@@ -1,45 +1,13 @@
-*{
-    text-decoration: none;
-}
-
-header .logo img{
-    width:150px;
-    margin:2px;
-    border-radius: 50px;
-}
-main{
-    
-    height: 48em;
-    width: fit-content;
-}
-
-
-body{
-    
-    font-family:sans-serif;
-    background-image:url(../../Imges/HOME.jpg) ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    width:fit-content ;
-}
-header div .nav{
-    display:flex;
-    justify-content: space-between;
-    align-content: center;
-}
-
+@import url("../header.css");
 main .forms{
-    font-size:20px;
-    align-items: center;  
-}
-body main form {
-    height:43em;
+    font-size:25px;
+    align-items: center;
+    
 }
 form h2{
- font-size: 40px;
+ font-size: 35px;
  text-align: center;
- 
+ display: block;
  
 }
 .one{
@@ -50,9 +18,10 @@ form h2{
 }
 
 .lists{
-    font-size: 30px;
+    font-size: 25px;
     margin-top: 15px;
     padding: 10px;
+    background-color: lightblue;
 }
 .content{
     display: flex;
@@ -61,41 +30,45 @@ form h2{
     justify-content: space-between;
     align-content: space-around;
     padding-top: 30px;
-}
-.continue{
-    color:white;
-}
-.content1{
-    display:flex;
-    margin-left: 550px;
-    height:fit-content;
-}
-
-.one form .parts{
-    font-size: 30px;
-    display:flex;
-   
-    flex-direction: column;
-   
-    align-content: center; 
-   width: 45em;
-   height:450px;
-}
- .button{
-    font-size:25px;
-    background-color: green;
-    border: 2px solid green ;
-    border-radius: 4px;
-    display: inline;
-    margin-left: 5px;
-}
-.content1 .button span{
-    padding-left: 5px;
-    font-size: 20px;
-    padding-right: 5px;
     
 }
 
+.one form .parts{
+    font-size: 25px;
+   
+    width: 45em;
+    height:auto;
+    margin-left: 7em;
+    
+}
+.radio{
+    margin-top: 15px;
+}
+input[type=radio] {
+    height: 18px;
+    width: 18px;
+    accent-color:lightblue;
+}
+.content1{
+     margin: 35px;
+    margin-left:40em;
+}
+ .button{
+    font-size:30px;
+    background-color: lightblue;
+    border: 2px solid lightblue ;
+    border-radius: 4px;
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+    margin: 3px;
+    color: black !important;
+
+}
+
+.content1 .button span{
+    margin-top: 5px;
+}
 
 
 

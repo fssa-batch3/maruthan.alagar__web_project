@@ -1,53 +1,11 @@
-
-header .logo img{
-    width:150px;
-    margin:2px;
-    border-radius: 50px;
-}
-body{
-    color: black;
-    font-family:sans-serif;
-    background-image:url(../../Imges/HOME.jpg) ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    width:auto ;
-}
-main{
-    width: 90em;
-    height: 53em;
-}
-body a{
-    text-decoration:none ;
-    
-}
-header div .nav{
-    display:flex;
-    justify-content: space-between;
-    align-content: center;
-}
- header div .list .link{
-    display:flex;
-    justify-content: space-between;
-    
-}
-header div .list .link .navlist{
-    list-style: none;
-    margin-top:40px;
-    color:black;
-    font-weight: bold;
-    font-size: 35px;
-   
-}
-header div .list .link .navlist:hover{
-    color:red !important;
-}
+@import url("../header.css");
 .namebar{
   padding-bottom: 15px;
 text-align: center;
 display: flex;
 justify-content: space-between;
 align-content: center;
+
 
   
 }
@@ -57,18 +15,26 @@ align-content: center;
     margin-top: 20px;
   
 }
+.namebar .date{
+    margin-right:30px;
+    margin-top:20px;
+
+}
 .namebar input{
     font-size: 25px;
-    background-color:  #bda884;
+    background-color:lightblue;
     width: fit-content;
     
 }
 
-td, th {
-    /*border: 1px solid #0c0101;*/
+td{
     text-align: center;
     width:fit-content;
-   
+    background-color: white;
+}
+.tb1{
+    background-color: darkblue;
+    color:white;
 }
 table tr td input{
     font-size: 20px;
@@ -76,38 +42,20 @@ table tr td input{
     border: 0cm;
 }
 
-.skyblue{
-    background-color: #D6EEEE;
-}
-.brown{
-    background-color: #bda884;
-}
+
 table{
     width:75em;
     height:31em;
     font-size: 20px;
     align-items: center;
+    background-color: wheat;
 }
-tr:nth-child(even) {
-    background-color: #D6EEEE;
-}
-tr:nth-child(odd) {
-    background-color: #bda884;
-}
+
 .arrow{
     color: black !important;
-}
-.arrow:hover{
     align-items: center !important;
     font-size: 30px;
-    color: red !important;
 }
-button{
-    font-size: 35px;
-    background-color: green;
-    color: white !important;
-    border:2px solid green;
-    border-radius: 4px;
-    margin-left: 20em;
-    margin-top: 50px;
+.arrow:hover{
+    color: red !important;
 }
