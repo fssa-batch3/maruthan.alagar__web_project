@@ -93,10 +93,7 @@ main .forms{
     color:white;
     margin:8px;
 }
-.content1 .button span{
-    padding-left: 5px;
-    margin-top: 5px;;
-}
+
 .continue{
     text-decoration: none !important;
     color:black !important;
