@@ -33,13 +33,11 @@ table tr td input{
     outline: 0;
     border: 0cm;
 }
+.empty{
+background-color: white;
+}
 
-.skyblue{
-    background-color: white;
-}
-.brown{
-    background-color: white;
-}
+
 table{
     width:100%;
     height:31em;

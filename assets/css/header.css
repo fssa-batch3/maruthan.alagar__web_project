@@ -1,4 +1,7 @@
-
+html{
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
 header .logo img{
     width:100px;
     margin-left:25px;
