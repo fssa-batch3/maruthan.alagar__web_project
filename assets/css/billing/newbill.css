@@ -16,6 +16,14 @@ padding-left: 18px;
     color:black
     
 }
+.symbol{
+    display: flex;
+}
+main img{
+ width: 35px;
+ margin-bottom: 15px;
+ margin-left: 4px;
+}
 .tb1{
     background-color: darkblue;
     color:white;

@@ -1,7 +1,5 @@
-html{
-    overflow-y: hidden;
-    overflow-x: hidden;
-}
+
+
 header .logo img{
     width:100px;
     margin-left:25px;
@@ -10,7 +8,8 @@ header .logo img{
 body{
     color:black;
     font-family:sans-serif;
-    background-image:url(../Imges/HOME.jpg) ;
+    /* background-image:url(../Imges/HOME.jpg) ; */
+    background-color: rgba(235,231,228,255);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
