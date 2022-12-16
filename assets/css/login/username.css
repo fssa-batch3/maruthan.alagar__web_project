@@ -62,6 +62,9 @@ main .forms{
     font-size:30px;
    
 }
+.content{
+    margin-left: 15px;
+}
 .one form{
     border: solid 2px;
     padding: 25px;
@@ -77,6 +80,7 @@ main .forms{
     border-color: rgb(59, 139, 237);
     float:right;
     color:white;
+    margin-right: 10px;
 }
 .content .button span{
     padding-left: 5px;
