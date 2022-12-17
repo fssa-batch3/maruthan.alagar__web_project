@@ -1,62 +1,70 @@
 @import url("../header.css");
-main .forms{
-    font-size:25px;
+
+main .forms {
+    font-size: 25px;
     align-items: center;
-    
+
 }
-form h2{
- font-size: 35px;
- text-align: center;
- display: block;
- 
+
+form h2 {
+    font-size: 35px;
+    text-align: center;
+    display: block;
+
 }
-.one{
+
+.one {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-content: center;
 }
 
-.lists{
+.lists {
     font-size: 25px;
     margin-top: 15px;
     padding: 10px;
     background-color: lightblue;
 }
-.content{
+
+.content {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: space-around;
     padding-top: 30px;
-    
+
 }
 
-.one form .parts{
+.one form .parts {
     font-size: 25px;
-   
+
     width: 45em;
-    height:auto;
+    height: auto;
     margin-left: 7em;
-    
+
 }
-.radio{
+
+.radio {
     margin-top: 15px;
 }
+
 input[type=radio] {
     height: 18px;
     width: 18px;
-    accent-color:lightblue;
+    accent-color: lightblue;
 }
-.content1{
-     margin: 35px;
-    margin-left:40em;
+
+.content1 {
+    margin: 35px;
+    margin-left: 40em;
 }
- .button{
-    font-size:30px;
+
+.button {
+    font-size: 30px;
     background-color: lightblue;
-    border: 2px solid lightblue ;
+    border: 2px solid lightblue;
     border-radius: 4px;
     display: inline-block;
     text-align: center;
@@ -66,9 +74,6 @@ input[type=radio] {
 
 }
 
-.content1 .button span{
+.content1 .button span {
     margin-top: 5px;
 }
-
-
-

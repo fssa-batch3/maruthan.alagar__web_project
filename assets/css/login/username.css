@@ -1,93 +1,105 @@
-*{
+* {
     text-decoration: none;
 }
-header .logo img{
-    width:100px;
-    margin:2px;
+
+header .logo img {
+    width: 100px;
+    margin: 2px;
     border-radius: 10px;
 }
-body{
-    color:black;
-    font-family:sans-serif;
-    background-image:url(../../Imges/background.png) ;
+
+body {
+    color: black;
+    font-family: sans-serif;
+    background-image: url(../../Imges/background.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    width:auto ;
+    width: auto;
 }
-body a{
-    text-decoration:none;
-    color:black;
+
+body a {
+    text-decoration: none;
+    color: black;
 
 }
-header div .nav{
-    display:flex;
+
+header div .nav {
+    display: flex;
     justify-content: space-between;
     align-content: center;
 }
- header div .list .link{
-    display:flex;
+
+header div .list .link {
+    display: flex;
     justify-content: space-between;
-    
+
 }
-header div .list .link .navlist{
+
+header div .list .link .navlist {
     list-style: none;
-    padding-right:20px;
-    margin-top:40px;
+    padding-right: 20px;
+    margin-top: 40px;
     font-size: 20px;
-    color:black;
+    color: black;
     font-weight: bold;
 
 }
-.lists{
-    display:flex;
-    font-size:20px;
-    margin:15px;
+
+.lists {
+    display: flex;
+    font-size: 20px;
+    margin: 15px;
     border: solid 2px;
-    padding:15px;
-    border-radius:3px;
+    padding: 15px;
+    border-radius: 3px;
 }
-main .forms{
-    font-size:20px;
+
+main .forms {
+    font-size: 20px;
     padding: 5px;
 }
 
-.one{
+.one {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-content: center;
     flex-wrap: wrap;
-    margin:auto;
-    font-size:30px;
-   
+    margin: auto;
+    font-size: 30px;
+
 }
-.content{
+
+.content {
     margin-left: 15px;
 }
-.one form{
+
+.one form {
     border: solid 2px;
     padding: 25px;
     border-radius: 10px;
-    background-color:lightblue;
-    
+    background-color: lightblue;
+
 
 }
-.content .button{
+
+.content .button {
     font-size: 20px;
     background-color: rgb(59, 139, 237);
     border-radius: 4px;
     border-color: rgb(59, 139, 237);
-    float:right;
-    color:white;
+    float: right;
+    color: white;
     margin-right: 10px;
 }
-.content .button span{
+
+.content .button span {
     padding-left: 5px;
     margin-top: 5px;
 }
-.continue{
-    text-decoration: none !important;
-    color:white !important;
-}
 
+.continue {
+    text-decoration: none !important;
+    color: white !important;
+}

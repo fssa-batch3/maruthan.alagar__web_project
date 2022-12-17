@@ -1,107 +1,118 @@
-
-*{
+* {
     text-decoration: none;
 }
 
-body{
-    color:black;
-    font-family:sans-serif;
-   
-  
-}
-body img{
+body {
+    color: black;
+    font-family: sans-serif;
 
-    width:100% ;
+
+}
+
+body img {
+
+    width: 100%;
     position: absolute;
     z-index: -1;
     filter: blur(4px);
-   
+
 
 }
-body a{
-    text-decoration:none;
-    color:black;
+
+body a {
+    text-decoration: none;
+    color: black;
 
 }
-header div .nav{
-    display:flex;
+
+header div .nav {
+    display: flex;
     justify-content: space-between;
     align-content: center;
 }
- header div .list .link{
-    display:flex;
+
+header div .list .link {
+    display: flex;
     justify-content: space-between;
-    
+
 }
-header div .list .link .navlist{
+
+header div .list .link .navlist {
     list-style: none;
-    margin-top:20px;
-    color:black;
+    margin-top: 20px;
+    color: black;
     display: inline;
     font-weight: bold;
     font-size: 25px;
-    float:right;
-    
+    float: right;
+
 
 }
-body h2{
-    font-size:30px;
+
+body h2 {
+    font-size: 30px;
     text-align: center;
 }
-.lists{
-    display:flex;
-    font-size:20px;
-    margin:15px;
+
+.lists {
+    display: flex;
+    font-size: 20px;
+    margin: 15px;
     border: solid 2px;
-    padding:15px;
-    border-radius:3px;
+    padding: 15px;
+    border-radius: 3px;
     background-color: lightblue;
 }
-main .forms{
-    font-size:20px;
+
+main .forms {
+    font-size: 20px;
     padding: 5px;
 }
 
-.one form{
+.one form {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly; 
-    align-content:center;
+    justify-content: space-evenly;
+    align-content: center;
     flex-wrap: wrap;
-    font-size:30px;
+    font-size: 30px;
 
-   
+
 }
-.part{
+
+.part {
     margin-left: 6%;
 }
-.part1{
+
+.part1 {
     display: flex;
-     flex-direction: column;
+    flex-direction: column;
     justify-content: space-around;
-   
+
 }
-#file{
+
+#file {
     padding-right: 0;
     width: 61%;
     font-size: 20px;
 }
 
-.content1 .button{
+.content1 .button {
     font-size: 25px;
-    background-color:lightblue;
+    background-color: lightblue;
     border-radius: 4px;
-    border-color:lightblue;
+    border-color: lightblue;
     text-align: center;
-    color:white;
+    color: white;
     margin-left: 45%;
 }
-.content1 .button span{
+
+.content1 .button span {
     padding-left: 5px;
     margin-top: 5px;
 }
-.continue{
-    text-decoration: none !important;
-    color:black !important;
-}
 
+.continue {
+    text-decoration: none !important;
+    color: black !important;
+}

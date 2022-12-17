@@ -1,61 +1,69 @@
 @import url("../header.css");
-.namebar{
-  padding-bottom: 15px;
-text-align: center;
-display: flex;
-justify-content: space-between;
-align-content: center;
+
+.namebar {
+    padding-bottom: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
 }
-.namebar label{
+
+.namebar label {
     font-size: 25px;
     padding: 4px;
     margin-top: 20px;
-  
+
 }
-.namebar h1{
+
+.namebar h1 {
     margin: 1em;
 }
-.namebar .date{
-    margin-right:30px;
-    margin-top:20px;
+
+.namebar .date {
+    margin-right: 30px;
+    margin-top: 20px;
 
 }
-.namebar input{
+
+.namebar input {
     font-size: 25px;
-    background-color:lightblue;
+    background-color: lightblue;
     width: fit-content;
-    
+
 }
 
-td{
+td {
     text-align: center;
-    width:fit-content;
+    width: fit-content;
     background-color: white;
 }
-.tb1{
+
+.tb1 {
     background-color: darkblue;
-    color:white;
+    color: white;
 }
-table tr td input{
+
+table tr td input {
     font-size: 20px;
     outline: 0;
     border: 0cm;
 }
 
 
-table{
-    width:100%;
-    height:31em;
+table {
+    width: 100%;
+    height: 31em;
     font-size: 20px;
     align-items: center;
     background-color: wheat;
 }
 
-.arrow{
+.arrow {
     color: black !important;
     align-items: center !important;
     font-size: 30px;
 }
-.arrow:hover{
+
+.arrow:hover {
     color: red !important;
 }
