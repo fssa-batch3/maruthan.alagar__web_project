@@ -3,6 +3,9 @@
 body header {
   height: 70px;
 }
+header div .list .link .navlist:hover{
+  color:rgb(184, 131, 74) !important;
+}
 
 body {
   color: black;

@@ -43,6 +43,9 @@ header div .list .link .navlist {
 
 
 }
+header div .list .link .navlist:hover{
+    color:blue;
+}
 
 body h2 {
     font-size: 30px;
