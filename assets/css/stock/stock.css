@@ -10,9 +10,9 @@
     width: fit-content;
     border-radius: 5px;
     height: 2em;
-    margin: 0.5em;
     border-color: lightblue;
-    color: black !important;
+    color: white;
+    margin-left:19px 
 }
 
 .addstock {
@@ -26,6 +26,26 @@
     margin: 1em;
     margin-top: 23px;
 }
+.search{
+    display: flex;
+    margin: 1em;
+}
+/* this is for search item page */
+.searchbox{
+    width: 470px;
+    height: 55px;
+    font-size: 25px;
+    background-color: lightblue;
+}
+.srch{
+    font-size: 25px;
+    background-color: lightblue;
+    border-color: lightblue;
+    margin-left:0 !important;
+
+
+}
+/* ended here */
 
 td,
 th {
