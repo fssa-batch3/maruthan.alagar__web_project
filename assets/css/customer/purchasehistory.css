@@ -7,11 +7,44 @@
 
 
 }
+.additem button {
+
+    font-size: 30px;
+    background-color: lightblue;
+    display: inline;
+    justify-content: end;
+    width: fit-content;
+    border-radius: 5px;
+    height: 2em;
+    border-color: lightblue;
+    color: white;
+    margin-left:19px ;
+
+}
 
 .additem h2 {
     font-size: 30px;
     margin: 1em;
 }
+.search{
+    margin: 1em;
+}
+/* this is for search item page */
+.searchbox{
+    width: 500px;
+    height: 55px;
+    font-size: 25px;
+    background-color: lightblue;
+}
+.srch{
+    font-size: 25px;
+    background-color: lightblue;
+    border-color: lightblue;
+    margin-left:0 !important;
+
+
+}
+/* ended here */
 
 td {
     text-align: center;

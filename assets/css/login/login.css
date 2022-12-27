@@ -2,7 +2,7 @@ header .logo img {
     width: 100px;
     border-radius: 10px;
     height: fit-content;
-    margin: 2px;
+    margin: 1em;
 }
 
 body {
@@ -67,6 +67,9 @@ main .forms {
     margin: auto;
     font-size: 30px;
 
+}
+.log{
+    text-align: center;
 }
 
 .one form {
