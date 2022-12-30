@@ -2,12 +2,57 @@ html {
     overflow-x: hidden;
 }
 
-header .logo img {
-    width: 110px;
-    margin: 2px;
-    margin-left: 13px;
+* {
+    box-sizing: border-box;
 }
 
+body { 
+  margin: 0;
+  font-family:sans-serif;
+}
+
+.header .logo {
+ margin: 0.5em;
+ margin-left: 1em;
+}
+
+
+
+.header a:hover {
+  color:blue;
+}
+.header a{
+    padding-top: 1em;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-bottom: 20px;
+}
+header{
+    height: 100%;
+}
+
+
+
+.list1 {
+  float: right;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 2.5em;
+  color: black;
+  
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .list {
+    float: none;
+  }
+}
 body {
     color: black;
     font-family: sans-serif;
@@ -15,7 +60,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    width: auto;
+    width: 100%;
     height: auto;
 }
 
@@ -25,32 +70,6 @@ body a {
 
 }
 
-header div .nav {
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-
-}
-
-header div .list .link {
-    display: flex;
-    justify-content: space-between;
-    width: fit-content;
-}
-
-header div .list .link .navlist {
-    list-style: none;
-    margin-right: 5px;
-    margin-top: 40px;
-    font-size: 25px;
-    color: black;
-    font-weight: bold;
-    width: fit-content;
-}
-
-header div .list .link .navlist:hover {
-    color: blue !important;
-}
 
 .cards {
     align-items: center;
