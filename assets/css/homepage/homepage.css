@@ -6,10 +6,7 @@ html {
     box-sizing: border-box;
 }
 
-body { 
-  margin: 0;
-  font-family:sans-serif;
-}
+
 
 .header .logo {
  margin: 0.5em;
