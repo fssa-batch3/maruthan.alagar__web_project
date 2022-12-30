@@ -48,6 +48,9 @@ header div .list .link .navlist {
 
 
 }
+header div .list .link .navlist:hover{
+    color:blue;
+}
 
 body h2 {
     font-size: 30px;
@@ -62,6 +65,7 @@ body h2 {
     padding: 15px;
     border-radius: 3px;
     background-color: lightblue;
+    width: 15em;
 }
 
 main .forms {
@@ -80,36 +84,30 @@ main .forms {
 
 }
 
-.part {
-    margin-left: 6%;
-}
-
 .part1 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
 }
 
-#file {
-    padding-right: 0;
-    width: 61%;
-    font-size: 20px;
+.content1 {
+    display: flex;
+    flex-direction: row;
+    margin-left: 41%;
+    margin-top: 9px;
+
 }
 
 .content1 .button {
-    font-size: 25px;
+
+    font-size: 30px;
     background-color: lightblue;
     border-radius: 4px;
     border-color: lightblue;
     text-align: center;
     color: white;
-    margin-left: 42%;
-}
-
-.content1 .button span {
-    padding-left: 5px;
-    margin-top: 5px;
+    margin: 8px;
+    margin-left: 16px;
 }
 
 .continue {
