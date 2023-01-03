@@ -1,8 +1,8 @@
 {
-  "name": "project",
+  "name": "m_a_m_billing",
   "version": "1.0.0",
   "description": "[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=fssa-batch3_maruthan.alagar__web_project&metric=bugs)](https://sonarcloud.io/summary/new_code?id=fssa-batch3_maruthan.alagar__web_project)",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "dev": "http-server ./"
   },
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/fssa-batch3/maruthan.alagar__web_project#readme",
   "dependencies": {
-    "http-server": "^0.1.2"
+    "https-server": "^0.1.2"
   }
 }
