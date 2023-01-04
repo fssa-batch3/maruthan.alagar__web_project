@@ -48,8 +48,13 @@ header div .list .link .navlist {
 
 
 }
-header div .list .link .navlist:hover{
-    color:blue;
+
+header div .list .link .navlist:hover {
+    color: blue;
+}
+
+.navlist1 {
+    display: none;
 }
 
 body h2 {
@@ -113,4 +118,32 @@ main .forms {
 .continue {
     text-decoration: none !important;
     color: black !important;
+}
+
+@media screen and (max-width: 800px) {
+    body img {
+        height: 150%;
+    }
+
+    .content1 .button {
+        text-align: center;
+        margin: 5px;
+        font-size: 25px;
+    }
+
+    .content1 {
+        width: 290px;
+        margin-left: 18%;
+    }
+
+    header div .list .link .navlist {
+        display: none;
+    }
+    .navlist1{
+        display: block;
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 140px;
+    }
+
 }

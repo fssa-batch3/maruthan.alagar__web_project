@@ -28,13 +28,15 @@
                 <h2 class="log">Login</h2>
                 <div class="content">
                     <label class="forms">Enter Username</label>
-                    <input class="lists" type="text" placeholder="Enter user Name" required />
+                    <input class="lists" id="username" type="text" placeholder="Enter user Name" value="Maruthu001"
+                        required />
 
                 </div>
 
                 <div class="content">
                     <label class="forms">Password</label>
-                    <input class="lists" type="password" placeholder="Enter Password" required />
+                    <input class="lists" id="password" type="password" placeholder="Enter Password" value="asdfdsa"
+                        required />
                 </div>
                 <div>
                     <a class="forgot" href="#">Forgot Password </a>
@@ -48,6 +50,13 @@
             </form>
         </div>
     </main>
+    <script>
+        const username = document.getElementById("username").value
+        const password = document.getElementById("password").value
+
+        console.log(username)
+        console.log(password)
+    </script>
 
 
 

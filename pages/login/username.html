@@ -26,17 +26,17 @@
                 <h3>User Name Creation</h3>
                 <div class="content">
                     <label class="forms"> Create Userame</label>
-                    <input class="lists" type="text" placeholder=" Enter Username" required />
+                    <input class="lists" id="create_username" type="text" placeholder=" Enter Username" value="Maruthu001" required />
 
                 </div>
 
                 <div class="content">
                     <label class="forms"> Create New Password</label>
-                    <input class="lists" type="password" placeholder="password" required />
+                    <input class="lists" id="new_password" type="password" placeholder="password" value="asdffdsa" required />
                 </div>
                 <div class="content">
                     <label class="forms">Confirm Password</label>
-                    <input class="lists" type="password" placeholder="Confirm password" required />
+                    <input class="lists" id="password" type="password" placeholder="Confirm password" value="asdffdsa" required />
                 </div>
                 <div class="content">
                     <button class="button" type="continue" class="registerbtn"><a class="continue"
@@ -50,6 +50,18 @@
         </form>
         </div>
     </main>
+    <script>
+        const new_password = document.getElementById("new_password").value
+        const create_username = document.getElementById("create_username").value
+        const password = document.getElementById("password").value
+        
+        console.log(new_password)
+        console.log(create_username)
+        console.log(password)
+
+
+
+    </script>
 
 
 

@@ -24,22 +24,26 @@
                 <h2>Register Shop</h2>
                 <div class="content">
                     <label class="forms">Shop Name</label>
-                    <input class="lists" type="text" placeholder="Enter Shop Name" required />
+                    <input class="lists" id="shop_name" type="text" placeholder="Enter Shop Name"
+                        value="M A M Supermarket" required />
 
                 </div>
 
                 <div class="content">
                     <label class="forms">License Number</label>
-                    <input class="lists" type="text" placeholder="Enter License Number" required />
+                    <input class="lists" id="licence_number" type="text" placeholder="Enter License Number"
+                    value="RJ-13/DLC/12/123456" required />
                 </div>
                 <div class="content">
                     <label class="forms">Phone Number</label>
-                    <input class="lists" type="tel" placeholder="Enter Mobile Number" required />
+                    <input class="lists" id="phone_number" type="tel" value="987654323"
+                        placeholder="Enter Mobile Number" required />
                 </div>
 
                 <div class="content">
                     <label class="forms">E-Mail Address (optional)</label>
-                    <input class="lists" type="email" placeholder="Enter your E-Mail" />
+                    <input class="lists" id="email" type="email" placeholder="Enter your E-Mail"
+                        value="maruthan@gmail.com" />
                 </div>
                 <div class="content">
                     <button class="button" type="continue" class="registerbtn"><a class="continue"
@@ -50,7 +54,20 @@
         </div>
     </main>
 
+    <script>
+        const shop_name = document.getElementById("shop_name").value
+        const licence_number = document.getElementById("licence_number").value
+        const phone_number = document.getElementById("phone_number").value
+        const email = document.getElementById("email").value
 
+        console.log(shop_name)
+        console.log(licence_number)
+        console.log(phone_number)
+        console.log(email)
+
+
+
+    </script>
 
 </body>
 
