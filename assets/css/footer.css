@@ -34,3 +34,8 @@ body footer {
 
 
 }
+@media screen and (max-width: 400px) {
+   body footer{
+     margin-top: 4em;
+}
+}

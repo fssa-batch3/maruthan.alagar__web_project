@@ -33,39 +33,39 @@
                     <div class="part1">
                         <div class="content">
                             <label class="forms">Product Name</label>
-                            <input class="lists" type="text" placeholder="Product Name" required />
+                            <input class="lists" id="product_name" type="text" placeholder="Product Name"  required />
 
                         </div>
                         <div class="content">
                             <label class="forms">Quantity</label>
-                            <input class="lists" type="number" placeholder="Choose Number" required />
+                            <input class="lists" id="quantity"  type="number" placeholder="Choose Number"  required />
                         </div>
                         <div class="content">
                             <label class="forms">MRP(per Piece)</label>
-                            <input class="lists" type="text" placeholder="Enter MRP" required />
+                            <input class="lists" id="mrp" type="text" placeholder="Enter MRP"  required />
                         </div>
 
                         <div class="content">
                             <label class="forms">Price(per piece)</label>
-                            <input class="lists" type="text" placeholder="Enter price" required />
+                            <input class="lists" id="price" type="text" placeholder="Enter price"  required />
                         </div>
                     </div>
                     <div class="part1">
                         <div class="content">
                             <label class="forms">Tax(%)</label>
-                            <input class="lists" type="text" placeholder="Enter Tax" />
+                            <input class="lists" id="tax" type="text" placeholder="Enter Tax"   />
                         </div>
                         <div class="content">
                             <label class="forms">Discount(%)</label>
-                            <input class="lists" type="text" placeholder="Enter Discount" />
+                            <input class="lists" id="discount" type="text" placeholder="Enter Discount"   />
                         </div>
                         <div class="content">
                             <label class="forms">ID Number</label>
-                            <input class="lists" type="text" placeholder="Enter ID" required />
+                            <input class="lists" id="id_number" type="text" placeholder="Enter ID"  required />
                         </div>
                         <div class="content">
                             <label class="forms">Special name(optional)</label>
-                            <input class="lists" type="text" placeholder="Enter special name" />
+                            <input class="lists" id="special_name" type="text" placeholder="Enter special name" />
                         </div>
                     </div>
                 </div>
@@ -75,9 +75,36 @@
 
     </main>
     <div class="content1">
-        <button class="button" type="submit" class="registerbtn"><a class="continue" href="../item/item.html">
-                Save<span>&#8594;</span></a></button>
+        <button class="button" type="button"  onclick="save()">
+                Save<span>&#8594;</span></button>
     </div>
+    <script>
+        function save(){
+        const product_name = document.getElementById("product_name").value
+        const quantity = document.getElementById("quantity").value
+        const mrp = document.getElementById("mrp").value
+        const price = document.getElementById("price").value
+        const tax = document.getElementById("tax").value
+        const discount = document.getElementById("discount").value
+        const id_number = document.getElementById("id_number").value
+        const special_name = document.getElementById("special_name").value
+
+        console.log(product_name)
+        console.log(quantity)
+        console.log(mrp)
+        console.log(price)
+        console.log(tax)
+        console.log(discount)
+        console.log(id_number)
+        console.log(special_name)
+        window.location.href="./item.html"
+        }
+
+
+
+
+    </script>
+
 
 
 

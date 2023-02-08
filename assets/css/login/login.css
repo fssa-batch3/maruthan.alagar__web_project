@@ -81,23 +81,26 @@ main .forms {
 
 }
 
-.content .button {
+.content .button1 {
     font-size: 20px;
     background-color: rgb(59, 139, 237);
     border-radius: 4px;
     border-color: rgb(59, 139, 237);
     float: right;
     color: white;
+    cursor:pointer;
 }
 
-.content .button span {
+.content .button1 span {
     padding-left: 5px;
     margin-top: 5px;
 }
 
-.forgot {
+.forgot , ins {
     font-size: 16px !important;
-    color: 16px !important;
+    color: blue !important;
+    cursor:pointer;
+
 
 }
 

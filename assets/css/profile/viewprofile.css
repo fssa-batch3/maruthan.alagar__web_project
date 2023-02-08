@@ -100,7 +100,7 @@ main .forms {
     border-radius: 4px;
     border-color: lightblue;
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
     margin: 8px;
     margin-left: 16px;
 }

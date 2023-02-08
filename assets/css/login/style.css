@@ -82,7 +82,7 @@ main .forms {
 
 }
 
-.content .button {
+ .button {
     font-size: 20px;
     background-color: rgb(59, 139, 237);
     border-radius: 4px;
@@ -91,7 +91,7 @@ main .forms {
     color: white;
 }
 
-.content .button span {
+ .button span {
     padding-left: 5px;
     margin-top: 5px;
 }

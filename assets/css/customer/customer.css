@@ -51,7 +51,9 @@
 
 }
 /* ended here */
-
+.dropdown{
+    display: none;
+}
 td {
     text-align: center;
     width: fit-content;
@@ -76,3 +78,56 @@ table {
     background-color: darkblue !important;
     color: white;
 }
+@media screen and (max-width: 400px) {
+
+    body{
+        font-size: 16px;
+    }
+    header .logo {
+        width: 70px;
+        margin-left:0 !important;
+      }
+    .additem h2{
+        font-size: 20px;
+        margin: 1em;
+    
+    }
+    .additem button{
+        font-size: 20px;
+        width: 205px;
+    }
+    
+    .additem{
+        margin-top: 2em;
+    }
+    .searchbox{
+        
+        width: 205px;
+        height:2em;
+        font-size: 20px;
+    
+    }
+    .search{
+        margin-right: -12em;
+    }
+    #srch{
+        margin-right: 0 !important;
+        width: 230px;
+    }
+    .btn1{
+        margin-bottom: 0.5em;
+    }
+    table{
+        font-size: 15px;
+        height: fit-content;
+        width: 100%;
+        margin-top: 2em;
+    }
+    .forres{
+        display: none;
+    }
+    
+    
+    
+    
+    }

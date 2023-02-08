@@ -37,83 +37,96 @@
                     <div class="content">
                         <label class="forms">Shop Name</label>
                         <input class="lists" id="shop_name" type="text" placeholder="Enter Shop Name"
-                            value="M A M Multi Store" required />
+                             required />
 
                     </div>
 
                     <div class="content">
                         <label class="forms">License Number</label>
-                        <input class="lists" id="licence_number" type="text" value="RJ-13/DLC/12/123456"
+                        <input class="lists" id="licence_number" type="text" 
                             placeholder="Enter License Number" required />
                     </div>
                     <div class="content">
                         <label class="forms">Phone Number</label>
-                        <input class="lists" id="phone_number" type="tel" value="+917810061572"
+                        <input class="lists" id="phone_number" type="tel"
                             placeholder="Enter Mobile Number" required />
                     </div>
 
                     <div class="content">
                         <label class="forms">E-Mail Address</label>
-                        <input class="lists" id="email" type="email" value="amaruthanalagar@gmail.com"
+                        <input class="lists" id="email" type="email" 
                             placeholder="Enter your E-Mail" />
                     </div>
                 </div>
                 <div class="part1">
                     <div class="content">
                         <label class="forms">GSTN Number</label>
-                        <input class="lists" id="gstn_number" type="text" value="24ABMFM0549H1Z8"
+                        <input class="lists" id="gstn_number" type="text" 
                             placeholder="Enter GSTN Number" required />
 
                     </div>
                     <div class="content">
                         <label class="forms">Address</label>
-                        <input class="lists" id="address" type="text" value="Malampatty, Viralimalai, Pudukkottai"
+                        <input class="lists" id="address" type="text" 
                             placeholder="Enter Shop Adress" required />
 
                     </div>
                     <div class="content">
                         <label class="forms">Shop Logo</label>
-                        <input class="lists" id="file" type="file" value="M_A_M.png" placeholder="Upload Logo"
+                        <input class="lists" id="file" type="file"  placeholder="Upload Logo"
                             required />
 
                     </div>
                     <div class="content">
                         <label class="forms">Print Name</label>
                         <input class="lists" id="nameforprint" type="text" placeholder="Enter Print Name"
-                            value="M A M Store" required />
+                             required />
 
                     </div>
                 </div>
             </form>
         </div>
         <div class="content1">
-            <button class="button" type="submit" class="registerbtn"><a class="continue"
-                    href="../homepage/homepage.html">Save & Continue<span>&#8594;</span></a></button>
+            <button class="button" type="button" onclick="finish()">Save & Continue<span>&#8594;</span></button>
 
         </div>
 
 
     </main>
-    <script>
-        const shop_name = document.getElementById("shop_name").value
-        const licence_number = document.getElementById("licence_number").value
-        const phone_number = document.getElementById("phone_number").value
-        const email = document.getElementById("email").value
+     <script>
+        function finish(){
+        // const shop_name = document.getElementById("shop_name").value
+        // const licence_number = document.getElementById("licence_number").value
+        // const phone_number = document.getElementById("phone_number").value
+        // const email = document.getElementById("email").value
         const gstn_number = document.getElementById("gstn_number").value
         const address = document.getElementById("address").value
         const nameforprint = document.getElementById("nameforprint").value
 
-        console.log(shop_name)
-        console.log(licence_number)
-        console.log(phone_number)
-        console.log(email)
-        console.log(gstn_number)
-        console.log(address)
-        console.log(nameforprint)
+        // console.log(shop_name)
+        // console.log(licence_number)
+        // console.log(phone_number)
+        // console.log(email)
+        // console.log(gstn_number)
+        // console.log(address)
+        // console.log(nameforprint)
 
-
-
-
+        // localStorage.setItem("shop_name", shop_name)
+        // localStorage.setItem("licence_number", licence_number)
+        // localStorage.setItem("phone_number", phone_number)
+        // localStorage.setItem("email", email)
+        localStorage.setItem("gstn_number", gstn_number)
+        localStorage.setItem("address", address)
+        localStorage.setItem("nameforprint", nameforprint)
+       
+        window.location.href="../homepage/homepage.html"
+       
+    }
+       
+       
+       
+       
+    
     </script>
 
 

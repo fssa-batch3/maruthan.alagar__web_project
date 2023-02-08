@@ -69,24 +69,23 @@ header{
     color:black;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: bold;
     background-color: rgb(201, 240, 188);
 
   }
   
   .dropdown-content a {
-    float: right;
     color: black;
     text-decoration: none;
     display: block;
-    text-align: right;
+    text-align: center;
   }
   
   
   .dropdown-content a:hover {
-    background-color: lightblue;
-    color: black;
+    background-color: rgb(13, 178, 234);
+    color: blue;
   }
   
   .dropdown:hover .dropdown-content {
