@@ -22,24 +22,24 @@
     </header>
     <main>
         <div class="one">
-            <form>
+            <form id="signup-form">
                 <h3>User Name Creation</h3>
                 <div class="content">
-                    <label class="forms"> Create Userame</label>
-                    <input class="lists" id="create_username" type="text" placeholder=" Enter Username"  required />
+                    <label class="forms"> Enter Your Email Address</label>
+                    <input class="lists" id="user_email" type="email" placeholder=" Enter Your Email"  required />
 
                 </div>
 
                 <div class="content">
                     <label class="forms"> Create New Password</label>
-                    <input class="lists" id="new_password" type="password" placeholder="Password"  required />
+                    <input class="lists" id="new_password" type="password" placeholder="Password" pattern="[a-zA-Z0-9]+" required />
                 </div>
                 <div class="content">
                     <label class="forms">Confirm Password</label>
-                    <input class="lists" id="password" type="password" placeholder="Confirm password"  required />
+                    <input class="lists" id="password" type="password" placeholder="Confirm password" required />
                 </div>
                 <div class="content_1">
-                    <button class="button" type="button" onclick="saveData()"> Finish<span>&#8594;</span></button>
+                    <button class="button" type="submit" onclick="(event)"> Finish<span>&#8594;</span></button>
 
                 </div>
 
@@ -194,40 +194,149 @@
        
 
 
-function saveData()
-{
-let name,new_pw,pw;
-name = document.getElementById("create_username").value;
-new_pw = document.getElementById("new_password").value;
-pw = document.getElementById("password").value;
-let user_records = new Array();
-user_records = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
-if(user_records.some((v)=>{return v.pw == pw}))
-{
-  alert("Your details successfully registed ");
-  window.location.href = "./login.html"
-}
-else if(create_username.value.length == 0 && password.value.length == 0 && new_password.value.length == 0){
-    alert('Please fill your Details');
-}else if(new_password.value.length == 0){
+// function saveData()
+// {
+// let name,new_pw,pw;
+// name = document.getElementById("create_username").value;
+// new_pw = document.getElementById("new_password").value;
+// pw = document.getElementById("password").value;
+// let user_records = new Array();
+// user_records = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+// if(user_records.some((v)=>{return v.pw == pw}))
+// {
+//   alert("Your details successfully registed ");
+//   window.location.href = "./login.html"
+// }
+// else if(create_username.value.length == 0 && password.value.length == 0 && new_password.value.length == 0){
+//     alert('Please fill your Details');
+// }else if(new_password.value.length == 0){
+//     alert('Please create new password');
+// }else if(password.value.length == 0){
+//     alert('Please re-enter password');
+
+// }else if(password.value != new_password.value){
+//     alert('Please Check the password');
+
+
+// }else
+// {
+//   user_records.push({
+//   "name":name,
+//   "new_pw":new_pw,
+//   "pw":pw
+// })
+// localStorage.setItem("users",JSON.stringify(user_records));
+// }
+// }
+
+
+
+
+
+// function saveData()
+// {
+// let name,new_pw,pw;
+// name = document.getElementById("create_username").value;
+// new_pw = document.getElementById("new_password").value;
+// pw = document.getElementById("password").value;
+// let user_records = new Array();
+// user_records = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+// if(user_records.some((v)=>{return v.pw == pw}))
+// {
+ 
+// }
+// else if(create_username.value == " "){
+//     alert('Please fill Details');
+// }else if(new_password.value.length == 0){
+//     alert('Please create new password');
+// }else if(password.value.length == 0){
+//     alert('Please re-enter password');
+// }else if(password.value != new_password.value){
+//     alert('Please Check the password');
+// }else
+// {
+//   user_records.push({
+//   "name":name,
+//   "new_pw":new_pw,
+//   "pw":pw
+// })
+// alert("Your details successfully registed ");
+//   window.location.href = "./login.html"
+// localStorage.setItem("users",JSON.stringify(user_records));
+// }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+const form = document.getElementById("signup-form");
+let user_email = document.getElementById("user_email");
+let new_pw = document.getElementById("new_password");
+let pw = document.getElementById("password");
+
+
+let userRecords = JSON.parse(localStorage.getItem("userRecords"));
+let unique = localStorage.getItem("unique")
+console.log(unique)
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  
+  if (pw.value !== new_pw.value) {
+    alert("Passwords do not match");
+    return;
+  }else if(user_email.value === 0){
+    alert('Please fill Email Address');
+}else if(new_pw.value.length == 0){
     alert('Please create new password');
-}else if(password.value.length == 0){
+}else if(pw.value.length == 0){
     alert('Please re-enter password');
 
-}else if(password.value != new_password.value){
-    alert('Please Check the password');
+}
 
 
-}else
-{
-  user_records.push({
-  "name":name,
-  "new_pw":new_pw,
-  "pw":pw
-})
-localStorage.setItem("users",JSON.stringify(user_records));
+
+else if (unique !== user_email.value) {
+    alert("Please Enter correct Email Address");
+    return;
+  }
+  
+
+
+else{
+
+
+    function findemail(e){
+          return e.user_email == unique;
+      }
+      let users_records = userRecords.find(findemail);
+
+
+    // const users_records = userRecords.find(userRecords => unique === user_email.value)
+   
+   
+   
+users_records["user_email"] = user_email.value;
+users_records["new_pw"] = new_pw.value;
+users_records["pw"] =pw.value;
 }
-}
+
+
+localStorage.setItem("userRecords", JSON.stringify(userRecords));
+console.log(userRecords)
+
+  alert("Your details successfully registed ");
+ window.location.href = "./login.html"
+  
+});
 
        
        

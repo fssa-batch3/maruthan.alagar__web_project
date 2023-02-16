@@ -100,3 +100,9 @@ main .forms {
     text-decoration: none !important;
     color: white !important;
 }
+.log{
+    font-size: 15px;
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}

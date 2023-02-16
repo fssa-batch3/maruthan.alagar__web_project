@@ -63,6 +63,7 @@ body h2 {
     width: 15em;
 }
 
+
 main .forms {
     font-size: 20px;
     padding: 5px;
@@ -93,7 +94,7 @@ main .forms {
 
 }
 
-.content1 .button {
+ .button,.button_1 ,.button_2,.button_2_1{
 
     font-size: 30px;
     background-color: lightblue;
@@ -108,4 +109,12 @@ main .forms {
 .continue {
     text-decoration: none !important;
     color: black !important;
+}
+.button_2_1{
+float: right;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+
 }

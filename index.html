@@ -21,23 +21,23 @@
     </header>
     <main>
         <div class="one">
-            <form>
+             <form id="signup-form">
                 <h2>Register Shop</h2>
                 <div class="content">
                     <label class="forms">Shop Name</label>
-                    <input class="lists" id="shop_name" type="text" placeholder="Enter Shop Name"
+                    <input class="lists" id="shop_name" type="text" placeholder="Enter Shop Name"pattern="[a-zA-Z0-9\s]+" title="Use a-z and A-Z Create Shop Name"
                          required />
 
                 </div>
 
                 <div class="content">
                     <label class="forms">License Number</label>
-                    <input class="lists" id="licence_number" type="text" placeholder="Enter License Number"
+                    <input class="lists" id="licence_number" type="text" placeholder="Enter License Number" pattern="[a-zA-Z0-9]+"
                      required />
                 </div>
                 <div class="content">
                     <label class="forms">Phone Number</label>
-                    <input class="lists" id="phone_number" type="tel" 
+                    <input class="lists" id="phone_number" type="tel" pattern="[0-9]{10, }"
                         placeholder="Enter Mobile Number" required />
                 </div>
 
@@ -46,8 +46,10 @@
                     <input class="lists" id="email" type="email" placeholder="Enter your E-Mail"
                         />
                 </div>
+               
                 <div class="content_1">
-                    <button class="button" type="button"  onclick = "register()"> Continue<span>&#8594;</span></button>
+                    <p class="log" onclick="login()">Already have an Account? Login</p>
+                    <button class="button" type="submit"  onclick = "(event)"> Continue<span>&#8594;</span></button>
 
                 </div>
             </form>
@@ -154,22 +156,84 @@
         //     document.querySelector("form").append(div_content_1)
 
 
-    function register(){
-        const shop_name = document.getElementById("shop_name").value
-        const licence_number = document.getElementById("licence_number").value
-        const phone_number = document.getElementById("phone_number").value
-        const email = document.getElementById("email").value
+    // function register(){
+    //     const shop_name = document.getElementById("shop_name").value
+    //     const licence_number = document.getElementById("licence_number").value
+    //     const phone_number = document.getElementById("phone_number").value
+    //     const email = document.getElementById("email").value
 
-        localStorage.setItem("shop_name", shop_name)
-        localStorage.setItem("licence_number", licence_number)
-        localStorage.setItem("phone_number", phone_number)
-        localStorage.setItem("email", email)
+
+
+
+    //     localStorage.setItem("shop_name", shop_name)
+    //     localStorage.setItem("licence_number", licence_number)
+    //     localStorage.setItem("phone_number", phone_number)
+    //     localStorage.setItem("email", email)
         
 
-       window.location.href="./pages/login/username.html"
-    }
+    //    window.location.href="./pages/login/username.html"
+    // }
+
+    
+
+let form = document.getElementById("signup-form");
+let shop_name = document.getElementById("shop_name");
+let licence_number = document.getElementById("licence_number");
+let phone_number = document.getElementById("phone_number");
+let user_email = document.getElementById("email");
 
 
+const userRecords = JSON.parse(localStorage.getItem("userRecords")) || [];
+
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  
+
+
+
+ if (userRecords.some(record => record.user_email === user_email.value)) {
+    alert("Email already exists Please try another one! ");
+    return;
+  }
+  else if(userRecords.some(record => record.phone_number === phone_number.value)){
+    alert("phone Number is already exists Please try another one!");
+    return;
+  }
+  else if(userRecords.some(record => record.licence_number === licence_number.value)){
+    alert("licence Number is already exists Please try another one!");
+    return;
+  }
+  
+//  else if (userRecords.some(record => record.email === email.value)) {
+//     alert("Email already exists");
+//     return;
+//   }
+else{
+
+  let newUser = {
+    shop_name: shop_name.value,
+    licence_number: licence_number.value,
+    phone_number: phone_number.value,
+     user_email: user_email.value
+     
+  };
+
+
+
+  userRecords.push(newUser);
+  localStorage.setItem("userRecords", JSON.stringify(userRecords));
+  localStorage.setItem("unique", user_email.value);
+  alert("Your details successfully registed ");
+  window.location.href="./pages/login/username.html"
+  event.preventDefault();
+  
+}});
+localStorage.setItem("unique", user_email.value);
+
+function login(){
+    window.location.href="./pages/login/login.html"
+}
 
 
     </script>

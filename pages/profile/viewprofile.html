@@ -17,8 +17,12 @@
             <div class="nav">
                 <div class="list">
                     <ul class="link">
-                        <li class="navlist"><a class="navlist" href="../homepage/homepage.html"> Back to Homepage
-                                &#8594;</a></li>
+                        <div class="top">
+                        <button class="button_2" onclick="remove()"  type="submit">
+                            Delete My Account</button>
+                            <button class="button_2_1" onclick="logout()"  type="submit">
+                                Log Out</button>
+                        </div>
                     </ul>
                 </div>
             </div>
@@ -27,7 +31,7 @@
     <main>
         <h2>Profile</h2>
         <div class="one">
-            <form>
+            <form id="sign-form" onsubmit="(event)" >
 
                 <div class="part">
 
@@ -49,99 +53,151 @@
 
                     <div class="content">
                         <label class="forms">E-Mail Address</label>
-                        <input class="lists" id="email" type="email"  />
+                        <input class="lists" id="user_email" type="email"  />
                     </div>
-                    <div class="content">
-                        <label class="forms">Username</label>
+                    <!-- <div class="content">
+                        <label class="forms">Username(E-mail Address)</label>
                         <input class="lists" id="username" type="email" />
-                    </div>
+                    </div> -->
                 </div>
                 <div class="part1">
                     <div class="content">
                         <label class="forms">GSTN Number</label>
-                        <input class="lists" id="gstn_number" type="text"  required />
+                        <input class="lists" id="gstn_number" type="text" placeholder="Enter GSTN Number"  required />
 
                     </div>
                     <div class="content">
                         <label class="forms">Address</label>
-                        <input class="lists" id="address" type="text"  required />
+                        <input class="lists" id="address" type="text" placeholder="Enter Shop Address" required />
 
                     </div>
                     <div class="content">
                         <label class="forms">Shop Logo</label>
-                        <input class="lists" id="file" type="file" placeholder="Upload Logo" required />
+                        <input class="lists" id="file" type="file" placeholder="Upload Logo"  />
 
                     </div>
                     <div class="content">
                         <label class="forms">Print Name</label>
-                        <input class="lists" id="nameforprint" type="text"  required />
+                        <input class="lists" id="nameforprint" type="text" placeholder="Enter Print Name" required />
 
                     </div>
-                    <div class="content">
+                    <!-- <div class="content">
                         <label class="forms">Password</label>
                         <input class="lists" id="password" type="text" required />
 
-                    </div>
+                    </div> -->
                 </div>
+                <!-- <button class="button" onclick="(event)"  type="button">
+                    Save<span>&#x1F872;</span></button> -->
             </form>
         </div>
         <div class="content1">
-            <button class="button" onclick="backbutton()"  type="button"><span>&#x1F870;</span> Back</button>
-            <button class="button" onclick="backbutton()"  type="button">
+            <button class="button_1" onclick="backbutton()"  type="button"><span>&#x1F870;</span> Back</button>
+             <button class="button" onclick="(event)"  type="submit">
                 Save<span>&#x1F872;</span></button>
-        </div>
+               
+         </div>  
 
 
 
     </main>
     <script>
         
-        const shop_name = localStorage.getItem("shop_name");
-        const email = localStorage.getItem("email");
-        const licence_number = localStorage.getItem("licence_number");
-        const phone_number = localStorage.getItem("phone_number");
-        const gstn_number = localStorage.getItem("gstn_number");
-        const address = localStorage.getItem("address");
-        const nameforprint = localStorage.getItem("nameforprint");
-        const username = localStorage.getItem("name");
-        const password = localStorage.getItem("pw");
+
+let userRecords = JSON.parse(localStorage.getItem("userRecords"));
+let unique = localStorage.getItem("unique")
+      function findDetail(e){
+          return e.user_email===unique;
+      }
+      let user_records = userRecords.find(findDetail);
+
+      document.getElementById("shop_name").value = user_records["shop_name"];
+        document.getElementById("licence_number").value = user_records["licence_number"]
+        document.getElementById("user_email").value = user_records["user_email"];
+        document.getElementById("phone_number").value = user_records["phone_number"];
+        document.getElementById("gstn_number").value = user_records["gstn_number"];
+        document.getElementById("address").value = user_records["address"];
+        document.getElementById("nameforprint").value = user_records["nameforprint"];
 
 
-        // console.log(shop_name);
-        // console.log(email);
-        // console.log(licence_number);
-        // console.log(gstn_number);
-        // console.log(address);
-        // console.log(nameforprint);
-        // console.log(username);
-        // console.log(password);
+       
+      function update(e){
+//                  // getting the updated data from the input field
+// const shop_name = document.getElementById("shop_name").value;
+// const licence_number = document.getElementById("licence_number").value;
+// const phone_number = document.getElementById("phone_number").value;
+let user_email = document.getElementById("user_email").value;
+let gstn_number = document.getElementById("gstn_number").value;
+let address = document.getElementById("address").value;
+let nameforprint = document.getElementById("nameforprint").value;
+              
 
-      
-        document.getElementById("shop_name").value = shop_name
-        document.getElementById("licence_number").value = licence_number
-        document.getElementById("email").value = email
-        document.getElementById("phone_number").value = phone_number
-        document.getElementById("gstn_number").value = gstn_number
-        document.getElementById("address").value = address
-        document.getElementById("nameforprint").value = nameforprint
-        document.getElementById("username").value = username
-        document.getElementById("password").value = password
-        
-        
-        // localStorage.setItem("shop_name", shop_name)
-        // localStorage.setItem("licence_number", licence_number)
-        // localStorage.setItem("phone_number", phone_number)
-        // localStorage.setItem("email", email)
-        // localStorage.setItem("gstn_number", gstn_number)
-        // localStorage.setItem("address", address)
-        // localStorage.setItem("nameforprint", nameforprint)
-        // localStorage.setItem("username", username)
-        // localStorage.setItem("password", password)
+
+
+// paste the updated data to the correct object
+
+
+user_records["gstn_number"] = gstn_number;
+user_records["address"] = address;
+user_records["nameforprint"] = nameforprint;
+              
+
+
+
+// again paste it to the
+                localStorage.setItem("userRecords", JSON.stringify(userRecords));
+                alert("Successfully Updated")
+                window.location.href="../homepage/homepage.html"
+            }
+
+            const sumbit =document.querySelector(".button");
+          sumbit.addEventListener("click",update);
+
+
+
+
+
+       
         function backbutton() {
         window.location.href="../homepage/homepage.html"
         }
+        function logout() {
+        window.location.href="../login/login.html"
+        }
 
+
+
+
+        function remove(){
+
+            let user_Records = JSON.parse(localStorage.getItem("userRecords"));
+            let unique_1 = localStorage.getItem("unique")
+           
+           
+            function findDetails(e){
+          return e.user_email===unique_1;
+      }
+       records = user_Records.find(findDetails);
+
+            let indexOfShop = user_Records.indexOf(records);
+            user_Records.splice(indexOfShop,1)
+
+            localStorage.setItem("userRecords", JSON.stringify(user_Records) )
+    alert("Deleted!")
+    window.location.href="../../index.html"
+
+}
+
+       
+       
     </script>
+
+
+
+
+
+
+
 
 
 

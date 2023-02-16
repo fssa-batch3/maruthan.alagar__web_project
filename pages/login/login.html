@@ -27,8 +27,8 @@
             <form>
                 <h2 class="log">Login</h2>
                 <div class="content">
-                    <label class="forms">Enter Username</label>
-                    <input class="lists" id="username" type="text" placeholder="Enter user Name" 
+                    <label class="forms">Enter Email Address</label>
+                    <input class="lists" id="user_email" type="email" placeholder="Enter user Name" 
                         required />
 
                 </div>
@@ -53,18 +53,18 @@
        
 function saveData()
 {
-let name,pw;
-name = document.getElementById("username").value;
+let user_email,pw;
+user_email = document.getElementById("user_email").value;
 pw = document.getElementById("password").value;
 let user_details=new Array();
-user_details =JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
-if(user_details.some((v)=>{return v.name==name && v.pw == pw}))
+user_details =JSON.parse(localStorage.getItem("userRecords"))?JSON.parse(localStorage.getItem("userRecords")):[]
+if(user_details.some((v)=>{return v.user_email==user_email && v.pw == pw}))
 {
   alert("Successfully Logined ");
-  let current_user=user_details.filter((v)=>{return v.name == name && v.pw == pw})[0]
- localStorage.setItem('name',current_user.name);
- localStorage.setItem('pw',current_user.pw);
-  window.location.href="./profile.html"
+  let current_user=user_details.filter((v)=>{return v.user_email == user_email && v.pw == pw})[0]
+ localStorage.setItem('unique',current_user.user_email);
+//  localStorage.setItem('pw',current_user.pw);
+window.location.href="../homepage/homepage.html"
 }
 else
 {
