@@ -15,6 +15,6 @@ M A M Billing-Features
 
 2. Product CRUD
     1. Create product
-    2.Create Product List   
+    2.Create Product List     
     3. Read / Update Product Details
    
