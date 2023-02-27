@@ -16,20 +16,4 @@ M A M Billing-Features
 2. Product CRUD
     1. Add product   
     2. Edit Product  
-    3. Update Product Details  
-
-3. Stock CRUD  
-    1. Add Stock   
-    2. Edit Stock Deatils  
-    3. Update Stock Details  
-
-4. Customer CRUD  
-    1. Add Customer 
-    2. Edit Customer   
-    3. Update Customer Details  
-    4. View Customer Purchase History  
- 
- 5. Bill CRUD 
-    1. Add new Bill  
-    2. Edit New Bill  
-    3. view Billing History 
+   
