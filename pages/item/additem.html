@@ -8,6 +8,7 @@
     <title>M A M Billing</title>
     <link rel="stylesheet" href="../../assets/css/item/additem.css">
     <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 </head>
 
 <body>
@@ -27,7 +28,7 @@
     </header>
     <main>
         <div class="one">
-            <form>
+            <form id="signup-form" onsubmit="(event)">
                 <h2>Add New Item</h2>
                 <div class="parts">
                     <div class="part1">
@@ -61,7 +62,7 @@
                         </div>
                         <div class="content">
                             <label class="forms">ID Number</label>
-                            <input class="lists" id="id_number" type="text" placeholder="Enter ID"  required />
+                            <input class="lists" id="product_id" type="text" placeholder="Enter ID"  required />
                         </div>
                         <div class="content">
                             <label class="forms">Special name(optional)</label>
@@ -69,36 +70,82 @@
                         </div>
                     </div>
                 </div>
+                <div class="content1">
+                    <button class="button" type="submit"  onclick="(event)">
+                            Save<span>&#8594;</span></button>
+                </div>
 
             </form>
         </div>
 
     </main>
-    <div class="content1">
-        <button class="button" type="button"  onclick="save()">
-                Save<span>&#8594;</span></button>
-    </div>
+   
     <script>
-        function save(){
-        const product_name = document.getElementById("product_name").value
-        const quantity = document.getElementById("quantity").value
-        const mrp = document.getElementById("mrp").value
-        const price = document.getElementById("price").value
-        const tax = document.getElementById("tax").value
-        const discount = document.getElementById("discount").value
-        const id_number = document.getElementById("id_number").value
-        const special_name = document.getElementById("special_name").value
+       let form = document.getElementById("signup-form");
+        let product_name = document.getElementById("product_name");
+        let quantity = document.getElementById("quantity");
+        let mrp = document.getElementById("mrp");
+        let price = document.getElementById("price");
+        let tax = document.getElementById("tax");
+        let discount = document.getElementById("discount");
+        let product_id = document.getElementById("product_id");
+        let special_name = document.getElementById("special_name");
+        let uuid = uuidv4();
 
-        console.log(product_name)
-        console.log(quantity)
-        console.log(mrp)
-        console.log(price)
-        console.log(tax)
-        console.log(discount)
-        console.log(id_number)
-        console.log(special_name)
-        window.location.href="./item.html"
-        }
+
+     const productDetails = JSON.parse(localStorage.getItem("productDetails")) || [];
+
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  
+
+
+
+ if (productDetails.some(record => record.product_name === product_name.value)) {
+    alert("Product is already exists! ");
+    return;
+  }
+  else if(productDetails.some(record => record.product_id === product_id.value)){
+    alert("ID Number is already exists!");
+    return;
+  }
+  else if(productDetails.some(record => record.special_name === special_name.value)){
+    alert("Special Name is already exists!");
+    return;
+  }
+  
+//  else if (userRecords.some(record => record.email === email.value)) {
+//     alert("Email already exists");
+//     return;
+//   }
+else{
+
+  let newProduct = {
+    product_name: product_name.value,
+    quantity: quantity.value,
+    mrp: mrp.value,
+    price: price.value,
+    tax: tax.value,
+    discount: discount.value,
+    product_id: product_id.value,
+    special_name: special_name.value,
+     unique :uuid     
+  };
+
+
+
+  productDetails.push(newProduct);
+  localStorage.setItem("productDetails", JSON.stringify(productDetails));
+  localStorage.setItem("product_id", product_id.value);
+  alert("Product is Sucessfully Created");
+  window.location.href="./item.html"
+  event.preventDefault();
+  
+}});
+
+
+        
 
 
 

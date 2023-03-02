@@ -90,7 +90,8 @@ main .forms {
     display: flex;
     flex-direction: row;
     margin-left: 40.5%;
-    margin-top: 9px;
+    margin-top: 20px;
+    margin-right: 40%;
 
 }
 
@@ -109,12 +110,4 @@ main .forms {
 .continue {
     text-decoration: none !important;
     color: black !important;
-}
-.button_2_1{
-float: right;
-}
-.top{
-    display: flex;
-    justify-content: space-between;
-
 }

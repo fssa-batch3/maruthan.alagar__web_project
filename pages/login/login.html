@@ -24,7 +24,7 @@
     </header>
     <main>
         <div class="one">
-            <form>
+            <form onsubmit="saveData()">
                 <h2 class="log">Login</h2>
                 <div class="content">
                     <label class="forms">Enter Email Address</label>
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="content">
-                    <button class="button1" type="button" onclick="saveData()" >Login<span>&#8594;</span></button>
+                    <button class="button1" type="button"  >Login<span>&#8594;</span></button>
 
                 </div>
             </form>
@@ -71,6 +71,9 @@ else
   alert('Please Check your details');
 }
 }
+
+const sumbit =document.querySelector(".button1");
+          sumbit.addEventListener("click",saveData);
 
 
 

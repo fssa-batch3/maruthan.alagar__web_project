@@ -22,65 +22,192 @@
     </header>
     <main>
         <div class="one">
-            <form>
+            <form onsubmit="update(event)">
                 <h2>View Item Details</h2>
                 <div class="parts">
                     <div class="part1">
                         <div class="content">
                             <label class="forms">Product Name</label>
-                            <input class="lists" Value="Sugar" required />
+                            <input class="lists" id="product_name" required />
 
                         </div>
                         <div class="content">
                             <label class="forms">Quantity</label>
-                            <input class="lists" value="1KG" required />
+                            <input class="lists" id="quantity" required />
                         </div>
                         <div class="content">
                             <label class="forms">MRP(per Piece)</label>
-                            <input class="lists" value="40/-" required />
+                            <input class="lists" id="mrp" required />
                         </div>
 
                         <div class="content">
                             <label class="forms">Price(per piece)</label>
-                            <input class="lists" value="38/-" required />
+                            <input class="lists" id="price" required />
                         </div>
                     </div>
                     <div class="part1">
                         <div class="content">
                             <label class="forms">Tax(%)</label>
-                            <input class="lists" value="2%" required />
+                            <input class="lists" id="tax" required />
                         </div>
                         <div class="content">
                             <label class="forms">Discount(%)</label>
-                            <input class="lists" value="0.5%" required />
+                            <input class="lists" id="discount" required />
                         </div>
                         <div class="content">
                             <label class="forms">ID Number</label>
-                            <input class="lists" value="A0115" required />
+                            <input class="lists" id="product_id" required />
                         </div>
                         <div class="content">
                             <label class="forms">Special name(optional)</label>
-                            <input class="lists" value="Sugar(sarkkarai)" />
+                            <input class="lists" id="special_name" />
                         </div>
                         <div class="radio">
-                            <input type="radio" name="yes_no" checked /> <label> In Stock </label>
-                            <input type="radio" name="yes_no" /> <label> Out Of Stock </label>
+                            <input type="radio" name="stock" id="instock" value="in stock" /> <label> In Stock </label>
+                            <input type="radio" name="stock" id="outofstock" value="out of stock" /> <label> Out Of
+                                Stock </label>
                         </div>
 
                     </div>
 
                 </div>
+                <div class="content1">
+                    <button class="button_1" type="button" onclick="backbutton()"><span>&#10094;</span>Back</button>
+                    <button class="button" type="submit">Save<span>&#10095;</span></button>
+                </div>
+
 
             </form>
         </div>
 
     </main>
-    <div class="content1">
-        <button class="button" type="submit" class="registerbtn"><a class="continue"
-                href="../item.html"><span>&#10094;</span>Back</a></button>
-        <button class="button" type="submit" class="registerbtn"><a class="continue"
-                href="../item.html">Save<span>&#10095;</span></a></button>
-    </div>
+    <script>
+
+
+        let productDetails = JSON.parse(localStorage.getItem("productDetails"));
+        let product_id = localStorage.getItem("product_id")
+
+
+        const url = window.location.href;
+const params = new URLSearchParams(window.location.search);
+const myParamValue = params.get('product_id');
+
+
+        function findDetail(e) {
+            return e.product_id === myParamValue;
+        }
+        let product_records = productDetails.find(findDetail);
+
+
+
+   
+
+
+
+        function update(e) {
+            //                  // getting the updated data from the input field
+            // const shop_name = document.getElementById("shop_name").value;
+            // const licence_number = document.getElementById("licence_number").value;
+            // const phone_number = document.getElementById("phone_number").value;
+            let product_name = document.getElementById("product_name").value;
+            let quantity = document.getElementById("quantity").value;
+            let mrp = document.getElementById("mrp").value;
+            let price = document.getElementById("price").value;
+            let tax = document.getElementById("tax").value;
+            let discount = document.getElementById("discount").value;
+            let id_number = document.getElementById("product_id").value;
+            let special_name = document.getElementById("special_name").value;
+            let checkBoxes = document.querySelectorAll('input[name="stock"]');
+
+            let selectedValue;
+
+            for (let i = 0; i < checkBoxes.length; i++) {
+                const element = checkBoxes[i];
+
+                if (element.checked === true) {
+                    selectedValue = element.value;
+                    break;
+                }
+
+            }
+
+            // paste the updated data to the correct object
+
+
+            product_records["product_name"] = product_name;
+            product_records["quantity"] = quantity;
+            product_records["mrp"] = mrp;
+            product_records["price"] = price;
+            product_records["tax"] = tax;
+            product_records["discount"] = discount;
+            product_records["product_id"] = id_number;
+            product_records["special_name"] = special_name;
+            product_records["radioValue"] = selectedValue;
+            // product_records["stock_in"] = stock_in;
+            // product_records["stock_out"] = stock_out;    
+
+
+
+
+
+
+
+            // again paste it to the
+            localStorage.setItem("productDetails", JSON.stringify(productDetails));
+
+            alert("Product Details Successfully Updated")
+            window.location.href = "../item.html"
+
+        }
+
+
+        const sumbit = document.querySelector(".button");
+        sumbit.addEventListener("click", update);
+
+        //   const back =document.querySelector(".button_1");
+        //   back.addEventListener("click",backbutton);
+
+
+
+
+        function backbutton() {
+            alert("Are You Sure Discard Changes!")
+            window.location.href = "../item.html"
+        }
+
+        document.getElementById("product_name").value = product_records["product_name"];
+        document.getElementById("quantity").value = product_records["quantity"]
+        document.getElementById("mrp").value = product_records["mrp"];
+        document.getElementById("price").value = product_records["price"];
+        document.getElementById("tax").value = product_records["tax"];
+        document.getElementById("discount").value = product_records["discount"];
+        document.getElementById("product_id").value = product_records["product_id"];
+        document.getElementById("special_name").value = product_records["special_name"];
+    
+
+        for (let i = 0; i < productDetails.length; i++) {
+    if (product_records.radioValue ==='in stock' ) {
+    document.getElementById("instock").setAttribute("checked","checked");
+    break;
+  }
+  else if(product_records.radioValue ==='out of stock'){
+    document.getElementById("outofstock").setAttribute("checked","checked");
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
 
 
 

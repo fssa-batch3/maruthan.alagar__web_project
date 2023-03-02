@@ -8,6 +8,7 @@
     <title>M A M Billing</title>
     <link rel="stylesheet" href="./assets/css/login/style.css">
     <link rel="stylesheet" href="./assets/css/normalize.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
     
 </head>
 
@@ -21,7 +22,7 @@
     </header>
     <main>
         <div class="one">
-             <form id="signup-form">
+             <form id="signup-form" onsubmit="(event)">
                 <h2>Register Shop</h2>
                 <div class="content">
                     <label class="forms">Shop Name</label>
@@ -49,13 +50,15 @@
                
                 <div class="content_1">
                     <p class="log" onclick="login()">Already have an Account? Login</p>
-                    <button class="button" type="submit"  onclick = "(event)"> Continue<span>&#8594;</span></button>
+                    <button class="button" type="submit" > Continue<span>&#8594;</span></button>
 
                 </div>
             </form>
         
         </div>
     </main>
+
+   
 
     <script>
 
@@ -181,6 +184,7 @@ let shop_name = document.getElementById("shop_name");
 let licence_number = document.getElementById("licence_number");
 let phone_number = document.getElementById("phone_number");
 let user_email = document.getElementById("email");
+const uuid = uuidv4();
 
 
 const userRecords = JSON.parse(localStorage.getItem("userRecords")) || [];
@@ -215,8 +219,8 @@ else{
     shop_name: shop_name.value,
     licence_number: licence_number.value,
     phone_number: phone_number.value,
-     user_email: user_email.value
-     
+     user_email: user_email.value,
+     unique :uuid     
   };
 
 
@@ -229,14 +233,18 @@ else{
   event.preventDefault();
   
 }});
-localStorage.setItem("unique", user_email.value);
+
 
 function login(){
     window.location.href="./pages/login/login.html"
 }
 
 
+
+
+
     </script>
+   
 
 </body>
 

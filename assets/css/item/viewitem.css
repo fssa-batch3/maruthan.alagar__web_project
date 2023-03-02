@@ -64,7 +64,7 @@ input[type=radio] {
     margin-left: 40em;
 }
 
-.button {
+.button,.button_1 {
     font-size: 30px;
     background-color: lightblue;
     border: 2px solid lightblue;

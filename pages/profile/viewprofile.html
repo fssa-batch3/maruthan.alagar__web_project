@@ -17,12 +17,13 @@
             <div class="nav">
                 <div class="list">
                     <ul class="link">
-                        <div class="top">
+                        
                         <button class="button_2" onclick="remove()"  type="submit">
                             Delete My Account</button>
+                      
                             <button class="button_2_1" onclick="logout()"  type="submit">
                                 Log Out</button>
-                        </div>
+                            
                     </ul>
                 </div>
             </div>
@@ -31,7 +32,7 @@
     <main>
         <h2>Profile</h2>
         <div class="one">
-            <form id="sign-form" onsubmit="(event)" >
+            <form id="sign-form"  >
 
                 <div class="part">
 
@@ -87,16 +88,21 @@
 
                     </div> -->
                 </div>
-                <!-- <button class="button" onclick="(event)"  type="button">
-                    Save<span>&#x1F872;</span></button> -->
+                <div class="content1">
+                    <button class="button_1" onclick="backbutton()"  type="button"><span>&#x1F870;</span> Back</button>
+                     <button class="button" onclick="update(event)" type="submit">
+                        Save<span>&#x1F872;</span></button>
+                       
+                 </div>  
+        
             </form>
         </div>
-        <div class="content1">
+        <!-- <div class="content1">
             <button class="button_1" onclick="backbutton()"  type="button"><span>&#x1F870;</span> Back</button>
              <button class="button" onclick="(event)"  type="submit">
                 Save<span>&#x1F872;</span></button>
                
-         </div>  
+         </div>   -->
 
 
 
@@ -115,9 +121,6 @@ let unique = localStorage.getItem("unique")
         document.getElementById("licence_number").value = user_records["licence_number"]
         document.getElementById("user_email").value = user_records["user_email"];
         document.getElementById("phone_number").value = user_records["phone_number"];
-        document.getElementById("gstn_number").value = user_records["gstn_number"];
-        document.getElementById("address").value = user_records["address"];
-        document.getElementById("nameforprint").value = user_records["nameforprint"];
 
 
        
@@ -149,9 +152,13 @@ user_records["nameforprint"] = nameforprint;
                 alert("Successfully Updated")
                 window.location.href="../homepage/homepage.html"
             }
+            document.getElementById("gstn_number").value = user_records["gstn_number"];
+        document.getElementById("address").value = user_records["address"];
+        document.getElementById("nameforprint").value = user_records["nameforprint"];
 
-            const sumbit =document.querySelector(".button");
-          sumbit.addEventListener("click",update);
+
+        //     const sumbit =document.querySelector(".button");
+        //   sumbit.addEventListener("click",update);
 
 
 
@@ -185,6 +192,10 @@ user_records["nameforprint"] = nameforprint;
             localStorage.setItem("userRecords", JSON.stringify(user_Records) )
     alert("Deleted!")
     window.location.href="../../index.html"
+
+    document.getElementById("gstn_number").value = user_records["gstn_number"];
+        document.getElementById("address").value = user_records["address"];
+        document.getElementById("nameforprint").value = user_records["nameforprint"];
 
 }
 
