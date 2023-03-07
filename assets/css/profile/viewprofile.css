@@ -40,8 +40,9 @@ header div .list .link .navlist {
     font-weight: bold;
     font-size: 25px;
     float: right;
-
-
+}
+.list{
+    text-align: center;
 }
 header div .list .link .navlist:hover{
     color:blue;
@@ -86,13 +87,17 @@ main .forms {
     justify-content: space-around;
 }
 
-.content1 {
+.content1{
     display: flex;
     flex-direction: row;
     margin-left: 40.5%;
     margin-top: 20px;
     margin-right: 40%;
 
+}
+#divtab{
+    display: flex;
+    justify-content: space-evenly;
 }
 
  .button,.button_1 ,.button_2,.button_2_1{

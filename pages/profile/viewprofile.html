@@ -32,29 +32,29 @@
     <main>
         <h2>Profile</h2>
         <div class="one">
-            <form id="sign-form"  >
+            <form id="sign-form" onsubmit=" update(event)"  >
 
                 <div class="part">
 
                     <div class="content">
                         <label class="forms">Shop Name</label>
-                        <input class="lists" id="shop_name" type="text"  required />
+                        <input class="lists" id="shop_name" type="text"  required readonly/>
 
                     </div>
 
                     <div class="content">
                         <label class="forms">License Number</label>
                         <input class="lists" id="licence_number" type="text"
-                            required />
+                            required disabled />
                     </div>
                     <div class="content">
                         <label class="forms">Phone Number</label>
-                        <input class="lists" id="phone_number" type="tel" required />
+                        <input class="lists" id="phone_number" type="tel" required readonly />
                     </div>
 
                     <div class="content">
                         <label class="forms">E-Mail Address</label>
-                        <input class="lists" id="user_email" type="email"  />
+                        <input class="lists" id="user_email" type="email" readonly />
                     </div>
                     <!-- <div class="content">
                         <label class="forms">Username(E-mail Address)</label>
@@ -64,22 +64,22 @@
                 <div class="part1">
                     <div class="content">
                         <label class="forms">GSTN Number</label>
-                        <input class="lists" id="gstn_number" type="text" placeholder="Enter GSTN Number"  required />
+                        <input class="lists" id="gstn_number" type="text" placeholder="Enter GSTN Number"  required  readonly/>
 
                     </div>
                     <div class="content">
                         <label class="forms">Address</label>
-                        <input class="lists" id="address" type="text" placeholder="Enter Shop Address" required />
+                        <input class="lists" id="address" type="text" placeholder="Enter Shop Address" required readonly/>
 
                     </div>
                     <div class="content">
                         <label class="forms">Shop Logo</label>
-                        <input class="lists" id="file" type="file" placeholder="Upload Logo"  />
+                        <input class="lists" id="file" type="file" placeholder="Upload Logo" readonly />
 
                     </div>
                     <div class="content">
                         <label class="forms">Print Name</label>
-                        <input class="lists" id="nameforprint" type="text" placeholder="Enter Print Name" required />
+                        <input class="lists" id="nameforprint" type="text" placeholder="Enter Print Name" required readonly />
 
                     </div>
                     <!-- <div class="content">
@@ -90,8 +90,10 @@
                 </div>
                 <div class="content1">
                     <button class="button_1" onclick="backbutton()"  type="button"><span>&#x1F870;</span> Back</button>
-                     <button class="button" onclick="update(event)" type="submit">
-                        Save<span>&#x1F872;</span></button>
+                    <!-- <button class="button" id="edit" type="submit">
+                        edit</button> -->
+                    <button class="button" id="save"type="submit" >
+                        Save</button>
                        
                  </div>  
         
@@ -169,6 +171,7 @@ user_records["nameforprint"] = nameforprint;
         window.location.href="../homepage/homepage.html"
         }
         function logout() {
+            alert("Are you Sure !")
         window.location.href="../login/login.html"
         }
 
@@ -198,6 +201,38 @@ user_records["nameforprint"] = nameforprint;
         document.getElementById("nameforprint").value = user_records["nameforprint"];
 
 }
+
+// const sumbit =document.querySelector("#save");
+//           sumbit.addEventListener("submit",update)
+//           sumbit.addEventListener("click",findReadonly1)
+//       function findReadonly(e){
+
+//         document.getElementById("shop_name").removeAttribute("readonly");
+//         document.getElementById("phone_number").removeAttribute("readonly");
+//         document.getElementById("user_email").removeAttribute("readonly");
+//         document.getElementById("gstn_number").removeAttribute("readonly");
+//         document.getElementById("address").removeAttribute("readonly");
+//         document.getElementById("file").removeAttribute("readonly");
+//         document.getElementById("nameforprint").removeAttribute("readonly");
+        
+//         document.querySelector("#edit").removeAttribute("style");
+//         document.querySelector("#save").setAttribute("style","display:none");
+//       }
+//       function findReadonly1(e){
+//         document.getElementById("shop_name").setAttribute("readonly","true");
+//         document.getElementById("phone_number").setAttribute("readonly","true");
+//         document.getElementById("user_email").setAttribute("readonly","true");
+//         document.getElementById("gstn_number").setAttribute("readonly","true");
+//         document.getElementById("address").setAttribute("readonly","true");
+//         document.getElementById("file").setAttribute("readonly","true");
+//         document.getElementById("nameforprint").setAttribute("readonly","true");
+        
+
+//         document.querySelector("#edit").setAttribute("style","display:none");
+//         document.querySelector("#save").setAttribute("style","display:inline");
+//       }
+//       const editThing = document.querySelector("#edit");
+//       editThing.addEventListener("click",findReadonly);
 
        
        

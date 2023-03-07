@@ -8,6 +8,7 @@
     <title>M A M Billing</title>
     <link rel="stylesheet" href="../../assets/css/stock/addstock.css">
     <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 </head>
 
 <body>
@@ -28,57 +29,133 @@
     </header>
     <main>
         <div class="one">
-            <form>
+            <form  id="signup-form" onsubmit="(event)">
                 <h2>Add New Stock</h2>
                 <div class="parts">
                     <div class="part1">
                         <div class="content">
                             <label class="forms">Name</label>
-                            <input class="lists" type="text" placeholder="Name" required />
+                            <input class="lists" id="stock_name" type="text" placeholder="Name" required />
 
                         </div>
                         <div class="content">
+                            <label class="forms">Brand Name</label>
+                            <input class="lists" id="brand_name" type="text" placeholder="Enter Brand Name" required />
+                        </div>
+                        <div class="content">
                             <label class="forms">Quantity</label>
-                            <input class="lists" type="number" placeholder="Choose Number" required />
+                            <input class="lists" id="quantity" type="number" placeholder="Choose Number" required />
                         </div>
                         <div class="content">
                             <label class="forms">MRP(per box/sack)</label>
-                            <input class="lists" type="text" placeholder="Enter MRP" required />
+                            <input class="lists" id="mrp" type="text" placeholder="Enter MRP" required />
                         </div>
 
                         <div class="content">
                             <label class="forms">Price(per box/sack)</label>
-                            <input class="lists" type="text" placeholder="Enter price" required />
+                            <input class="lists" id="price" type="text" placeholder="Enter price" required />
                         </div>
+                        
                     </div>
                     <div class="part1">
                         <div class="content">
                             <label class="forms">Tax(%)</label>
-                            <input class="lists" type="text" placeholder="Enter Tax" />
+                            <input class="lists" id="tax" type="text" placeholder="Enter Tax" />
                         </div>
                         <div class="content">
                             <label class="forms">Discount(%)</label>
-                            <input class="lists" type="text" placeholder="Enter Discount" />
+                            <input class="lists" id="discount" type="text" placeholder="Enter Discount" />
                         </div>
                         <div class="content">
                             <label class="forms">Agency ID</label>
-                            <input class="lists" type="text" placeholder="Enter ID" required />
+                            <input class="lists" id="agency_id" type="text" placeholder="Enter Agency ID" required />
                         </div>
                         <div class="content">
                             <label class="forms">Agency Details</label>
-                            <input class="lists" type="text" placeholder="Enter Details" />
+                            <input class="lists" id="agency_details" type="text" placeholder="Enter Agency Details" />
+                        </div>
+                        <div class="content">
+                            <label class="forms">Date</label>
+                            <input class="lists" id="date" type="date" placeholder="Enter Agency Details" style="width: 13.5em;" />
                         </div>
                     </div>
+                </div>
+                <div class="content1">
+                    <button class="button" type="submit" class="registerbtn">
+                            Save<span>&#8594;</span></button>
                 </div>
 
             </form>
         </div>
 
     </main>
-    <div class="content1">
-        <button class="button" type="submit" class="registerbtn"><a class="continue" href="../stock/stock.html">
-                Save<span>&#8594;</span></a></button>
-    </div>
+   
+
+    <script>
+        let form = document.getElementById("signup-form");
+         let stock_name = document.getElementById("stock_name");
+         let quantity = document.getElementById("quantity");
+         let mrp = document.getElementById("mrp");
+         let price = document.getElementById("price");
+         let tax = document.getElementById("tax");
+         let discount = document.getElementById("discount");
+         let agency_id = document.getElementById("agency_id");
+         let agency_details = document.getElementById("agency_details");
+         let brand_name = document.getElementById("brand_name");
+         let date = document.getElementById("date");
+
+         let uuid = uuidv4();
+ 
+ 
+      const stockDetails = JSON.parse(localStorage.getItem("stockDetails")) || [];
+ 
+ 
+ form.addEventListener("submit", function(event) {
+   event.preventDefault();
+   
+ 
+ 
+ 
+  if (stockDetails.some(record => record.stock_name === stock_name.value)) {
+     alert("Stock is already exists! ");
+     return;
+   }
+
+ else{
+ 
+   let newStock = {
+    stock_name: stock_name.value,
+     quantity: quantity.value,
+     mrp: mrp.value,
+     price: price.value,
+     tax: tax.value,
+     discount: discount.value,
+     agency_id: agency_id.value,
+     agency_details: agency_details.value,
+     brand_name: brand_name.value,
+     date: date.value,
+      unique :uuid     
+   };
+ 
+ 
+ 
+   stockDetails.push(newStock);
+   localStorage.setItem("stockDetails", JSON.stringify(stockDetails));
+   localStorage.setItem("stock_name", stock_name.value);
+   alert("Stock is Sucessfully Created");
+   window.location.href="./stock.html"
+   event.preventDefault();
+   
+ }});
+ 
+ 
+         
+ 
+ 
+ 
+ 
+     </script>
+ 
 
 
 

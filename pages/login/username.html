@@ -32,7 +32,7 @@
 
                 <div class="content">
                     <label class="forms"> Create New Password</label>
-                    <input class="lists" id="new_password" type="password" placeholder="Password" pattern="[a-zA-Z0-9]+" required />
+                    <input class="lists" id="new_password" type="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*+`~=?\|<>/]).{8,}" required />
                 </div>
                 <div class="content">
                     <label class="forms">Confirm Password</label>
@@ -283,6 +283,7 @@ let new_pw = document.getElementById("new_password");
 let pw = document.getElementById("password");
 
 
+
 let userRecords = JSON.parse(localStorage.getItem("userRecords"));
 let unique = localStorage.getItem("unique")
 console.log(unique)
@@ -293,21 +294,41 @@ form.addEventListener("submit", function(event) {
   if (pw.value !== new_pw.value) {
     alert("Passwords do not match");
     return;
+  }else if (unique !== user_email.value) {
+    alert("Please Enter correct Email Address");
+    return;
   }else if(user_email.value === 0){
     alert('Please fill Email Address');
+    return;
 }else if(new_pw.value.length == 0){
     alert('Please create new password');
+    return;
 }else if(pw.value.length == 0){
     alert('Please re-enter password');
+    return;
 
+}else if(pw.value.length !== 8){
+    alert('Password Length Max of 8 Characters');
+    return;
+
+}else if(!pw.value.match(/\d/)){
+    alert('Please add 1 number');
+    return;
+
+}else if(!pw.value.match(/[A-Z]/)){
+    alert('Please add 1 uppercase letter');
+    return;
+
+
+}else if(!pw.value.match(/[a-z]/)){
+    alert('please add 1 lovercase letter');
+    return;
 }
 
 
 
-else if (unique !== user_email.value) {
-    alert("Please Enter correct Email Address");
-    return;
-  }
+
+
   
 
 

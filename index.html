@@ -38,14 +38,14 @@
                 </div>
                 <div class="content">
                     <label class="forms">Phone Number</label>
-                    <input class="lists" id="phone_number" type="tel" pattern="[0-9]{10, }"
+                    <input class="lists" id="phone_number" type="tel" pattern="^[789]\d{9,9}$"
                         placeholder="Enter Mobile Number" required />
                 </div>
 
                 <div class="content">
-                    <label class="forms">E-Mail Address (optional)</label>
+                    <label class="forms">E-Mail Address </label>
                     <input class="lists" id="email" type="email" placeholder="Enter your E-Mail"
-                        />
+                       required />
                 </div>
                
                 <div class="content_1">
@@ -209,10 +209,6 @@ form.addEventListener("submit", function(event) {
     return;
   }
   
-//  else if (userRecords.some(record => record.email === email.value)) {
-//     alert("Email already exists");
-//     return;
-//   }
 else{
 
   let newUser = {
