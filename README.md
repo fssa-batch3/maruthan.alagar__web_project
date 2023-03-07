@@ -8,17 +8,17 @@ Problem Statement: https://drive.google.com/drive/folders/1VDiP6IlCi3fnf6GGEF-LK
 
 M A M Billing-Features
 
-1. User CRUD  
+1. User Module  
     1. Register   
     2. Login  
     3. Profile Edit/Delete  
 
-2. Product CRUD
+2. Product Module
     1. Create product
     2. Create Product List
     3. Read / Update Product Details
     4. Delete Product Details  
-2. Stock CRUD 
+2. Stock Module 
     1. Create Stock     
    
    
