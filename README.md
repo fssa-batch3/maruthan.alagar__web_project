@@ -17,6 +17,8 @@ M A M Billing-Features
     1. Create product
     2. Create Product List
     3. Read / Update Product Details
-    4. Delete Product Details
+    4. Delete Product Details  
+2. Stock CRUD 
+    1. Create Stock     
    
    
