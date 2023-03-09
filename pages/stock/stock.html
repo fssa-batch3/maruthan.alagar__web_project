@@ -217,7 +217,8 @@
    
              let nameValue = stockDetails[i].stock_name
    // Set the value as a parameter in a URL
-   const url = "http://127.0.0.1:5500/pages/stock/viewstock.html?stock_name=" + encodeURIComponent(nameValue);
+//    const url = "http://127.0.0.1:5500/pages/stock/viewstock.html?stock_name=" + encodeURIComponent(nameValue);
+   const url = "./viewstock.html?stock_name=" + encodeURIComponent(nameValue);
    
              //anchor
              a_tag = document.createElement("a");
