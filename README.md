@@ -20,5 +20,8 @@ M A M Billing-Features
     4. Delete Product Details  
 2. Stock Module 
     1. Create Stock     
+    2.Read Stock  
+    3.update Stock  
+   
    
    
