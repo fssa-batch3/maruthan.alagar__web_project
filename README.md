@@ -17,11 +17,15 @@ M A M Billing-Features
     1. Create product
     2. Create Product List
     3. Read / Update Product Details
-    4. Delete Product Details  
-2. Stock Module 
-    1. Create Stock     
-    2.Read Stock  
-    3.update Stock  
+    4. Delete Product Details    
+3. Stock Module
+    1. Create Stock
+    2. Create Stock List
+    3. Read / Update Stock Details
+4. Customer Module
+    1. Create Customer
+    2. Create customer List
+    3. Read / Update Customer Details
    
    
    
