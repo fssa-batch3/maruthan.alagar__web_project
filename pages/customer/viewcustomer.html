@@ -22,41 +22,149 @@
     </header>
     <main>
         <div class="one">
-            <form>
+            <form onsubmit="update(event)"  >
                 <h2>View Customer Details</h2>
                 <div class="parts">
 
                     <div class="content">
                         <label class="forms">Customer Name</label>
-                        <input class="lists" Value="Maruthan" required />
+                        <input class="lists" type="text"  id="customer_name" required />
 
                     </div>
                     <div class="content">
                         <label class="forms">Phone Number</label>
-                        <input class="lists" value="7810061572" required />
+                        <input class="lists" type="number" id="customer_phone" required />
+                    </div>
+                    <div class="content">
+                        <label class="forms">Customer ID</label>
+                        <input class="lists" type="text" id="customer_id" required />
                     </div>
                     <div class="content">
                         <label class="forms">E-Mail Address (optional)</label>
-                        <input class="lists" value="amaruthanalagar@gmail.com" required />
+                        <input class="lists" type="email" id="customer_email"  />
                     </div>
+                    
                     <div class="content">
-                        <label class="forms">ID</label>
-                        <input class="lists" value="A0096" required />
+                        <label class="forms">Customer Address(optional)</label>
+                        <input class="lists" type="text" id="customer_address"   />
                     </div>
+                    
 
 
+                </div>
+                <div class="content1">
+                    <button class="button"type="button" onclick="backbutton()"><span>&#10094;</span>Back</button>
+                    <button class="button" type="submit">Save<span>&#10095;</span></button>
                 </div>
 
             </form>
         </div>
-        <div class="content1">
-            <button class="button" type="submit" class="registerbtn"><a class="continue"
-                    href="../customer/customer.html"><span>&#10094;</span>Back</a></button>
-            <button class="button" type="submit" class="registerbtn"><a class="continue"
-                    href="../customer/customer.html">Save<span>&#10095;</span></a></button>
-        </div>
+      
 
     </main>
+    <script>
+
+
+        let customerDetails = JSON.parse(localStorage.getItem("customerDetails"));
+        // let stock_name = localStorage.getItem("stock_name")
+
+
+        const url = window.location.href;
+const params = new URLSearchParams(window.location.search);
+const myParamValue = params.get('customer_id');
+
+
+        function findDetail(e) {
+            return e.customer_id === myParamValue;
+        }
+        let customer_records = customerDetails.find(findDetail);
+
+
+
+   
+        
+
+
+
+        function update(e) {
+            //                  // getting the updated data from the input field
+            // const shop_name = document.getElementById("shop_name").value;
+            // const licence_number = document.getElementById("licence_number").value;
+            // const phone_number = document.getElementById("phone_number").value;
+            let customer_name = document.getElementById("customer_name").value;
+            let customer_id = document.getElementById("customer_id").value;
+            let customer_email = document.getElementById("customer_email").value;
+            let customer_phone = document.getElementById("customer_phone").value;
+            let customer_address = document.getElementById("customer_address").value;
+           
+
+            // paste the updated data to the correct object
+
+
+            customer_records["customer_name"] = customer_name;
+            customer_records["customer_id"] = customer_id;
+            customer_records["customer_email"] = customer_email;
+            customer_records["customer_phone"] = customer_phone;
+            customer_records["customer_address"] = customer_address;
+           
+              
+
+
+
+
+
+
+
+            // again paste it to the
+            localStorage.setItem("customerDetails", JSON.stringify(customerDetails));
+            window.location.href = "./customer.html" 
+
+            alert("Customer Details Successfully Updated")
+            if(customer_address.value.length ===0 ){
+            customer_email.setAttribute("value","Please Enter Customer Email");
+        }
+          
+
+        }
+
+
+        // const sumbit = document.getElementById("save_data");
+        // sumbit.addEventListener("click", update(event));
+
+        //   const back =document.querySelector(".button_1");
+        //   back.addEventListener("click",backbutton);
+
+
+
+
+        function backbutton() {
+            alert("Are You Sure Discard Changes!")
+            window.location.href = "./customer.html"
+        }
+
+       
+        document.getElementById("customer_name").value = customer_records["customer_name"];
+        document.getElementById("customer_id").value = customer_records["customer_id"]
+        document.getElementById("customer_email").value = customer_records["customer_email"];
+        document.getElementById("customer_phone").value = customer_records["customer_phone"];
+        document.getElementById("customer_address").value = customer_records["customer_address"];
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
 
 
 
