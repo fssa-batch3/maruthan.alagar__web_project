@@ -26,6 +26,9 @@ M A M Billing-Features
     1. Create Customer
     2. Create customer List
     3. Read / Update Customer Details
+4. Bill Module
+    1. Create Bill
+   
    
    
    
