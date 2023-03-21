@@ -39,9 +39,10 @@
                 <input type="date" />
 
             </div>
-            <a href="../customer/billingside.html"><img src="../../assets/Imges/plus.jfif" alt="plus-symbol" /></a>
+            <!-- <a href="../customer/billingside.html"><img src="../../assets/Imges/plus.jfif" alt="plus-symbol" /></a> -->
         </div>
-        <table class="table">
+        <!-- <table class="table">
+
             <caption style="font-size: 0%;">billing details</caption>
             <tr class="tb1">
                 <th>No</th>
@@ -123,9 +124,344 @@
                 <td><strong>Total</strong></td>
                 <td><input type="textbox" /></td>
             </tr>
-        </table>
+        </table> -->
 
-        <button class="btn" type="submit"><a class="btn" href="../billing/newbill.html">Print Bill</a></button>
-
-
+        
     </main>
+    <section>    
+        <form>
+            <div>
+            
+            <label> Payment Method</label>
+            <div id="radiobuttons">
+           <input id="radio" type="radio" value="Cash"><lable>Cash</lable>
+           <input id="radio" type="radio" value="Card"><lable>Card</lable>
+           <input id="radio" type="radio" value="UPI"><lable>UPI</lable>
+            </div>
+          
+           <div>
+
+           <label>Txn.ID :</label>
+           <input type="text" readonly>
+           </div>
+           <div>
+
+           <label>Amount :</label>
+           <input type="number" >
+           </div>
+           <div>
+           <label>Balance :</label>
+           <input type="number">
+             </div>
+             </div>
+             
+             
+             
+             
+             <div>
+
+                <div>
+                <label>Total MRP :</label>
+                <input type="number">
+                </div>
+                <div>
+                <label>Total Tax :</label>
+                <input type="number">
+                </div>
+                <div>
+                <label>Total Discount :</label>
+                <input type="number">
+                </div>
+                <div>
+                <label>Total Price :</label>
+                <input type="number">
+                </div>
+             </div>
+             <div >
+                <h2>Sub Total :</h2>
+                <input type="number" readonly>
+                <h1>Total :</h1>
+                <input type="number" readonly>
+
+
+             </div>
+
+             <div id="buttonDiv">
+                <button class="btn"  onclick="clicking()" type="submit">Save Bill</button>
+                <button class="btn" type="submit">Save & Print</button>
+             </div>
+
+         </form>
+</section>
+
+
+
+
+
+   
+    <script>
+
+
+
+
+        // main table
+        main_table = document.createElement("table");
+        main_table.setAttribute("class", "table");
+
+
+
+
+        // table row
+        table_row = document.createElement("tr");
+        table_row.setAttribute("class", "tb1");
+        // label_name.innerText = register_shop[i]["name"];
+        main_table.append(table_row);
+
+        //table coloumn_1
+        table_coloumn = document.createElement("th");
+        table_coloumn.innerText = " S.No";
+        table_row.append(table_coloumn);
+
+
+        //table coloumn_2
+        table_coloumn = document.createElement("th");
+        table_coloumn.innerText = "Item Name";
+        table_row.append(table_coloumn);
+
+        //table coloumn_3
+        table_coloumn = document.createElement("th");
+        table_coloumn.setAttribute("class", "forres");
+        table_coloumn.innerText = "Quantity";
+        table_row.append(table_coloumn);
+
+
+
+        //table coloumn_4
+        table_coloumn = document.createElement("th");
+        table_coloumn.innerText = "MRP";
+        table_row.append(table_coloumn);
+
+        //table coloumn_5
+        table_coloumn = document.createElement("th");
+        table_coloumn.innerText = "Price";
+        table_row.append(table_coloumn);
+
+        //table coloumn_6
+        table_coloumn = document.createElement("th");
+        table_coloumn.innerText = "Tax";
+        table_row.append(table_coloumn);
+
+
+        //table coloumn_7
+        table_coloumn = document.createElement("th");
+        table_coloumn.innerText = "Discount";
+        table_row.append(table_coloumn);
+
+        //table coloumn_8
+        table_coloumn = document.createElement("th");
+        table_coloumn.innerText = "Amount";
+        table_row.append(table_coloumn);
+
+        
+
+
+
+        for(let i =0 ;i<=4;i++){
+            tableRows()
+        }
+
+
+
+        function tableRows() {
+            // table row
+            table_row_1 = document.createElement("tr");
+            table_row_1.setAttribute("class", "tb1");
+
+            main_table.append(table_row_1);
+
+            //table coloumn_1
+            table_coloumn_1 = document.createElement("td");
+
+            table_row_1.append(table_coloumn_1);
+
+
+            table_input_1 = document.createElement("input")
+            table_input_1.setAttribute("id", "serial")
+            table_input_1.setAttribute("type", "text")
+            table_coloumn_1.append(table_input_1)
+
+            //table coloumn_2
+            table_coloumn_2 = document.createElement("td");
+            table_row_1.append(table_coloumn_2);
+
+            table_input_2 = document.createElement("input")
+            table_input_2.setAttribute("id", "itemname")
+            table_input_2.setAttribute("type", "text")
+            table_coloumn_2.append(table_input_2)
+
+
+            //table coloumn_3
+            table_coloumn_3 = document.createElement("td");
+            table_row_1.append(table_coloumn_3);
+
+            table_input_3 = document.createElement("input")
+            table_input_3.setAttribute("id", "quantity")
+            table_input_3.setAttribute("type", "text")
+            table_coloumn_3.append(table_input_3)
+
+            //  table coloumn_4
+            table_coloumn_4 = document.createElement("td");
+            table_row_1.append(table_coloumn_4);
+
+            table_input_4 = document.createElement("input")
+            table_input_4.setAttribute("id", "mrp")
+            table_input_4.setAttribute("type", "text")
+            table_coloumn_4.append(table_input_4)
+
+
+            //  table coloumn_5
+            table_coloumn_5 = document.createElement("td");
+            table_row_1.append(table_coloumn_5);
+
+            table_input_5 = document.createElement("input")
+            table_input_5.setAttribute("id", "price")
+            table_input_5.setAttribute("type", "text")
+            table_coloumn_5.append(table_input_5)
+
+            //  table coloumn_6
+            table_coloumn_6 = document.createElement("td");
+            table_row_1.append(table_coloumn_6);
+
+            table_input_6 = document.createElement("input")
+            table_input_6.setAttribute("id", "tax")
+            table_input_6.setAttribute("type", "text")
+            table_coloumn_6.append(table_input_6)
+
+            //  table coloumn_7
+            table_coloumn_7 = document.createElement("td");
+            table_row_1.append(table_coloumn_7);
+
+            table_input_7 = document.createElement("input")
+            table_input_7.setAttribute("id", "discount")
+            table_input_7.setAttribute("type", "text")
+            table_coloumn_7.append(table_input_7)
+
+            //  table coloumn_8
+            table_coloumn_8 = document.createElement("td");
+            table_row_1.append(table_coloumn_8);
+
+            table_input_8 = document.createElement("input")
+            table_input_8.setAttribute("id", "amount")
+            table_input_8.setAttribute("type", "text")
+            table_coloumn_8.append(table_input_8)
+
+
+        }
+
+
+        
+        //     <div>
+        //     <img onclick="tableRows()" src="../../assets/Imges/plus.jfif" alt="plus-symbol" />
+        // </div>
+               //  table coloumn_8
+               table_9 = document.createElement("th"); 
+               table_9.setAttribute("id","for-plus")          
+               table_row.append(table_9);
+
+            table_input_9 = document.createElement("img")
+             table_input_9.setAttribute("src","../../assets/Imges/plus.jfif")
+             table_input_9.setAttribute("onclick","tableRows()")
+             table_input_9.setAttribute("alt","Plus Img")
+             table_9.append(table_input_9)
+
+        //    }
+        document.querySelector("main").append(main_table)   
+
+       
+function clicking(){
+       
+        let serial = document.getElementById("serial").value;
+        let itemname = document.getElementById("itemname").value;
+        let quantity = document.getElementById("quantity").value;
+        let mrp = document.getElementById("mrp").value;
+        let price = document.getElementById("price").value;
+        let tax = document.getElementById("tax").value;
+        let discount = document.getElementById("discount").value;
+        let amount = document.getElementById("amount").value;
+        // let uuid = uuidv4();
+
+        console.log(serial)
+        console.log(itemname)
+        console.log(quantity)
+        console.log(mrp)
+        console.log(price)
+        console.log(tax)
+        console.log(discount)
+        console.log(amount)
+        
+}
+
+//      const newbillDetails = JSON.parse(localStorage.getItem("newbillDetails")) || [];
+
+
+// form.addEventListener("submit", function(event) {
+//   event.preventDefault();
+  
+
+
+
+//  if (productDetails.some(record => record.product_name === product_name.value)) {
+//     alert("Product is already exists! ");
+//     return;
+//   }
+//   else if(productDetails.some(record => record.product_id === product_id.value)){
+//     alert("ID Number is already exists!");
+//     return;
+//   }
+//   else if(productDetails.some(record => record.special_name === special_name.value)){
+//     alert("Special Name is already exists!");
+//     return;
+//   }
+  
+// //  else if (userRecords.some(record => record.email === email.value)) {
+// //     alert("Email already exists");
+// //     return;
+// //   }
+// else{
+
+//   let newProduct = {
+//     product_name: product_name.value,
+//     quantity: quantity.value,
+//     mrp: mrp.value,
+//     price: price.value,
+//     tax: tax.value,
+//     discount: discount.value,
+//     product_id: product_id.value,
+//     special_name: special_name.value,
+//      unique :uuid     
+//   };
+
+
+
+//   productDetails.push(newProduct);
+//   localStorage.setItem("productDetails", JSON.stringify(productDetails));
+//   localStorage.setItem("product_id", product_id.value);
+//   alert("Product is Sucessfully Created");
+//   window.location.href="./item.html"
+//   event.preventDefault();
+  
+// }});
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
