@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/fssa-batch3/maruthan.alagar__web_project#readme",
   "dependencies": {
+    "@commitlint/cli": "^17.5.0",
+    "@commitlint/config-conventional": "^17.4.4",
     "https-server": "^0.1.2"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3"
   }
 }

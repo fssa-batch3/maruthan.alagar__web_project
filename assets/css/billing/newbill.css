@@ -1,33 +1,48 @@
 @import url("../header.css");
 
 
-body{
-    overflow-x: hidden;
-}
 .namebar {
+    display: flex;
+    flex-direction: column;
     padding-bottom: 15px;
-    text-align: center;
+   
     padding-left: 18px;
 
 }
+#customer,#top{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20PX;
+}
 
 .namebar label{
-    font-size: 20px;
+    font-size: 18px;
     padding: 4px;
 
 }
 
-.namebar input {
+.namebar #top input {
     font-size: 20px;
     background-color: lightblue;
-    color: black
+    color: black;
+    width:91%;
+
+}
+#customer input{
+    width: 16em;
+    background-color: lightblue;
 }
 
 .symbol {
     display: flex;
 }
+#customerpic{
+    margin-top: 28px;
+    height: 36px;
+    width: 35px;
+}
 
-main img {
+#coloum {
     width: 35px;
     margin-bottom: 7px;
     margin-left: 13px;
@@ -83,7 +98,7 @@ table {
     background-color:#e8e8dd;
 }
 
-form{
+#payment{
     display: flex;
     flex-direction:row;
     justify-content: space-around;

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M A M Billing</title>
     <link rel="stylesheet" href="../../assets/css/billing/newbill.css">
-    <link rel="stylesheet" href="../../normalize.css">
+
 </head>
 
 <body>
@@ -27,178 +27,159 @@
         </div>
     </header>
     <main>
-        <div class="symbol">
-            <div class="namebar">
-                <label>Customer Name:</label>
-                <input type="text" />
-                <label>ID Number:</label>
-                <input type="text" />
-                <label>Phone Number:</label>
-                <input type="text" />
-                <label>Date</label>
-                <input type="date" />
-
-            </div>
-            <!-- <a href="../customer/billingside.html"><img src="../../assets/Imges/plus.jfif" alt="plus-symbol" /></a> -->
-        </div>
-        <!-- <table class="table">
-
-            <caption style="font-size: 0%;">billing details</caption>
-            <tr class="tb1">
-                <th>No</th>
-                <th>Item</th>
-                <th>Quantity</th>
-                <th>MRP</th>
-                <th>Price</th>
-                <th>Amount</th>
-
-            </tr>
-            <tr>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-
-            </tr>
-            <tr>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-
-            </tr>
-            <tr>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-
-            </tr>
-            <tr>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-            </tr>
-            <tr>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-                <td><input type="textbox" /></td>
-
-            </tr>
-
-            <tr>
-                <td class="empty"></td>
-                <td class="empty"></td>
-                <td class="empty"></td>
-                <td class="empty"></td>
-                <td><strong>Tax(%)</strong></td>
-                <td><input type="textbox" /></td>
-
-            </tr>
-            <tr>
-                <td class="empty"></td>
-                <td class="empty"></td>
-                <td class="empty"></td>
-                <td class="empty"></td>
-                <td><strong>Discount(%)</strong></td>
-                <td><input class="skyblue" type="textbox" /></td>
-
-            </tr>
-            <tr>
-                <td class="empty"></td>
-                <td class="empty"></td>
-                <td class="empty"></td>
-                <td class="empty"></td>
-                <td><strong>Total</strong></td>
-                <td><input type="textbox" /></td>
-            </tr>
-        </table> -->
-
-        
-    </main>
-    <section>    
         <form>
+            <div class="symbol">
+                <div class="namebar">
+                    <div id="customer">
+                        <div>
+                            <label>Customer Name:</label>
+                            <input class="lists" type="text" id="customer_name" placeholder="Enter Customer Name"
+                                required />
+                        </div>
+                        <div>
+                            <label>ID Number:</label>
+                            <input class="lists" type="text" id="customer_id" placeholder="Enter ID Number" required />
+                        </div>
+                        <div>
+                            <label>Phone Number:</label>
+                            <input class="lists" type="tel" id="customer_phone" placeholder="Enter Mobile Number"
+                                required />
+                        </div>
+                        <div>
+                            <label>Date</label>
+                            <input type="date" id="date-input">
+                        </div>
+                        <img src="../../assets/Imges/plus.jfif" id="customerpic" alt="plus pic">
+                    </div>
+                </form>
+                <form>
+                    <div id="top">
+                   
+                            
+
+
+                        <div>
+                            <label>Product Name:</label>
+                            <input class="lists" id="product_name" type="text" placeholder="Product Name" required />
+                        </div>
+
+                        <div>
+                            <label>Product ID</label>
+                            <input class="lists" id="product_id" type="text" placeholder="Enter Product ID" required />
+                        </div>
+
+
+
+                        <div>
+                            <label>Quantity:</label>
+                            <input class="lists" id="quantity" type="number" placeholder="Choose Number" required />
+                        </div>
+
+
+                        <div>
+                            <label>Price:</label>
+                            <input class="lists" id="price" type="text" placeholder="Enter price" required />
+                        </div>
+                        <div>
+                            <label>Tax:</label>
+                            <input class="lists" id="tax" type="text" placeholder="Enter Tax" />
+                        </div>
+                        <div>
+                            <label>Discount:</label>
+                            <input class="lists" id="discount" type="text" placeholder="Enter Discount" />
+                        </div>
+                        <img src="../../assets/Imges/plus.jfif" onclick="newDetail()" id="customerpic" alt="plus pic">
+
+                    </div>
+
+
+
+
+
+
+                    <!-- <a href="../customer/billingside.html"><img src="../../assets/Imges/plus.jfif" alt="plus-symbol" /></a> -->
+                </div>
+        </form>
+
+
+
+
+    </main>
+    <section>
+        <form id="payment">
             <div>
-            
-            <label> Payment Method</label>
-            <div id="radiobuttons">
-           <input id="radio" type="radio" value="Cash"><lable>Cash</lable>
-           <input id="radio" type="radio" value="Card"><lable>Card</lable>
-           <input id="radio" type="radio" value="UPI"><lable>UPI</lable>
+
+                <label> Payment Method</label>
+                <div id="radiobuttons">
+                    <input id="radio" type="radio" value="Cash">
+                    <lable>Cash</lable>
+                    <input id="radio" type="radio" value="Card">
+                    <lable>Card</lable>
+                    <input id="radio" type="radio" value="UPI">
+                    <lable>UPI</lable>
+                </div>
+
+                <div>
+
+                    <label>Txn.ID :</label>
+                    <input type="text" readonly>
+                </div>
+                <div>
+
+                    <label>Amount :</label>
+                    <input type="number">
+                </div>
+                <div>
+                    <label>Balance :</label>
+                    <input type="number">
+                </div>
             </div>
-          
-           <div>
 
-           <label>Txn.ID :</label>
-           <input type="text" readonly>
-           </div>
-           <div>
 
-           <label>Amount :</label>
-           <input type="number" >
-           </div>
-           <div>
-           <label>Balance :</label>
-           <input type="number">
-             </div>
-             </div>
-             
-             
-             
-             
-             <div>
+
+
+            <div>
 
                 <div>
-                <label>Total MRP :</label>
-                <input type="number">
+                    <label>Total MRP :</label>
+                    <input type="number">
                 </div>
                 <div>
-                <label>Total Tax :</label>
-                <input type="number">
+                    <label>Total Tax :</label>
+                    <input type="number">
                 </div>
                 <div>
-                <label>Total Discount :</label>
-                <input type="number">
+                    <label>Total Discount :</label>
+                    <input type="number">
                 </div>
                 <div>
-                <label>Total Price :</label>
-                <input type="number">
+                    <label>Total Price :</label>
+                    <input type="number">
                 </div>
-             </div>
-             <div >
+            </div>
+            <div>
                 <h2>Sub Total :</h2>
                 <input type="number" readonly>
                 <h1>Total :</h1>
                 <input type="number" readonly>
 
 
-             </div>
+            </div>
 
-             <div id="buttonDiv">
-                <button class="btn"  onclick="clicking()" type="submit">Save Bill</button>
+            <div id="buttonDiv">
+                <button class="btn" type="submit">Save Bill</button>
                 <button class="btn" type="submit">Save & Print</button>
-             </div>
+            </div>
 
-         </form>
-</section>
-
-
+        </form>
+    </section>
 
 
 
-   
+
+
+
+
     <script>
 
 
@@ -262,198 +243,159 @@
         table_coloumn.innerText = "Amount";
         table_row.append(table_coloumn);
 
-        
 
 
 
-        for(let i =0 ;i<=4;i++){
-            tableRows()
-        }
 
 
 
-        function tableRows() {
+
+
+        for (let i = 0; i <= 4; i++) {
             // table row
             table_row_1 = document.createElement("tr");
             table_row_1.setAttribute("class", "tb1");
 
             main_table.append(table_row_1);
 
-            //table coloumn_1
             table_coloumn_1 = document.createElement("td");
-
+            table_coloumn_1.setAttribute("VALUE", "MARUTHAN")
             table_row_1.append(table_coloumn_1);
 
-
-            table_input_1 = document.createElement("input")
-            table_input_1.setAttribute("id", "serial")
-            table_input_1.setAttribute("type", "text")
-            table_coloumn_1.append(table_input_1)
-
-            //table coloumn_2
             table_coloumn_2 = document.createElement("td");
             table_row_1.append(table_coloumn_2);
 
-            table_input_2 = document.createElement("input")
-            table_input_2.setAttribute("id", "itemname")
-            table_input_2.setAttribute("type", "text")
-            table_coloumn_2.append(table_input_2)
-
-
-            //table coloumn_3
             table_coloumn_3 = document.createElement("td");
             table_row_1.append(table_coloumn_3);
 
-            table_input_3 = document.createElement("input")
-            table_input_3.setAttribute("id", "quantity")
-            table_input_3.setAttribute("type", "text")
-            table_coloumn_3.append(table_input_3)
-
-            //  table coloumn_4
             table_coloumn_4 = document.createElement("td");
             table_row_1.append(table_coloumn_4);
 
-            table_input_4 = document.createElement("input")
-            table_input_4.setAttribute("id", "mrp")
-            table_input_4.setAttribute("type", "text")
-            table_coloumn_4.append(table_input_4)
-
-
-            //  table coloumn_5
             table_coloumn_5 = document.createElement("td");
             table_row_1.append(table_coloumn_5);
 
-            table_input_5 = document.createElement("input")
-            table_input_5.setAttribute("id", "price")
-            table_input_5.setAttribute("type", "text")
-            table_coloumn_5.append(table_input_5)
-
-            //  table coloumn_6
             table_coloumn_6 = document.createElement("td");
             table_row_1.append(table_coloumn_6);
 
-            table_input_6 = document.createElement("input")
-            table_input_6.setAttribute("id", "tax")
-            table_input_6.setAttribute("type", "text")
-            table_coloumn_6.append(table_input_6)
-
-            //  table coloumn_7
             table_coloumn_7 = document.createElement("td");
             table_row_1.append(table_coloumn_7);
 
-            table_input_7 = document.createElement("input")
-            table_input_7.setAttribute("id", "discount")
-            table_input_7.setAttribute("type", "text")
-            table_coloumn_7.append(table_input_7)
-
-            //  table coloumn_8
             table_coloumn_8 = document.createElement("td");
             table_row_1.append(table_coloumn_8);
 
-            table_input_8 = document.createElement("input")
-            table_input_8.setAttribute("id", "amount")
-            table_input_8.setAttribute("type", "text")
-            table_coloumn_8.append(table_input_8)
 
 
         }
 
+        //  table coloumn_8
+        //    table_9 = document.createElement("th"); 
+        //    table_9.setAttribute("id","for-plus")          
+        //    table_row.append(table_9);
 
-        
-        //     <div>
-        //     <img onclick="tableRows()" src="../../assets/Imges/plus.jfif" alt="plus-symbol" />
-        // </div>
-               //  table coloumn_8
-               table_9 = document.createElement("th"); 
-               table_9.setAttribute("id","for-plus")          
-               table_row.append(table_9);
-
-            table_input_9 = document.createElement("img")
-             table_input_9.setAttribute("src","../../assets/Imges/plus.jfif")
-             table_input_9.setAttribute("onclick","tableRows()")
-             table_input_9.setAttribute("alt","Plus Img")
-             table_9.append(table_input_9)
+        // table_input_9 = document.createElement("img")
+        //  table_input_9.setAttribute("src","../../assets/Imges/plus.jfif")
+        //  table_input_9.setAttribute("onclick","tableRows()")
+        //  table_input_9.setAttribute("id","coloum")
+        //  table_input_9.setAttribute("alt","Plus Img")
+        //  table_9.append(table_input_9)
 
         //    }
-        document.querySelector("main").append(main_table)   
+        document.querySelector("main").append(main_table)
 
-       
-function clicking(){
-       
-        let serial = document.getElementById("serial").value;
-        let itemname = document.getElementById("itemname").value;
-        let quantity = document.getElementById("quantity").value;
-        let mrp = document.getElementById("mrp").value;
-        let price = document.getElementById("price").value;
-        let tax = document.getElementById("tax").value;
-        let discount = document.getElementById("discount").value;
-        let amount = document.getElementById("amount").value;
-        // let uuid = uuidv4();
 
-        console.log(serial)
-        console.log(itemname)
-        console.log(quantity)
-        console.log(mrp)
-        console.log(price)
-        console.log(tax)
-        console.log(discount)
-        console.log(amount)
+
+
+
+        const dateInput = document.getElementById('date-input');
+
+        const systemDate = new Date();
+
+        const year = systemDate.getFullYear();
+        const month = (systemDate.getMonth() + 1).toString().padStart(2, '0');
+        const day = systemDate.getDate().toString().padStart(2, '0');
+        const dateString = `${year}-${month}-${day}`;
+
+        dateInput.value = dateString;
+
         
-}
 
-//      const newbillDetails = JSON.parse(localStorage.getItem("newbillDetails")) || [];
-
-
-// form.addEventListener("submit", function(event) {
-//   event.preventDefault();
-  
+function newDetail(){
+      
+        const customer_bill_Details = JSON.parse(localStorage.getItem("customer_bill_Details")) || [];
+     
 
 
 
-//  if (productDetails.some(record => record.product_name === product_name.value)) {
-//     alert("Product is already exists! ");
-//     return;
-//   }
-//   else if(productDetails.some(record => record.product_id === product_id.value)){
-//     alert("ID Number is already exists!");
-//     return;
-//   }
-//   else if(productDetails.some(record => record.special_name === special_name.value)){
-//     alert("Special Name is already exists!");
-//     return;
-//   }
-  
-// //  else if (userRecords.some(record => record.email === email.value)) {
-// //     alert("Email already exists");
-// //     return;
-// //   }
-// else{
+        
+       
+                
 
-//   let newProduct = {
-//     product_name: product_name.value,
-//     quantity: quantity.value,
-//     mrp: mrp.value,
-//     price: price.value,
-//     tax: tax.value,
-//     discount: discount.value,
-//     product_id: product_id.value,
-//     special_name: special_name.value,
-//      unique :uuid     
-//   };
+    let product_name = document.getElementById("product_name");
+            let quantity = document.getElementById("quantity");
+            let product_id = document.getElementById("product_id");
+            let price = document.getElementById("price");
+            let tax = document.getElementById("tax");
+            let discount = document.getElementById("discount");
+            let customer_id = document.getElementById("customer_id");
 
 
+          let  newItem = {
+                product_name: product_name.value,
+                quantity: quantity.value,
+                product_id: product_id.value,
+                price: price.value,
+                tax: tax.value,
+                discount: discount.value,
+                
 
-//   productDetails.push(newProduct);
-//   localStorage.setItem("productDetails", JSON.stringify(productDetails));
-//   localStorage.setItem("product_id", product_id.value);
-//   alert("Product is Sucessfully Created");
-//   window.location.href="./item.html"
-//   event.preventDefault();
-  
-// }});
+            };
+            let customer ={
+                customer_id : customer_id.value,
+                dateInput: dateInput.value
 
+            }
 
+            let id ;
+            let pro_id;
+            for(let i =0 ;i<customer_bill_Details.length;i++){
+                customer_bill_Details[i].customer_id === customer_id.value
+                id = customer_bill_Details[i].customer_id.value;
+            }
+            for(let i =0 ;i<customer_bill_Details.length;i++){
+                customer_bill_Details[i].product_id === product_id.value
+                pro_id = i;
+            }
+    
 
+          
+console.log(id)
+console.log(customer_id.value)
+
+            
+
+           
+           if(id === customer_id.value){
+            alert("You are in current bill")
+           }
+           else{
+            customer_bill_Details.push(customer);
+           }
+
+       
+       if(pro_id == product_id){
+        alert("product is already added")
+       }
+       else{
+        customer_bill_Details.push(newItem);
+       }
+   
+    
+    
+        
+        localStorage.setItem("customer_bill_Details", JSON.stringify(customer_bill_Details));
+        alert("Product is Sucessfully Created");
+
+    }
 
 
 
