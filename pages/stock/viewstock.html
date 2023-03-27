@@ -29,7 +29,7 @@
                     <div class="part1">
                         <div class="content">
                             <label class="forms">Name</label>
-                            <input class="lists" id="stock_name" type="text" required />
+                            <input class="lists" id="stock_name" type="text" required  />
                         </div>
                         <div class="content">
                             <label class="forms">Brand Name</label>
@@ -75,8 +75,7 @@
 
                 </div>
                 <div class="content1">
-                    <button class="button" type="button" onclick="backbutton()" class="registerbtn"><span>&#10094;</span>Back</button>
-                    <button class="button" id="save_data" type="submit" >Save<span>&#10095;</span></button>
+                    <button class="button" type="button" onclick="backbutton()" class="registerbtn"><span>&#10094;</span>Back to Stock</button>
                 </div>
 
             </form>
@@ -147,7 +146,6 @@ const myParamValue = params.get('stock_name');
             // again paste it to the
             localStorage.setItem("stockDetails", JSON.stringify(stockDetails));
             window.location.href = "./stock.html" 
-
             alert("Stock Details Successfully Updated")
           
 

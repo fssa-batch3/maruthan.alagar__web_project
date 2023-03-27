@@ -121,6 +121,10 @@ let unique = localStorage.getItem("unique")
 let gstn_number = document.getElementById("gstn_number").value;
 let address = document.getElementById("address").value;
 let nameforprint = document.getElementById("nameforprint").value;
+
+if(gstn_number === undefined){
+    gstn_number.setAttribute("placeholder","Enter GSTN Number")
+}
               
 
 
