@@ -49,56 +49,50 @@
                             <label>Date</label>
                             <input type="date" id="date-input">
                         </div>
-                        <img src="../../assets/Imges/plus.jfif" id="customerpic" alt="plus pic">
+                        <a href="../customer/billingside.html"><button type="button" id="add"><img src="../../assets/Imges/plus.jfif" id="customerpic" alt="plus pic"></button></a>
                     </div>
-                </form>
-                <form>
-                    <div id="top">
-                   
-                            
-
-
-                        <div>
-                            <label>Product Name:</label>
-                            <input class="lists" id="product_name" type="text" placeholder="Product Name" required />
-                        </div>
-
-                        <div>
-                            <label>Product ID</label>
-                            <input class="lists" id="product_id" type="text" placeholder="Enter Product ID" required />
-                        </div>
-
-
-
-                        <div>
-                            <label>Quantity:</label>
-                            <input class="lists" id="quantity" type="number" placeholder="Choose Number" required />
-                        </div>
-
-
-                        <div>
-                            <label>Price:</label>
-                            <input class="lists" id="price" type="text" placeholder="Enter price" required />
-                        </div>
-                        <div>
-                            <label>Tax:</label>
-                            <input class="lists" id="tax" type="text" placeholder="Enter Tax" />
-                        </div>
-                        <div>
-                            <label>Discount:</label>
-                            <input class="lists" id="discount" type="text" placeholder="Enter Discount" />
-                        </div>
-                        <img src="../../assets/Imges/plus.jfif" onclick="newDetail()" id="customerpic" alt="plus pic">
-
-                    </div>
+        </form>
+        <form id="pro">
+            <div id="top">
 
 
 
 
-
-
-                    <!-- <a href="../customer/billingside.html"><img src="../../assets/Imges/plus.jfif" alt="plus-symbol" /></a> -->
+                <div>
+                    <label>Product Name:</label>
+                    <input class="lists" id="product_name" type="text" placeholder="Product Name" required />
                 </div>
+
+                <div>
+                    <label>Product ID</label>
+                    <input class="lists" id="product_id" type="text" placeholder="Enter Product ID" required />
+                </div>
+
+
+
+                <div>
+                    <label>Quantity:</label>
+                    <input class="lists" id="quantity" type="number" placeholder="Choose Number" required />
+                </div>
+
+
+                <div>
+                    <label>Price:</label>
+                    <input class="lists" id="price" type="text" placeholder="Enter price" required />
+                </div>
+                <div>
+                    <label>Tax:</label>
+                    <input class="lists" id="tax" type="text" placeholder="Enter Tax" />
+                </div>
+                <div>
+                    <label>Discount:</label>
+                    <input class="lists" id="discount" type="text" placeholder="Enter Discount" />
+                </div>
+                <button type="button" id="add" onclick="newDetail()"><img src="../../assets/Imges/plus.jfif"  id="customerpic" alt="plus pic"></button>
+
+            </div>
+
+            </div>
         </form>
 
 
@@ -167,8 +161,8 @@
             </div>
 
             <div id="buttonDiv">
-                <button class="btn" type="submit">Save Bill</button>
-                <button class="btn" type="submit">Save & Print</button>
+                <button class="btn" id="btn" onclick="saveData()" type="submit">Save Bill</button>
+                <button class="btn" id="btn" onclick="saveData()"type="submit">Save & Print</button>
             </div>
 
         </form>
@@ -246,46 +240,10 @@
 
 
 
+        const customer_bill_Details = JSON.parse(sessionStorage.getItem("customer_bill_Details")) || [];
 
 
 
-
-
-        for (let i = 0; i <= 4; i++) {
-            // table row
-            table_row_1 = document.createElement("tr");
-            table_row_1.setAttribute("class", "tb1");
-
-            main_table.append(table_row_1);
-
-            table_coloumn_1 = document.createElement("td");
-            table_coloumn_1.setAttribute("VALUE", "MARUTHAN")
-            table_row_1.append(table_coloumn_1);
-
-            table_coloumn_2 = document.createElement("td");
-            table_row_1.append(table_coloumn_2);
-
-            table_coloumn_3 = document.createElement("td");
-            table_row_1.append(table_coloumn_3);
-
-            table_coloumn_4 = document.createElement("td");
-            table_row_1.append(table_coloumn_4);
-
-            table_coloumn_5 = document.createElement("td");
-            table_row_1.append(table_coloumn_5);
-
-            table_coloumn_6 = document.createElement("td");
-            table_row_1.append(table_coloumn_6);
-
-            table_coloumn_7 = document.createElement("td");
-            table_row_1.append(table_coloumn_7);
-
-            table_coloumn_8 = document.createElement("td");
-            table_row_1.append(table_coloumn_8);
-
-
-
-        }
 
         //  table coloumn_8
         //    table_9 = document.createElement("th"); 
@@ -317,85 +275,156 @@
 
         dateInput.value = dateString;
 
-        
-
-function newDetail(){
-      
-        const customer_bill_Details = JSON.parse(localStorage.getItem("customer_bill_Details")) || [];
-     
 
 
-
-        
+        function newDetail() {
+            
        
-                
+        //     let serial = customer_bill_Details[0].product_details.length+1;
+        // console.log(serial)
 
-    let product_name = document.getElementById("product_name");
+
+            let product_name = document.getElementById("product_name");
             let quantity = document.getElementById("quantity");
             let product_id = document.getElementById("product_id");
             let price = document.getElementById("price");
             let tax = document.getElementById("tax");
             let discount = document.getElementById("discount");
             let customer_id = document.getElementById("customer_id");
+            let customer_name = document.getElementById("customer_name");
+            let customer_phone = document.getElementById("customer_phone");
 
 
-          let  newItem = {
+
+
+
+
+            let newItem = {
                 product_name: product_name.value,
                 quantity: quantity.value,
                 product_id: product_id.value,
                 price: price.value,
                 tax: tax.value,
                 discount: discount.value,
-                
+                // serial : serial.value
+              
+
 
             };
-            let customer ={
-                customer_id : customer_id.value,
-                dateInput: dateInput.value
-
+            let customer = {
+                customer_id: customer_id.value,
+                customer_name: customer_name.value,
+                customer_phone: customer_phone.value,
+                dateInput: dateInput.value,
+                product_details: [newItem]
             }
 
-            let id ;
-            let pro_id;
-            for(let i =0 ;i<customer_bill_Details.length;i++){
-                customer_bill_Details[i].customer_id === customer_id.value
-                id = customer_bill_Details[i].customer_id.value;
-            }
-            for(let i =0 ;i<customer_bill_Details.length;i++){
-                customer_bill_Details[i].product_id === product_id.value
-                pro_id = i;
-            }
-    
 
-          
-console.log(id)
-console.log(customer_id.value)
 
+
+            let customer_bill;
+
+            function findDetail(e) {
+                return e.customer_id === customer_id.value;
+            }
+
+
+            if(customer_name.value.length === 0){
+                alert("Please Enter Customer name")
+            }
+            else if(customer_id.value.length === 0){
+                alert("Please Enter Customer Id")
+            }
+            else if(customer_phone.value.length === 0){
+                alert("Please Enter Customer Phone")
+            }
+            else if(product_name.value.length === 0){
+                alert("Please Enter Product name")
+            }
+            else if(quantity.value.length === 0){
+                alert("Please Enter Quantity")
+            }
+            else if(product_id.value.length === 0){
+                alert("Please Enter Product ID")
+            }
+            else if(price.value.length === 0){
+                alert("Please Enter Price")
+            }
+            else if(tax.value.length === 0){
+                alert("Please Enter Tax")
+            }
+
+
+
+
+            else if (customer_bill = customer_bill_Details.find(findDetail)) {
+                customer_bill.product_details.push(newItem);
+                alert("Product is Sucessfully Added");
+                sessionStorage.setItem("customer_bill_Details", JSON.stringify(customer_bill_Details));
+            }
+            else {
+                customer_bill_Details.push(customer);
+                alert("Product is Sucessfully Created");
+                sessionStorage.setItem("customer_bill_Details", JSON.stringify(customer_bill_Details));
+            }
             
 
            
-           if(id === customer_id.value){
-            alert("You are in current bill")
-           }
-           else{
-            customer_bill_Details.push(customer);
-           }
+            
 
-       
-       if(pro_id == product_id){
-        alert("product is already added")
-       }
-       else{
-        customer_bill_Details.push(newItem);
-       }
-   
-    
-    
-        
-        localStorage.setItem("customer_bill_Details", JSON.stringify(customer_bill_Details));
-        alert("Product is Sucessfully Created");
 
-    }
+
+
+            
+           
+
+        for (let i = 0; i <= customer_bill_Details[0].product_details.length; i++) {
+            // table row
+            table_row_1 = document.createElement("tr");
+            table_row_1.setAttribute("class", "tb1");
+
+            main_table.append(table_row_1);
+
+            table_coloumn_1 = document.createElement("td");
+           
+            table_row_1.append(table_coloumn_1);
+           
+
+            table_coloumn_2 = document.createElement("td");
+            // table_coloumn_1.innerText = customer_bill_Details[0].product_details[i].product_name
+            table_row_1.append(table_coloumn_2);
+
+            table_coloumn_3 = document.createElement("td");
+            table_row_1.append(table_coloumn_3);
+
+            table_coloumn_4 = document.createElement("td");
+            table_row_1.append(table_coloumn_4);
+
+            table_coloumn_5 = document.createElement("td");
+            table_row_1.append(table_coloumn_5);
+
+            table_coloumn_6 = document.createElement("td");
+            table_row_1.append(table_coloumn_6);
+
+            table_coloumn_7 = document.createElement("td");
+            table_row_1.append(table_coloumn_7);
+
+            table_coloumn_8 = document.createElement("td");
+            table_row_1.append(table_coloumn_8);
+
+
+
+        }
+        }
+
+        function saveData(){
+
+            const bill_Details = JSON.parse(localStorage.getItem("customer_bill_Details"))
+            customer_bill_Details.push(customer_bill_Details)
+            localStorage.setItem("customer_bill_Details", JSON.stringify(customer_bill_Details));
+            sessionStorage.clear();
+
+        }
 
 
 

@@ -64,47 +64,37 @@
                 <div class="part1">
                     <div class="content">
                         <label class="forms">GSTN Number</label>
-                        <input class="lists" id="gstn_number" type="text" placeholder="Enter GSTN Number"  required  readonly/>
+                        <input class="lists" id="gstn_number" type="text" placeholder="Enter GSTN Number"  required  />
 
                     </div>
                     <div class="content">
                         <label class="forms">Address</label>
-                        <input class="lists" id="address" type="text" placeholder="Enter Shop Address" required readonly/>
+                        <input class="lists" id="address" type="text" placeholder="Enter Shop Address" required />
 
                     </div>
                     <div class="content">
                         <label class="forms">Shop Logo</label>
-                        <input class="lists" id="file" type="file" placeholder="Upload Logo" readonly />
+                        <input class="lists" id="file" type="file" placeholder="Upload Logo"  />
 
                     </div>
                     <div class="content">
                         <label class="forms">Print Name</label>
-                        <input class="lists" id="nameforprint" type="text" placeholder="Enter Print Name" required readonly />
+                        <input class="lists" id="nameforprint" type="text" placeholder="Enter Print Name" required  />
 
                     </div>
-                    <!-- <div class="content">
-                        <label class="forms">Password</label>
-                        <input class="lists" id="password" type="text" required />
 
-                    </div> -->
                 </div>
                 <div class="content1">
                     <button class="button_1" onclick="backbutton()"  type="button"><span>&#x1F870;</span> Back</button>
-                    <!-- <button class="button" id="edit" type="submit">
-                        edit</button> -->
+  
                     <button class="button" id="save"type="submit" >
-                        Save</button>
+                        Save<span>&#x1F872;</span></button>
                        
                  </div>  
         
             </form>
         </div>
-        <!-- <div class="content1">
-            <button class="button_1" onclick="backbutton()"  type="button"><span>&#x1F870;</span> Back</button>
-             <button class="button" onclick="(event)"  type="submit">
-                Save<span>&#x1F872;</span></button>
-               
-         </div>   -->
+     
 
 
 
@@ -127,11 +117,7 @@ let unique = localStorage.getItem("unique")
 
        
       function update(e){
-//                  // getting the updated data from the input field
-// const shop_name = document.getElementById("shop_name").value;
-// const licence_number = document.getElementById("licence_number").value;
-// const phone_number = document.getElementById("phone_number").value;
-let user_email = document.getElementById("user_email").value;
+
 let gstn_number = document.getElementById("gstn_number").value;
 let address = document.getElementById("address").value;
 let nameforprint = document.getElementById("nameforprint").value;
@@ -151,16 +137,17 @@ user_records["nameforprint"] = nameforprint;
 
 // again paste it to the
                 localStorage.setItem("userRecords", JSON.stringify(userRecords));
-                alert("Successfully Updated")
                 window.location.href="../homepage/homepage.html"
+                alert("Successfully Updated")
+                
+
+
             }
+       
             document.getElementById("gstn_number").value = user_records["gstn_number"];
         document.getElementById("address").value = user_records["address"];
         document.getElementById("nameforprint").value = user_records["nameforprint"];
 
-
-        //     const sumbit =document.querySelector(".button");
-        //   sumbit.addEventListener("click",update);
 
 
 
@@ -202,37 +189,7 @@ user_records["nameforprint"] = nameforprint;
 
 }
 
-// const sumbit =document.querySelector("#save");
-//           sumbit.addEventListener("submit",update)
-//           sumbit.addEventListener("click",findReadonly1)
-//       function findReadonly(e){
 
-//         document.getElementById("shop_name").removeAttribute("readonly");
-//         document.getElementById("phone_number").removeAttribute("readonly");
-//         document.getElementById("user_email").removeAttribute("readonly");
-//         document.getElementById("gstn_number").removeAttribute("readonly");
-//         document.getElementById("address").removeAttribute("readonly");
-//         document.getElementById("file").removeAttribute("readonly");
-//         document.getElementById("nameforprint").removeAttribute("readonly");
-        
-//         document.querySelector("#edit").removeAttribute("style");
-//         document.querySelector("#save").setAttribute("style","display:none");
-//       }
-//       function findReadonly1(e){
-//         document.getElementById("shop_name").setAttribute("readonly","true");
-//         document.getElementById("phone_number").setAttribute("readonly","true");
-//         document.getElementById("user_email").setAttribute("readonly","true");
-//         document.getElementById("gstn_number").setAttribute("readonly","true");
-//         document.getElementById("address").setAttribute("readonly","true");
-//         document.getElementById("file").setAttribute("readonly","true");
-//         document.getElementById("nameforprint").setAttribute("readonly","true");
-        
-
-//         document.querySelector("#edit").setAttribute("style","display:none");
-//         document.querySelector("#save").setAttribute("style","display:inline");
-//       }
-//       const editThing = document.querySelector("#edit");
-//       editThing.addEventListener("click",findReadonly);
 
        
        
