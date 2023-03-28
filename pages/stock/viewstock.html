@@ -75,9 +75,10 @@
 
                 </div>
                 <div class="content1">
-                    <button class="button" type="button" onclick="backbutton()" class="registerbtn"><span>&#10094;</span>Back to Stock</button>
+                    
+                    <button class="button"  type="button" onclick="backbutton()"><span>&#10094;</span>Back</button>
+                <button class="button" type="submit" >Save<span>&#10095;</span></button>
                 </div>
-
             </form>
         </div>
 
@@ -155,6 +156,12 @@ const myParamValue = params.get('stock_name');
             alert("Are You Sure Discard Changes!")
             window.location.href = "./stock.html"
         }
+
+        // const sumbit = document.querySelector(".button");
+        // sumbit.addEventListener("click", update);
+
+
+
 
         document.getElementById("stock_name").value = stock_records["stock_name"];
         document.getElementById("quantity").value = stock_records["quantity"]
