@@ -8,42 +8,43 @@ Problem Statement: https://drive.google.com/drive/folders/1VDiP6IlCi3fnf6GGEF-LK
 
 M A M Billing-Modules & Features
 
-####1. User Module  (completed)
-    1. Register 
-    2. Login  
-    3. Profile Edit/Delete  
+1. User Module  (completed)    
+    1. Register    
+    2. Login    
+    3. Profile Edit/Delete       
 
-####2. Product Module (completed)
-    1. Create product
-    2. Create Product List
-    3. Read / Update Product Details
-    4. Delete Product Details  
+2. Product Module (completed)    
+    1. Create product    
+    2. Create Product List     
+    3. Read / Update Product Details     
+    4. Delete Product Details     
 
-####3. Stock Module (completed)
-    1. Create Stock
-    2. Create Stock List
-    3. Read / Update Stock Details
+3. Stock Module (completed)   
+    1. Create Stock   
+    2. Create Stock List    
+    3. Read / Update Stock Details   
 
-####4. Customer Module (completed)
-    1. Create Customer
-    2. Create customer List
-    3. Read / Update Customer Details
+4. Customer Module (completed)   
+    1. Create Customer    
+    2. Create customer List   
+    3. Read / Update Customer Details  
 
-####5. Bill Module (Yet to Start)
-    1. Create Bill
-    2. Read Bill
-####6. Store history Module (Yet to Start).
-    1.Customer Purchase history
-    2.Billing History
-####6.Store history Module (Yet to Start)
-    1.Customer Purchase history
-    2.Billing History
+5. Bill Module (Yet to Start)   
+    1. Create Bill   
+    2. Read Bill   
+6. Store history Module (Yet to Start)      
+    1.Customer Purchase history   
+    2.Billing History       
+                   
+7.Store history Module (Yet to Start)              
+    1.Customer Purchase history                 
+    2.Billing History                   
 
-####7.Search Details(Yet to Start)
-    1.Item Search
-    2.Stock Search
-    3.Customer Search
-    4.Bill Search
+8.Search Details(Yet to Start)     
+    1.Item Search   
+    2.Stock Search   
+    3.Customer Search   
+    4.Bill Search   
 
    
    
