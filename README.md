@@ -6,7 +6,7 @@ WireFrame:  https://drive.google.com/drive/folders/1VDiP6IlCi3fnf6GGEF-LKljH47js
 Problem Statement: https://drive.google.com/drive/folders/1VDiP6IlCi3fnf6GGEF-LKljH47jsb9lY 
 
 
-#####M A M Billing-Modules & Features
+M A M Billing-Modules & Features
 
 ####1. User Module  (completed)
     1. Register 
@@ -35,7 +35,15 @@ Problem Statement: https://drive.google.com/drive/folders/1VDiP6IlCi3fnf6GGEF-LK
 ####6. Store history Module (Yet to Start).
     1.Customer Purchase history
     2.Billing History
+####6.Store history Module (Yet to Start)
+    1.Customer Purchase history
+    2.Billing History
 
+####7.Search Details(Yet to Start)
+    1.Item Search
+    2.Stock Search
+    3.Customer Search
+    4.Bill Search
 
    
    
