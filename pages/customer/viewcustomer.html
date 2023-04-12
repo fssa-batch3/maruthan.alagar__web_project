@@ -28,12 +28,12 @@
 
                     <div class="content">
                         <label class="forms">Customer Name</label>
-                        <input class="lists" type="text"  id="customer_name" required />
+                        <input class="lists" type="text"  id="customer_name" pattern="[a-zA-Z]+" title="Use Letters to Add Customer Name.Don't use space or any special Characters" required />
 
                     </div>
                     <div class="content">
                         <label class="forms">Phone Number</label>
-                        <input class="lists" type="number" id="customer_phone" required />
+                        <input class="lists" type="number" id="customer_phone"  pattern="^[789]\d{9,9}$" title="Use Numbers begin with 7,8,9 and must Enter 10 Characters" required />
                     </div>
                     <div class="content">
                         <label class="forms">Customer ID</label>
