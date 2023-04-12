@@ -35,12 +35,12 @@
                     <div class="part1">
                         <div class="content">
                             <label class="forms">Name</label>
-                            <input class="lists" id="stock_name" type="text" placeholder="Name" required />
+                            <input class="lists" id="stock_name" type="text" placeholder="Name" pattern="[a-zA-Z]+" title="Use Letters to Add Stock Name.Don't use space or any special Characters" required />
 
                         </div>
                         <div class="content">
                             <label class="forms">Brand Name</label>
-                            <input class="lists" id="brand_name" type="text" placeholder="Enter Brand Name" required />
+                            <input class="lists" id="brand_name" type="text" placeholder="Enter Brand Name"  required />
                         </div>
                         <div class="content">
                             <label class="forms">Quantity</label>
@@ -48,23 +48,23 @@
                         </div>
                         <div class="content">
                             <label class="forms">MRP(per box/sack)</label>
-                            <input class="lists" id="mrp" type="text" placeholder="Enter MRP" required />
+                            <input class="lists" id="mrp" type="number" placeholder="Enter MRP" required />
                         </div>
 
                         <div class="content">
                             <label class="forms">Price(per box/sack)</label>
-                            <input class="lists" id="price" type="text" placeholder="Enter price" required />
+                            <input class="lists" id="price" type="number" placeholder="Enter price" required />
                         </div>
                         
                     </div>
                     <div class="part1">
                         <div class="content">
                             <label class="forms">Tax(%)</label>
-                            <input class="lists" id="tax" type="text" placeholder="Enter Tax" />
+                            <input class="lists" id="tax" type="number" placeholder="Enter Tax" />
                         </div>
                         <div class="content">
                             <label class="forms">Discount(%)</label>
-                            <input class="lists" id="discount" type="text" placeholder="Enter Discount" />
+                            <input class="lists" id="discount" type="number" placeholder="Enter Discount" />
                         </div>
                         <div class="content">
                             <label class="forms">Agency ID</label>
@@ -72,11 +72,11 @@
                         </div>
                         <div class="content">
                             <label class="forms">Agency Details</label>
-                            <input class="lists" id="agency_details" type="text" placeholder="Enter Agency Details" />
+                            <input class="lists" id="agency_details" type="text"  placeholder="Enter Agency Details" required/>
                         </div>
                         <div class="content">
                             <label class="forms">Date</label>
-                            <input class="lists" id="date" type="date" placeholder="Enter Agency Details" style="width: 13.5em;" />
+                            <input class="lists" id="date" type="date" placeholder="Enter Agency Details" style="width: 13.5em;"  required/>
                         </div>
                     </div>
                 </div>

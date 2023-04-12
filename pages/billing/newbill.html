@@ -376,9 +376,9 @@
 
 
             
-           
+            for (let i = 0; i < customer_bill_Details.length; i++) {
 
-        for (let i = 0; i <= customer_bill_Details[0].product_details.length; i++) {
+        for (let i = 0; i < customer_bill_Details[i].product_details.length; i++) {
             // table row
             table_row_1 = document.createElement("tr");
             table_row_1.setAttribute("class", "tb1");
@@ -386,7 +386,7 @@
             main_table.append(table_row_1);
 
             table_coloumn_1 = document.createElement("td");
-           
+            table_coloumn_1.innerText =customer_bill_Details[0].product_details.length +1;
             table_row_1.append(table_coloumn_1);
            
 
@@ -416,12 +416,13 @@
 
         }
         }
+        }
 
         function saveData(){
-
-            const bill_Details = JSON.parse(localStorage.getItem("customer_bill_Details"))
-            customer_bill_Details.push(customer_bill_Details)
-            localStorage.setItem("customer_bill_Details", JSON.stringify(customer_bill_Details));
+            const customer_bill_Details = JSON.parse(sessionStorage.getItem("customer_bill_Details"))
+            const bill_Details = JSON.parse(localStorage.getItem("bill_Details"))  || []
+           bill_Details.push(customer_bill_Details)
+            localStorage.setItem("bill_Details", JSON.stringify(bill_Details));
             sessionStorage.clear();
 
         }

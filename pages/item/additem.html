@@ -34,7 +34,7 @@
                     <div class="part1">
                         <div class="content">
                             <label class="forms">Product Name</label>
-                            <input class="lists" id="product_name" type="text" placeholder="Product Name"  required />
+                            <input class="lists" id="product_name" type="text" placeholder="Product Name" pattern="[a-zA-Z]+" title="Use Letters to Add Product Name.Don't use space or any special Characters" required />
 
                         </div>
                         <div class="content">
@@ -43,30 +43,30 @@
                         </div>
                         <div class="content">
                             <label class="forms">MRP(per Piece)</label>
-                            <input class="lists" id="mrp" type="text" placeholder="Enter MRP"  required />
+                            <input class="lists" id="mrp" type="number" placeholder="Enter MRP"  required />
                         </div>
 
                         <div class="content">
                             <label class="forms">Price(per piece)</label>
-                            <input class="lists" id="price" type="text" placeholder="Enter price"  required />
+                            <input class="lists" id="price" type="number" placeholder="Enter price"  required />
                         </div>
                     </div>
                     <div class="part1">
                         <div class="content">
                             <label class="forms">Tax(%)</label>
-                            <input class="lists" id="tax" type="text" placeholder="Enter Tax"   />
+                            <input class="lists" id="tax" type="number" placeholder="Enter Tax"  required />
                         </div>
                         <div class="content">
                             <label class="forms">Discount(%)</label>
-                            <input class="lists" id="discount" type="text" placeholder="Enter Discount"   />
+                            <input class="lists" id="discount" type="number" placeholder="Enter Discount"  required />
                         </div>
                         <div class="content">
                             <label class="forms">ID Number</label>
-                            <input class="lists" id="product_id" type="text" placeholder="Enter ID"  required />
+                            <input class="lists" id="product_id" type="text" pattern="[A-Za-z0-9]+" placeholder="Enter ID"  required />
                         </div>
                         <div class="content">
                             <label class="forms">Special name(optional)</label>
-                            <input class="lists" id="special_name" type="text" placeholder="Enter special name" />
+                            <input class="lists" id="special_name" type="text" placeholder="Enter special name" pattern="[A-Za-z]+" title="Use Letters to Add Special Name. Don't use space or any special Characters" />
                         </div>
                     </div>
                 </div>
@@ -91,6 +91,7 @@
         let product_id = document.getElementById("product_id");
         let special_name = document.getElementById("special_name");
         let uuid = uuidv4();
+       
 
 
      const productDetails = JSON.parse(localStorage.getItem("productDetails")) || [];
@@ -130,6 +131,8 @@ else{
     discount: discount.value,
     product_id: product_id.value,
     special_name: special_name.value,
+   
+
      unique :uuid     
   };
 

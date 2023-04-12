@@ -32,34 +32,31 @@
     <main>
         <h2>Profile</h2>
         <div class="one">
-            <form id="sign-form" onsubmit=" update(event)"  >
+            <form id="sign-form" onsubmit="update(event)"  >
 
                 <div class="part">
 
                     <div class="content">
                         <label class="forms">Shop Name</label>
-                        <input class="lists" id="shop_name" type="text"  required readonly/>
+                        <input class="lists" id="shop_name" type="text"  required />
 
                     </div>
 
                     <div class="content">
                         <label class="forms">License Number</label>
                         <input class="lists" id="licence_number" type="text"
-                            required disabled />
+                            required  />
                     </div>
                     <div class="content">
                         <label class="forms">Phone Number</label>
-                        <input class="lists" id="phone_number" type="tel" required readonly />
+                        <input class="lists" id="phone_number" type="tel" required />
                     </div>
 
                     <div class="content">
                         <label class="forms">E-Mail Address</label>
-                        <input class="lists" id="user_email" type="email" readonly />
+                        <input class="lists" id="user_email" type="email" />
                     </div>
-                    <!-- <div class="content">
-                        <label class="forms">Username(E-mail Address)</label>
-                        <input class="lists" id="username" type="email" />
-                    </div> -->
+                 
                 </div>
                 <div class="part1">
                     <div class="content">
@@ -74,12 +71,12 @@
                     </div>
                     <div class="content">
                         <label class="forms">Shop Logo</label>
-                        <input class="lists" id="file" type="file" placeholder="Upload Logo"  />
+                        <input class="lists" id="file" type="file"  placeholder="Upload Logo" disabled/>
 
                     </div>
                     <div class="content">
                         <label class="forms">Print Name</label>
-                        <input class="lists" id="nameforprint" type="text" placeholder="Enter Print Name" required  />
+                        <input class="lists" id="nameforprint" type="text"  placeholder="Enter Print Name" required />
 
                     </div>
 
@@ -104,9 +101,15 @@
 
 let userRecords = JSON.parse(localStorage.getItem("userRecords"));
 let unique = localStorage.getItem("unique")
+
+
+
       function findDetail(e){
           return e.user_email===unique;
       }
+
+
+
       let user_records = userRecords.find(findDetail);
 
       document.getElementById("shop_name").value = user_records["shop_name"];
@@ -122,31 +125,25 @@ let gstn_number = document.getElementById("gstn_number").value;
 let address = document.getElementById("address").value;
 let nameforprint = document.getElementById("nameforprint").value;
 
-if(gstn_number === undefined){
-    gstn_number.setAttribute("placeholder","Enter GSTN Number")
-}
-              
-
-
-
-// paste the updated data to the correct object
 
 
 user_records["gstn_number"] = gstn_number;
 user_records["address"] = address;
 user_records["nameforprint"] = nameforprint;
               
-
-
-
-// again paste it to the
                 localStorage.setItem("userRecords", JSON.stringify(userRecords));
-                window.location.href="../homepage/homepage.html"
                 alert("Successfully Updated")
+               
                 
-
-
             }
+
+
+
+
+            
+            if(user_records["gstn_number"].value === "undefiened"){
+    gstn_number.setAttribute("placeholder","Enter GSTN Number")
+}
        
             document.getElementById("gstn_number").value = user_records["gstn_number"];
         document.getElementById("address").value = user_records["address"];
@@ -192,6 +189,7 @@ user_records["nameforprint"] = nameforprint;
         document.getElementById("nameforprint").value = user_records["nameforprint"];
 
 }
+
 
 
 

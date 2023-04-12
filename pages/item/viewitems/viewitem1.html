@@ -28,39 +28,39 @@
                     <div class="part1">
                         <div class="content">
                             <label class="forms">Product Name</label>
-                            <input class="lists" id="product_name" required />
+                            <input class="lists" type="text" id="product_name" pattern="[a-zA-Z]+" title="Use Letters to Add Product Name.Don't use space or any special Characters"  required />
 
                         </div>
                         <div class="content">
                             <label class="forms">Quantity</label>
-                            <input class="lists" id="quantity" required />
+                            <input class="lists" type="number" id="quantity" required />
                         </div>
                         <div class="content">
                             <label class="forms">MRP(per Piece)</label>
-                            <input class="lists" id="mrp" required />
+                            <input class="lists" type="number" id="mrp" required />
                         </div>
 
                         <div class="content">
                             <label class="forms">Price(per piece)</label>
-                            <input class="lists" id="price" required />
+                            <input class="lists"type="number" id="price" required />
                         </div>
                     </div>
                     <div class="part1">
                         <div class="content">
                             <label class="forms">Tax(%)</label>
-                            <input class="lists" id="tax" required />
+                            <input class="lists" type="number" id="tax" required />
                         </div>
                         <div class="content">
                             <label class="forms">Discount(%)</label>
-                            <input class="lists" id="discount" required />
+                            <input class="lists" type="number" id="discount" required />
                         </div>
                         <div class="content">
                             <label class="forms">ID Number</label>
-                            <input class="lists" id="product_id" required />
+                            <input class="lists" type="text" id="product_id" pattern="[A-Za-z0-9]+" required />
                         </div>
                         <div class="content">
                             <label class="forms">Special name(optional)</label>
-                            <input class="lists" id="special_name" />
+                            <input class="lists" type="text" id="special_name" pattern="[A-Za-z]+" title="Use Letters to Edit Special Name. Don't use space or any special Characters"/>
                         </div>
                         <div class="radio">
                             <input type="radio" name="stock" id="instock" value="in stock" /> <label> In Stock </label>
