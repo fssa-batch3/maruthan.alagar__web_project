@@ -26,19 +26,28 @@
                 <h3>User Name Creation</h3>
                 <div class="content">
                     <label class="forms"> Enter Your Email Address</label>
-                    <input class="lists" id="user_email" type="email" placeholder=" Enter Your Email"  required />
+                    <input class="lists" id="user_email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder=" Enter Your Email"  required />
 
                 </div>
 
                 <div class="content">
                     <label class="forms"> Create New Password</label>
-                    <input class="lists" id="new_password" type="password" placeholder="Abcd@123" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*+`~=?\|<>/]).{8,}" required />
+                    <input class="lists" id="new_password" type="password" placeholder="Abcd@123" oninput="showRulez()" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*+`~=?\|<>/]).{8,}" required />
                 </div>
                 <div class="content">
-                    <label class="forms">Confirm Password</label>
+                    <label class="forms">Re-Enter Password</label>
                     <input class="lists" id="password" type="password" placeholder="Abcd@123" required />
 
                 </div>
+                <div id="rulez" style="display:none;"
+                class="rules">
+                    <p>Constraints :-</p>
+                    <p>*Password Length Max of 8 Characters</p>
+                    <p>*Add 1 number & 1 uppercase letter</p>
+                    <p>*Add 1 lowercase letter & Add 1 Symbol </p>
+                </div>
+
+
                 <div class="content_1">
                     <button class="button" type="submit"> Finish<span>&#8594;</span></button>
 
@@ -98,7 +107,7 @@ form.addEventListener("submit", function(event) {
 
 
 }else if(!pw.value.match(/[a-z]/)){
-    alert('please add 1 lovercase letter');
+    alert('Please add 1 lowercase letter');
     return;
 }
 
@@ -136,7 +145,9 @@ console.log(userRecords)
   
 });
 
-       
+function showRulez(){
+    document.getElementById("rulez").removeAttribute("style");
+ }
        
     </script>
 

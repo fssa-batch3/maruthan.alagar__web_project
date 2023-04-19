@@ -33,7 +33,7 @@
                     </div>
                     <div class="content">
                         <label class="forms">Phone Number</label>
-                        <input class="lists" type="number" id="customer_phone"  pattern="^[789]\d{9,9}$" title="Use Numbers begin with 7,8,9 and must Enter 10 Characters" required />
+                        <input class="lists" type="tel" id="customer_phone"  pattern="^[789]\d{9,9}$" maxlength="10" title="Use Numbers begin with 7,8,9 and must Enter 10 Characters"  required />
                     </div>
                     <div class="content">
                         <label class="forms">Customer ID</label>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="content">
                         <label class="forms">E-Mail Address (optional)</label>
-                        <input class="lists" type="email" id="customer_email"  />
+                        <input class="lists" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  title="Please enter correct Email" id="customer_email"  />
                     </div>
                     
                     <div class="content">

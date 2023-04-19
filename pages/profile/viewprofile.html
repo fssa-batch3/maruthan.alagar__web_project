@@ -44,39 +44,39 @@
 
                     <div class="content">
                         <label class="forms">License Number</label>
-                        <input class="lists" id="licence_number" type="text"
-                            required  />
+                        <input class="lists" id="licence_number" type="text"  pattern="[A-Z0-9]+" onclick="giveNo()" maxlength="14" title="Don't Use space and any Special Characters.Use A_Z and 1-9 and Must Be 14 Characters"
+                            required  readonly/>
                     </div>
                     <div class="content">
                         <label class="forms">Phone Number</label>
-                        <input class="lists" id="phone_number" type="tel" required />
+                        <input class="lists" id="phone_number" type="tel" pattern="^[789]\d{9,9}$" maxlength="10" title="Use Numbers begin with 7,8,9 and must Enter 10 Characters" required />
                     </div>
 
                     <div class="content">
                         <label class="forms">E-Mail Address</label>
-                        <input class="lists" id="user_email" type="email" />
+                        <input class="lists" id="user_email" type="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  onclick="giveNo()"  title="Please enter correct Email" readonly/>
                     </div>
                  
                 </div>
                 <div class="part1">
                     <div class="content">
                         <label class="forms">GSTN Number</label>
-                        <input class="lists" id="gstn_number" type="text" placeholder="Enter GSTN Number"  required  />
+                        <input class="lists" id="gstn_number" type="text" placeholder="Enter GSTN Number" onclick="giveNo()"  maxlength="15" pattern="[A-Z0-9]+" title="Don't Use space and any Special Characters.Use A_Z and 1-9 and Must Be 14 Characters" required readonly />
 
                     </div>
                     <div class="content">
                         <label class="forms">Address</label>
-                        <input class="lists" id="address" type="text" placeholder="Enter Shop Address" required />
+                        <input class="lists" id="address" type="text" placeholder="Enter Shop Address" maxlength="250" required />
 
                     </div>
                     <div class="content">
                         <label class="forms">Shop Logo</label>
-                        <input class="lists" id="file" type="file"  placeholder="Upload Logo" disabled/>
+                        <input class="lists" id="file" type="text"  placeholder="Upload Logo" onclick="giveAlert()" readonly/>
 
                     </div>
                     <div class="content">
                         <label class="forms">Print Name</label>
-                        <input class="lists" id="nameforprint" type="text"  placeholder="Enter Print Name" required />
+                        <input class="lists" id="nameforprint" type="text"  placeholder="Enter Print Name" onclick="giveAlert()" readonly/>
 
                     </div>
 
@@ -156,10 +156,11 @@ user_records["nameforprint"] = nameforprint;
 
        
         function backbutton() {
+
         window.location.href="../homepage/homepage.html"
         }
         function logout() {
-            alert("Are you Sure !")
+            alert("Are you Sure Logout")
         window.location.href="../login/login.html"
         }
 
@@ -167,7 +168,7 @@ user_records["nameforprint"] = nameforprint;
 
 
         function remove(){
-
+            
             let user_Records = JSON.parse(localStorage.getItem("userRecords"));
             let unique_1 = localStorage.getItem("unique")
            
@@ -190,6 +191,15 @@ user_records["nameforprint"] = nameforprint;
 
 }
 
+
+
+function giveAlert(){
+     alert("You need Premium Account To Access this Input")
+}
+
+function giveNo(){
+     alert("This is not Editable or Can't Be Change")
+}
 
 
 

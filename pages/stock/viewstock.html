@@ -52,11 +52,11 @@
                     <div class="part1">
                         <div class="content">
                             <label class="forms">Tax(%)</label>
-                            <input class="lists" id="tax" type="number"  />
+                            <input class="lists" id="tax" type="number"   oninput="checkTax()" />
                         </div>
                         <div class="content">
                             <label class="forms">Discount(%)</label>
-                            <input class="lists" id="discount" type="number"  />
+                            <input class="lists" id="discount" type="number" oninput="checkDis()" />
                         </div>
                         <div class="content">
                             <label class="forms">Agency ID</label>
@@ -184,6 +184,22 @@ const myParamValue = params.get('stock_name');
 
 
 
+        function checkDis(){
+   
+   if(discount.value.length > 2){
+       alert("Discount should be between 0 % - 100 %")
+       document.getElementById("discount").value = stock_records["discount"];
+       
+   }
+ }
+
+ function checkTax(){
+   if(tax.value.length > 2 ){
+       alert("Tax should be between 0 % - 100 %")
+       document.getElementById("tax").value = stock_records["tax"];
+      
+   }
+}
 
 
 

@@ -103,3 +103,9 @@ form {
     text-decoration: none !important;
     color: white !important;
 }
+.rules p{
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(9 61 171);
+}
