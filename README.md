@@ -126,7 +126,7 @@ Login page
     - Steps:
         1. Log in as a Shop.
         2. Click the "Stock" button you see in Nav bar.
-        3. In Stock List page you see "Add new stock" button clik that to add Stock details.
+        3. In Stock List page you see "Add new stock" button click that to add Stock details.
         4. Navigate to the add product page
         5. Fill all details in add Stock page.
         6. Click "save" Button
@@ -155,7 +155,7 @@ Login page
     - Steps:
         1. Log in as a Shop.
         2. Click the "Customer" button you see in Nav bar.
-        3. In customer List page you see "Add new Customer" button clik that to add customer details.
+        3. In customer List page you see "Add new Customer" button click that to add customer details.
         4. Navigate to the add Customer page
         5. Fill all details in add customer page.
         6. Click "save" Button
