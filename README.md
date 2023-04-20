@@ -90,7 +90,27 @@ Login page
         4. Enter the Another information such as GSTN Number, Address and Print Name (Logo is not working because after completing bill creation it will be enabled).
         5. Click the "Save" button.
     - Expected Result:
-        - User will get alert from Page as "Successfully Updated"
+        - User will get alert from Page as "Successfully Updated"    
+        
+### Logout from Site
+- Scenario 1: Successfully Logged out from Site.
+    - Steps:
+        1. Log in as a Shop.
+        2. Click the "Profile" button you see in Home Page Nav bar.
+        3. Navigate to the profile page
+        5. There you see "LogOut" button Click It To logout.
+    - Expected Result:
+        - User will get confirm message from Page as "Are you Sure?"
+        
+ ### Delete Shop Details
+- Scenario 1: Successfully Delete Shop Detils.
+    - Steps:
+        1. Log in as a Shop.
+        2. Click the "Profile" button you see in Home Page Nav bar.
+        3. Navigate to the profile page
+        5. There you see "Delete My Account" button Click It To Delete.
+    - Expected Result:
+        - User will get alert from Page as "Successfully Deleted"
 
 ### Add Product/Item Details
 - Scenario 1: Successfully Add product/item details
