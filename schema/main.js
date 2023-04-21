@@ -10,17 +10,17 @@ if(JSON.parse(localStorage.getItem("userRecords"))){
 else{
    usersRecords = [
     {address: "Freshworks 40 MGR Main Road Kodandarama Nagar Perungudi",
-gstn_number: "asdfg",licence_number: "787878728HGFHJVJ098",nameforprint: "MARUTHAN ALAGAR",
-new_pw: "Acdm@123",phone_number: "7810061572",pw: "Acdm@123",shop_name: "M A M shop",
+gstn_number: "asdfg",licence_number: "787878728HGFHJVJ098",nameforprint: "MARUTHANALAGAR",
+new_pw: "Acdm@123",phone_number: "7810061572",pw: "Acdm@123",shop_name: "MAMshop",
 unique: "ca5ffcaa-e9f8-42dd-bf9e-5fe617f665d3",
 user_email: "maruthan@fssa.freshworks.com"},
 {address: "12.Malampatty.Viralimalai.Pudukkottai",
-gstn_number: "GST456GHT56",licence_number: "LICE4FGC098",nameforprint: "NAMMA KADAI",
-new_pw: "Maha@123",phone_number: "9878675464" ,pw: "Maha@123",shop_name: "Mahalakshmi MALIGAI",
+gstn_number: "GST456GHT56",licence_number: "LICE4FGC098",nameforprint: "NAMMAKADAI",
+new_pw: "Maha@123",phone_number: "9878675464" ,pw: "Maha@123",shop_name: "MahalakshmiMALIGAI",
 user_email: "mahamaligai@gmail.com"},
 {address: "12.Perungudi.Chennail",
-gstn_number: "GSTGHGV7HT56",licence_number: "LICE654FYGC098",nameforprint: "KANNAN STORES",
-new_pw: "Kanna@123",phone_number: "9878675464",pw: "Kanna@123",shop_name: "KANNAN STORES",
+gstn_number: "GSTGHGV7HT56",licence_number: "LICE654FYGC098",nameforprint: "KANNANSTORES",
+new_pw: "Kanna@123",phone_number: "9878675464",pw: "Kanna@123",shop_name: "KANNANSTORES",
 user_email: "kannanstores@gmail.com"}
 ]
 localStorage.setItem("userRecords", JSON.stringify(usersRecords));
@@ -33,11 +33,11 @@ if(JSON.parse(localStorage.getItem(productDetails))){
 else{
     productDetails=[
         {discount: "1",mrp: "20",price: "18",product_id: "S0098",product_name: "Sugar",
-quantity: "2",radioValue: "in stock",special_name: "Sarkkarai",tax: "2",unique: "dd876553-0cff-4339-8843-252573e0ab75"
+quantity: "2",type:"kgs",radioValue: "in stock",special_name: "Sarkkarai",tax: "2",unique: "dd876553-0cff-4339-8843-252573e0ab75"
 },
 {discount: "12",mrp: "2300",price: "2200",product_id: "R0097",
 product_name: "Rice",quantity: "2",radioValue: "in stock",
-special_name: "Pulungal Arisi",tax: "2",unique: "93a93b51-9191-4c0a-8748-a65c9f8da478"}
+special_name: "PulungalArisi",tax: "2",type:"kgs",unique: "93a93b51-9191-4c0a-8748-a65c9f8da478"}
 
 
 
@@ -77,9 +77,9 @@ if(JSON.parse(localStorage.getItem(customerDetails))){
 else{
     customerDetails = [
         {customer_address: "Chennai",
-    customer_email: "Maruthan@gmail.com",
+    customer_email: "maruthan@gmail.com",
     customer_id: "A0098",
-    customer_name: "MARUTHAN ALAGAR",
+    customer_name: "MARUTHANALAGAR",
     customer_phone: "7810061572",
     unique: "b335ee47-fe9a-4f62-9699-7280008150e2"},
 {
