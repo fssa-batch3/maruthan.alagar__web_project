@@ -1,6 +1,12 @@
 @import url("../header.css");
 
 
+body{
+    overflow-x: hidden;
+}
+
+
+
 .namebar {
     display: flex;
     flex-direction: column;
@@ -27,6 +33,10 @@
     color: black;
     width:93%;
 
+}
+#cus_form{
+    margin-left: 15px;
+    width: 98%;
 }
 #customer input{
     width: 16em;
@@ -71,12 +81,9 @@ td input{
 }
 th{
     height: 3.5em;
-    width: 12%;
+    width: 0%;
 }
-#pro{
-    margin-left: 15px;
-    width: 98%;
-}
+
 
 table {
     width: 72em;
@@ -99,14 +106,35 @@ table {
     background-color: rgb(239, 14, 14);
 }
 #for-plus{
-    background-color:#e8e8dd;
+    background-color:rgba(235,231,228,255);
 }
 
 #payment{
     display: flex;
     flex-direction:row;
     justify-content: space-around;
-    padding-top: 3%;
+    margin-top: 8%;
+    align-items: stretch;
+   
+}
+#payment div input{
+    background-color: lightblue;
+    width: 50%;
+    text-align: center;
+}
+#payment div label{
+    width: 45%;
+}
+
+#pay{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+#big input{
+    width: 100% !important;
+    height: 80%;
+    font-weight: bold;
 }
 
 form div{
@@ -139,21 +167,26 @@ form div{
 }
 #buttonDiv{
     flex-direction: row;
+    margin-top: 54px;
 }
 input[type=radio] {
     height: 18px;
     width: 18px;
     accent-color: lightblue;
+    padding: 0% !important;
   
 }
 form div input{
     height: 35px;
     border-style: none;
-    background-color:#e8e8dd;
+    background-color:#f4f4f4;
     font-size: 20px;
     width: 100%;
 }
 form div label{
     font-size: 20px;
     padding-left: 4px;
+}
+#lab{
+    width: 100% !important;
 }
