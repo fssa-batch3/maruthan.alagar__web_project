@@ -16,8 +16,9 @@ document.getElementById("log-in").addEventListener("click", function () {
   login();
 });
 
-function registerForm(event) {
+function registerForm() {
   console.log("Entering registerForm method");
+ 
 
   if (userRecords.some((record) => record.user_email === user_email.value)) {
     alert("Email already exists Please try another one! ");
@@ -43,8 +44,9 @@ function registerForm(event) {
     localStorage.setItem("unique", user_email.value);
     window.location.href = "./pages/login/username.html";
     alert("Your details successfully registered");
+    
   }
-  event.preventDefault();
+ 
 }
 
 function login() {
