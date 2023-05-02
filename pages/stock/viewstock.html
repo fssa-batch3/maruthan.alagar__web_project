@@ -1,218 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M A M Billing</title>
-    <link rel="stylesheet" href="../../assets/css/stock/viewstock.css">
-    <link rel="stylesheet" href="../../assets/css/normalize.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>M A M Billing</title>
+        <link rel="stylesheet" href="../../assets/css/stock/viewstock.css">
+        <link rel="stylesheet" href="../../assets/css/normalize.css">
+       
+    </head>
 
-<body>
-    <header>
-        <div>
-            <div class="nav">
-                <div class="logo">
-                    <a href="../homepage/homepage.html"><img src="../../assets/Imges/M_A_M.png    "
-                            alt="Logo pic" /></a>
+    <body>
+        <header>
+            <div>
+                <div class="nav">
+                    <div class="logo">
+                        <a href="../homepage/homepage.html">
+                            <img src="../../assets/Imges/M_A_M.png    "
+                                alt="Logo pic"></a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
-        <div class="one">
-            <form onsubmit="update(event)"  >
-                <h2>View Stock Details</h2>
-                <div class="parts">
-                    <div class="part1">
-                        <div class="content">
-                            <label class="forms">Name</label>
-                            <input class="lists" id="stock_name" type="text" pattern="[a-zA-Z]+" title="Use Letters to Add Stock Name.Don't use space or any special Characters" required  />
+        </header>
+        <main>
+            <div class="one">
+                <form id="edit_form">
+                    <h2>View Stock Details</h2>
+                    <div class="parts">
+                        <div class="part1">
+                            <div class="content">
+                                <label class="forms">Name</label>
+                                <input class="lists" id="stock_name" type="text" pattern="[a-zA-Z]+" title="Use Letters to Add Stock Name.Don't use space or any special Characters" required>
+                            </div>
+                            <div class="content">
+                                <label class="forms">Brand Name</label>
+                                <input class="lists" id="brand_name" type="text" required>
+                            </div>
+                            <div class="content">
+                                <label class="forms">Quantity</label>
+                                <input class="lists" id="quantity" type="number" required>
+                            </div>
+                            <div class="content">
+                                <label class="forms">MRP(per box/sack)</label>
+                                <input class="lists" id="mrp" type="number" required>
+                            </div>
+
+                            <div class="content">
+                                <label class="forms">Price(per box/sack)</label>
+                                <input class="lists" id="price" type="number" required>
+                            </div>
                         </div>
-                        <div class="content">
-                            <label class="forms">Brand Name</label>
-                            <input class="lists" id="brand_name" type="text" required />
-                        </div>
-                        <div class="content">
-                            <label class="forms">Quantity</label>
-                            <input class="lists" id="quantity" type="number" required />
-                        </div>
-                        <div class="content">
-                            <label class="forms">MRP(per box/sack)</label>
-                            <input class="lists" id="mrp" type="number" required />
+                        <div class="part1"> 
+                            <div class="content">
+                                <label class="forms">Tax(%)</label>
+                                <input class="lists" id="tax" type="number" >
+                            </div>
+                            <div class="content">
+                                <label class="forms">Discount(%)</label>
+                                <input class="lists" id="discount" type="number">
+                            </div>
+                            <div class="content">
+                                <label class="forms">Agency ID</label>
+                                <input class="lists" id="agency_id" type="text" required>
+                            </div>
+                            <div class="content">
+                                <label class="forms">Agency Details</label>
+                                <input class="lists" id="agency_details" type="text"required>
+                            </div>
+                            <div class="content">
+                                <label class="forms">Date</label>
+                                <input class="lists" id="date" type="date" style="width: 13.5em;" required>
+                            </div>
+
                         </div>
 
-                        <div class="content">
-                            <label class="forms">Price(per box/sack)</label>
-                            <input class="lists" id="price" type="number" required />
-                        </div>
                     </div>
-                    <div class="part1">
-                        <div class="content">
-                            <label class="forms">Tax(%)</label>
-                            <input class="lists" id="tax" type="number"   oninput="checkTax()" />
-                        </div>
-                        <div class="content">
-                            <label class="forms">Discount(%)</label>
-                            <input class="lists" id="discount" type="number" oninput="checkDis()" />
-                        </div>
-                        <div class="content">
-                            <label class="forms">Agency ID</label>
-                            <input class="lists" id="agency_id" type="text" required />
-                        </div>
-                        <div class="content">
-                            <label class="forms">Agency Details</label>
-                            <input class="lists" id="agency_details" type="text"required />
-                        </div>
-                        <div class="content">
-                            <label class="forms">Date</label>
-                            <input class="lists" id="date" type="date" style="width: 13.5em;" required/>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="content1">
+                    <div class="content1">
                     
-                    <button class="button"  type="button" onclick="backbutton()"><span>&#10094;</span>Back</button>
-                <button class="button" type="submit" >Save<span>&#10095;</span></button>
-                </div>
-            </form>
-        </div>
+                        <button class="button" type="button" id="backbutton">
+                            <span>&#10094;</span>Back
+                        </button>
+                        <button class="button" type="submit">
+                            Save<span>&#10095;</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
 
-
-    </main>
-    <script>
-
-
-        let stockDetails = JSON.parse(localStorage.getItem("stockDetails"));
-        let stock_name = localStorage.getItem("stock_name")
-
-
-        const url = window.location.href;
-const params = new URLSearchParams(window.location.search);
-const myParamValue = params.get('stock_name');
-
-
-        function findDetail(e) {
-            return e.stock_name === myParamValue;
-        }
-        let stock_records = stockDetails.find(findDetail);
-
-
-
-   
+        </main>
+        <script src="./../../assets/js/stock/viewstock.js"></script>
         
-
-
-
-        function update(e) {
-            event.preventDefault()
-            //                  // getting the updated data from the input field
-            // const shop_name = document.getElementById("shop_name").value;
-            // const licence_number = document.getElementById("licence_number").value;
-            // const phone_number = document.getElementById("phone_number").value;
-            let stock_name = document.getElementById("stock_name").value;
-            let quantity = document.getElementById("quantity").value;
-            let mrp = document.getElementById("mrp").value;
-            let price = document.getElementById("price").value;
-            let tax = document.getElementById("tax").value;
-            let discount = document.getElementById("discount").value;
-            let agency_id = document.getElementById("agency_id").value;
-            let agency_details = document.getElementById("agency_details").value;
-            let date = document.getElementById("date").value;
-
-
-            // paste the updated data to the correct object
-
-
-            stock_records["stock_name"] = stock_name;
-            stock_records["quantity"] = quantity;
-            stock_records["mrp"] = mrp;
-            stock_records["price"] = price;
-            stock_records["tax"] = tax;
-            stock_records["discount"] = discount;
-            stock_records["agency_id"] = agency_id;
-            stock_records["agency_details"] = agency_details;
-            stock_records["date"] = date;
-              
-
-
-
-
-
-
-
-            // again paste it to the
-            localStorage.setItem("stockDetails", JSON.stringify(stockDetails));
-            alert("Stock Details Successfully Updated")
-            window.location.href = "./stock.html" 
-            
-          
-
-        }
-
-        function backbutton() {
-            confirm("Are You Sure Discard Changes!")
-            window.location.href = "./stock.html"
-        }
-
-        // const sumbit = document.querySelector(".button");
-        // sumbit.addEventListener("click", update);
-
-
-
-
-        document.getElementById("stock_name").value = stock_records["stock_name"];
-        document.getElementById("quantity").value = stock_records["quantity"]
-        document.getElementById("mrp").value = stock_records["mrp"];
-        document.getElementById("price").value = stock_records["price"];
-        document.getElementById("tax").value = stock_records["tax"];
-        document.getElementById("discount").value = stock_records["discount"];
-        document.getElementById("agency_id").value = stock_records["agency_id"];
-        document.getElementById("agency_details").value = stock_records["agency_details"];
-        document.getElementById("brand_name").value = stock_records["brand_name"];
-        document.getElementById("date").value = stock_records["date"];
-    
-
-
-
-
-
-
-
-
-        function checkDis(){
-   
-   if(discount.value.length > 2){
-       alert("Discount should be between 0 % - 100 %")
-       document.getElementById("discount").value = stock_records["discount"];
-       
-   }
- }
-
- function checkTax(){
-   if(tax.value.length > 2 ){
-       alert("Tax should be between 0 % - 100 %")
-       document.getElementById("tax").value = stock_records["tax"];
-      
-   }
-}
-
-
-
-
-
-
-    </script>
-   
-
-
-
-
-
-</body>
+    </body>
 
 </html>

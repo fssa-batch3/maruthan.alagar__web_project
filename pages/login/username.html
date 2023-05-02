@@ -1,158 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M A M Billing</title>
-    <link rel="stylesheet" href="../../assets/css/login/username.css">
-    <link rel="stylesheet" href="../../assets/css/normalize.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>M A M Billing</title>
+        <link rel="stylesheet" href="../../assets/css/login/username.css">
+        <link rel="stylesheet" href="../../assets/css/normalize.css">
+       
+    </head>
 
-<body>
-    <header>
-        <div>
-            <div class="nav">
-                <div class="logo">
-                    <img src="../../assets//Imges/M A M - Copy.jpg" alt="Logo pic" />
+    <body>
+        <header>
+            <div>
+                <div class="nav">
+                    <div class="logo">
+                        <img src="../../assets//Imges/M A M - Copy.jpg" alt="Logo pic">
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
-        <div class="one">
-            <form id="signup-form"  onsubmit="(event)">
-                <h3>User Name Creation</h3>
-                <div class="content">
-                    <label class="forms"> Enter Your Email Address</label>
-                    <input class="lists" id="user_email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder=" Enter Your Email"  required />
+        </header>
+        <main>
+            <div class="one">
+                <form id="user_form">
+                    <h3>User Name Creation</h3>
+                    <div class="content">
+                        <label class="forms"> Enter Your Email Address</label>
+                        <input class="lists" id="user_email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder=" Enter Your Email" required>
 
-                </div>
+                    </div>
 
-                <div class="content">
-                    <label class="forms"> Create New Password</label>
-                    <input class="lists" id="new_password" type="password" placeholder="Abcd@123" oninput="showRulez()" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*+`~=?\|<>/]).{8,}" required />
-                </div>
-                <div class="content">
-                    <label class="forms">Re-Enter Password</label>
-                    <input class="lists" id="password" type="password" placeholder="Abcd@123" required />
+                    <div class="content">
+                        <label class="forms"> Create New Password</label>
+                        <input class="lists" id="new_password" type="password" placeholder="Abcd@123"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*+`~=?\|<>/]).{8,}" required>
+                    </div>
+                    <div class="content">
+                        <label class="forms">Re-Enter Password</label>
+                        <input class="lists" id="password" type="password" placeholder="Abcd@123" required>
 
-                </div>
-                <div id="rulez" style="display:none;"
-                class="rules">
-                    <p>Constraints :-</p>
-                    <p>*Password Length Max of 8 Characters</p>
-                    <p>*Add 1 number & 1 uppercase letter</p>
-                    <p>*Add 1 lowercase letter & Add 1 Symbol </p>
-                </div>
+                    </div>
+                    <div id="rulez" style="display:none;"
+                        class="rules">
+                        <p>Constraints :-</p>
+                        <p>*Password Length Max of 8 Characters</p>
+                        <p>*Add 1 number & 1 uppercase letter</p>
+                        <p>*Add 1 lowercase letter & Add 1 Symbol </p>
+                    </div>
 
+                    <div class="content_1">
+                        <button class="button" type="submit">
+                            Finish<span>&#8594;</span>
+                        </button>
 
-                <div class="content_1">
-                    <button class="button" type="submit"> Finish<span>&#8594;</span></button>
+                    </div>
 
-                </div>
+                </form>
+            </div>
+        </main>
+        <script src="./../../assets/js/profile/username.js"></script>
 
-       
-
-
-        </form>
-        </div>
-    </main>
-    <script>
-
-
-
-const form = document.getElementById("signup-form");
-let user_email = document.getElementById("user_email");
-let new_pw = document.getElementById("new_password");
-let pw = document.getElementById("password");
-
-
-
-let userRecords = JSON.parse(localStorage.getItem("userRecords"));
-let unique = localStorage.getItem("unique")
-console.log(unique)
-
-form.addEventListener("submit", function(event) {
-  event.preventDefault();
-  
-  if (pw.value !== new_pw.value) {
-    alert("Passwords do not match");
-    return;
-  }else if (unique !== user_email.value) {
-    alert("Please Enter correct Email Address");
-    return;
-  }else if(user_email.value === 0){
-    alert('Please fill Email Address');
-    return;
-}else if(new_pw.value.length == 0){
-    alert('Please create new password');
-    return;
-}else if(pw.value.length == 0){
-    alert('Please re-enter password');
-    return;
-
-}else if(pw.value.length < 8){
-    alert('Password Length Max of 8 Characters');
-    return;
-
-}else if(!pw.value.match(/\d/)){
-    alert('Please add 1 number');
-    return;
-
-}else if(!pw.value.match(/[A-Z]/)){
-    alert('Please add 1 uppercase letter');
-    return;
-
-
-}else if(!pw.value.match(/[a-z]/)){
-    alert('Please add 1 lowercase letter');
-    return;
-}
-
-
-
-
-
-  
-
-
-else{
-
-
-    function findemail(e){
-          return e.user_email == unique;
-      }
-      let users_records = userRecords.find(findemail);
-
-
-    // const users_records = userRecords.find(userRecords => unique === user_email.value)
-   
-   
-   
-users_records["user_email"] = user_email.value;
-users_records["new_pw"] = new_pw.value;
-users_records["pw"] =pw.value;
-}
-
-
-localStorage.setItem("userRecords", JSON.stringify(userRecords));
-console.log(userRecords)
-
-  alert("Your Username is successfully Created ");
- window.location.href = "./login.html"
-  
-});
-
-function showRulez(){
-    document.getElementById("rulez").removeAttribute("style");
- }
-       
-    </script>
-
-
-
-</body>
+    </body>
 
 </html>

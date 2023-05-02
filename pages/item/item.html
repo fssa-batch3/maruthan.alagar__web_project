@@ -1,165 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M A M Billing</title>
-    <link rel="stylesheet" href="../../assets/css/item/item.css">
-    <link rel="stylesheet" href="../../assets/css/normalize.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>M A M Billing</title>
+        <link rel="stylesheet" href="../../assets/css/item/item.css">
+        <link rel="stylesheet" href="../../assets/css/normalize.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+    </head>
 
-<body>
-    <header>
-        <div class="header">
-            <a href="../homepage/homepage.html"><img class="logo" src="../../assets/Imges/M_A_M.png" alt="logo" width="110px" /></a>
-            <div class="list1">
-                <a class="nav1" href="#">Item</a>
-                <a href="../stock/stock.html">Stock</a>
-                <a href="../customer/customer.html">Customer</a>
-                <a href="../billing/billing.html">Bill</a>
-                <a href="../profile/viewprofile.html">Profile</a>
-            </div>
-            <div class="dropdown">
-                <button class="dropbtn">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a class="link" href="../item/item.html">Item</a>
-                    <a class="link" href="../stock/stock.html">Stock</a>
-                    <a class="link" href="../customer/customer.html">Customer</a>
-                    <a class="link" href="../billing/billing.html">Bill</a>
-                    <a class="link" href="../profile/viewprofile.html">Profile</a>
+    <body>
+        <header>
+            <div class="header">
+                <a href="../homepage/homepage.html">
+                    <img class="logo" src="../../assets/Imges/M_A_M.png" alt="logo" width="110px">
+                </a>
+                <div class="list1">
+                    <a class="nav1" href="#">Item</a>
+                    <a href="../stock/stock.html">Stock</a>
+                    <a href="../customer/customer.html">Customer</a>
+                    <a href="../billing/billing.html">Bill</a>
+                    <a href="../profile/viewprofile.html">Profile</a>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a class="link" href="../item/item.html">Item</a>
+                        <a class="link" href="../stock/stock.html">Stock</a>
+                        <a class="link" href="../customer/customer.html">Customer</a>
+                        <a class="link" href="../billing/billing.html">Bill</a>
+                        <a class="link" href="../profile/viewprofile.html">Profile</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <main class="main">
-        <div class="additem">
-            <h2>Item List</h2>
-            <div class="search">
-            <button><a class="top" href="../item/additem.html"> &#x002B;Add New Item </a></button>
-            <button><a href="./searchitem.html"><i class="fa fa-search"></a></i></button>
+        </header>
+        <main class="main">
+            <div class="additem">
+                <h2>Item List</h2>
+                <div class="search">
+                    <button>
+                        <a class="top" href="../item/additem.html"> &#x002B;Add New Item </a>
+                    </button>
+                    <button>
+                        <a href="./searchitem.html">
+                            <i class="fa fa-search"></a></i></button>
         </div>
 
         </div>
 
     </main>
-    <footer>
-        <h3>Copyright © 2023 M A M Billing Software</h3>
+                            <script src="./../../assets/js/item/item.js"></script>
+                            <footer>
+                                <h3>Copyright © 2023 M A M Billing Software</h3>
 
-        <button class="btn" type="submit"><a href="../homepage/cards.html">Contact Us</a></button>
+                                <button class="btn" type="submit">
+                                    <a href="../homepage/cards.html">Contact Us</a>
+                                </button>
 
+                            </footer>
 
-
-
-    </footer>
-
-
-    <script>
-
-
-     let productDetails = JSON.parse(localStorage.getItem("productDetails")); 
-
-
-               // main table
-            main_table = document.createElement("table");
-            main_table.setAttribute("class", "table");
-            
-            
-
-            
-           // table row
-            table_row = document.createElement("tr");
-            table_row.setAttribute("class", "tb1");
-            // label_name.innerText = register_shop[i]["name"];
-            main_table.append(table_row);
-       
-            //table coloumn_1
-        table_coloumn = document.createElement("th");
-        table_coloumn.innerText = "Name";
-        table_row.append(table_coloumn);
-         
-        
-        //table coloumn_2
-          table_coloumn = document.createElement("th");
-          table_coloumn.innerText = "Special Name";
-        table_row.append(table_coloumn);
-         
-        //table coloumn_3
-          table_coloumn = document.createElement("th");
-          table_coloumn.innerText = "ID";
-        table_row.append(table_coloumn);
-        
-        //table coloumn_4
-          table_coloumn = document.createElement("th");
-          table_coloumn.innerText = "Price";
-        table_row.append(table_coloumn);
-         
-        //table coloumn_5
-          table_coloumn = document.createElement("th");
-          table_coloumn.innerText = "View";
-        table_row.append(table_coloumn);
-
-        for( i=0; i<productDetails.length;i++){
-        
-            // table row
-         table_row_1 = document.createElement("tr");
-         table_row_1.setAttribute("class", "tb1");
-            // label_name.innerText = register_shop[i]["name"];
-            main_table.append(table_row_1);
-       
-            //table coloumn_1
-        table_coloumn_1 = document.createElement("td");
-        table_coloumn_1.innerText = productDetails[i]["product_name"];
-        table_row_1.append(table_coloumn_1);
-          //table coloumn_1
-          table_coloumn_1 = document.createElement("td");
-          table_coloumn_1.innerText = productDetails[i]["special_name"];
-          table_row_1.append(table_coloumn_1);
-          //table coloumn_1
-          table_coloumn_1 = document.createElement("td");
-          table_coloumn_1.innerText =  productDetails[i]["product_id"];
-          table_row_1.append(table_coloumn_1);
-          //table coloumn_1
-          table_coloumn_1 = document.createElement("td");
-          table_coloumn_1.innerText = productDetails[i]["price"];
-          table_row_1.append(table_coloumn_1);
-          //table coloumn_1
-          table_coloumn_1_arrow = document.createElement("td");
-         
-          table_row_1.append(table_coloumn_1_arrow);
-
-          let nameValue = productDetails[i].product_id
-// Set the value as a parameter in a URL
-const url = "./viewitems/viewitem1.html?product_id=" + encodeURIComponent(nameValue);
-
-          //anchor
-          a_tag = document.createElement("a");
-          a_tag.setAttribute("class", "arrow");
-          a_tag.innerText = "→";
-          a_tag.setAttribute("href", url);
-          table_coloumn_1_arrow.append(a_tag);
-         
-       
-
-
-          
-        }
-        document.querySelector("main").append(main_table)   
-
-
-    
-
-
-        
-        
-
-
-
-    </script>
 </body>
 
 </html>

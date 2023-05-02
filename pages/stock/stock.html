@@ -1,250 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M A M Billing</title>
-    <link rel="stylesheet" href="../../assets/css/stock/stock.css">
-    <link rel="stylesheet" href="../../assets/css/normalize.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>M A M Billing</title>
+        <link rel="stylesheet" href="../../assets/css/stock/stock.css">
+        <link rel="stylesheet" href="../../assets/css/normalize.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       
+    </head>
 
-<body>
-    <header>
-        <div class="header">
-            <a href="../homepage/homepage.html"><img class="logo" src="../../assets/Imges/M_A_M.png" alt="logo" width="110px" /></a>
-            <div class="list1">
-                <a href="../item/item.html">Item</a>
-                <a class="nav1" href="#">Stock</a>
-                <a href="../customer/customer.html">Customer</a>
-                <a href="../billing/billing.html">Bill</a>
-                <a href="../profile/viewprofile.html">Profile</a>
-            </div>
-            <div class="dropdown">
-                <button class="dropbtn">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a class="link" href="../item/item.html">Item</a>
-                    <a class="link" href="../stock/stock.html">Stock</a>
-                    <a class="link" href="../customer/customer.html">Customer</a>
-                    <a class="link" href="../billing/billing.html">Bill</a>
-                    <a class="link" href="../profile/viewprofile.html">Profile</a>
+    <body>
+        <header>
+            <div class="header">
+                <a href="../homepage/homepage.html">
+                    <img class="logo" src="../../assets/Imges/M_A_M.png" alt="logo" width="110px">
+                </a>
+                <div class="list1">
+                    <a href="../item/item.html">Item</a>
+                    <a class="nav1" href="#">Stock</a>
+                    <a href="../customer/customer.html">Customer</a>
+                    <a href="../billing/billing.html">Bill</a>
+                    <a href="../profile/viewprofile.html">Profile</a>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a class="link" href="../item/item.html">Item</a>
+                        <a class="link" href="../stock/stock.html">Stock</a>
+                        <a class="link" href="../customer/customer.html">Customer</a>
+                        <a class="link" href="../billing/billing.html">Bill</a>
+                        <a class="link" href="../profile/viewprofile.html">Profile</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
-        <div class="addstock">
-            <h2>Stock List</h2>
-            <div class="search">
-            <button><a class="top" href="../stock/addstock.html"><span> &#x002B;</span> Add New stock </a></button>
-            <button><a href="./searchstock.html"><i class="fa fa-search"></a></i></button>
+        </header>
+        <main>
+            <div class="addstock">
+                <h2>Stock List</h2>
+                <div class="search">
+                    <button>
+                        <a class="top" href="../stock/addstock.html">
+                            <span> &#x002B;</span> Add New stock 
+                        </a>
+                    </button>
+                    <button>
+                        <a href="./searchstock.html">
+                            <i class="fa fa-search"></a></i></button>
         </div>
         </div>
     </main> 
-        <!-- <table class="table">
-            <caption style="font-size: 0%;">billing details</caption>
-            <tr class="tb1">
-                <th>Name</th>
-                <th>Brand Name</th>
-                <th class="forres">Quantity(in box)</th>
-                <th>Date</th>
-                <th>View</th>
-            </tr>
-            <tr>
-                <td>Chilli Powder</td>
-                <td>Aachi</td>
-                <td class="forres">20</td>
-                <td> <input type="date" value="2022-12-30"></td>
-                <td><a class="arrow" href="../stock/viewstock.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Termaric Powder</td>
-                <td>Aachi</td>
-                <td class="forres">10</td>
-                <td> <input type="date" value="2022-12-30"></td>
-                <td><a class="arrow" href="../stock/viewstocks/viewstock1.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Chilli Powder</td>
-                <td>Sakthi</td>
-                <td class="forres">10</td>
-                <td> <input type="date" value="2022-12-30"></td>
-                <td><a class="arrow" href="../stock/viewstocks/viewstock2.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Mutton Masala</td>
-                <td>Aachi</td>
-                <td class="forres">10</td>
-                <td> <input type="date" value="2022-12-30"></td>
-                <td><a class="arrow" href="../stock/viewstocks/viewstock3.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Chicken Masala</td>
-                <td>Sakthi</td>
-                <td class="forres">20</td>
-                <td> <input type="date" value="2022-12-29"></td>
-                <td><a class="arrow" href="../stock/viewstocks/viewstock4.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Chana Dhall(Konda kadalai)</td>
-                <td>Local(sivam)</td>
-                <td class="forres">5(Packs)</td>
-                <td> <input type="date" value="2022-12-29"></td>
-                <td><a class="arrow" href="../stock/viewstocks/viewstock5.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>rice(pachai)</td>
-                <td>Sri Krishnan</td>
-                <td class="forres">50(Packs)</td>
-                <td> <input type="date" value="2022-12-29"></td>;</a></td>
-                <td><a class="arrow" href="../stock/viewstocks/viewstock6.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Bengal-gram</td>
-                <td>Local(Madhura)</td>
-                <td class="forres">5(packs)</td>
-                <td> <input type="date" value="2022-12-29"></td>
-                <td><a class="arrow" href="../stock/viewstocks/viewstock7.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Cashew</td>
-                <td>No1(Kannan)</td>
-                <td class="forres">20(packs)</td>
-                <td> <input type="date" value="2022-12-29"></td>
-                <td><a class="arrow" href="../stock/viewstocks/viewstock8.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>sugar</td>
-                <td>Kurungulam</td>
-                <td class="forres">15(packs)</td>
-                <td> <input type="date" value="2022-12-29"></td>
-                <td><a class="arrow" href="../stock/viewstocks/viewstock9.html">&#8594;</a></td>
-            </tr>
-        </table> -->
+                            <script src="./../../assets/js/stock/stock.js"></script>
+                              
+                            <footer>
+                                <h3>Copyright © 2023 M A M Billing Software</h3>
 
+                                <button class="btn" type="submit">
+                                    <a href="../homepage/cards.html">Contact Us</a>
+                                </button>
 
-   
-    <footer>
-        <h3>Copyright © 2023 M A M Billing Software</h3>
-
-        <button class="btn" type="submit"><a href="../homepage/cards.html">Contact Us</a></button>
-
-
-
-
-    </footer>
-    <script>
-
-
-        let stockDetails = JSON.parse(localStorage.getItem("stockDetails")); 
-   
-   
-                  // main table
-               main_table = document.createElement("table");
-               main_table.setAttribute("class", "table");
-               
-               
-   
-               
-              // table row
-               table_row = document.createElement("tr");
-               table_row.setAttribute("class", "tb1");
-               // label_name.innerText = register_shop[i]["name"];
-               main_table.append(table_row);
-          
-               //table coloumn_1
-           table_coloumn = document.createElement("th");
-           table_coloumn.innerText = "Name";
-           table_row.append(table_coloumn);
-            
-           
-           //table coloumn_2
-             table_coloumn = document.createElement("th");
-             table_coloumn.innerText = "Brand Name";
-           table_row.append(table_coloumn);
-            
-           //table coloumn_3
-             table_coloumn = document.createElement("th");
-             table_coloumn.setAttribute("class","forres");
-             table_coloumn.innerText = "Quantity(in box)";
-           table_row.append(table_coloumn);
-           
-           //table coloumn_4
-             table_coloumn = document.createElement("th");
-             table_coloumn.innerText = "Date";
-           table_row.append(table_coloumn);
-            
-           //table coloumn_5
-             table_coloumn = document.createElement("th");
-             table_coloumn.innerText = "View";
-           table_row.append(table_coloumn);
-   
-           for( i=0; i<stockDetails.length;i++){
-           
-               // table row
-            table_row_1 = document.createElement("tr");
-            table_row_1.setAttribute("class", "tb1");
-               // label_name.innerText = register_shop[i]["name"];
-               main_table.append(table_row_1);
-          
-               //table coloumn_1
-           table_coloumn_1 = document.createElement("td");
-           table_coloumn_1.innerText = stockDetails[i]["stock_name"];
-           table_row_1.append(table_coloumn_1);
-             //table coloumn_1
-             table_coloumn_1 = document.createElement("td");
-             table_coloumn_1.innerText = stockDetails[i]["brand_name"];
-             table_row_1.append(table_coloumn_1);
-             //table coloumn_1
-             table_coloumn_1 = document.createElement("td");
-             table_coloumn_1.setAttribute("class","forres");
-             table_coloumn_1.innerText =  stockDetails[i]["quantity"];
-             table_row_1.append(table_coloumn_1);
-             //table coloumn_1
-             table_coloumn_1 = document.createElement("td");
-             table_coloumn_1.setAttribute("type","date")
-             table_coloumn_1.innerText = stockDetails[i]["date"];
-
-             table_row_1.append(table_coloumn_1);
-             //table coloumn_1
-             table_coloumn_1_arrow = document.createElement("td");
-            
-             table_row_1.append(table_coloumn_1_arrow);
-   
-             let nameValue = stockDetails[i].stock_name
-   // Set the value as a parameter in a URL
-//    const url = "http://127.0.0.1:5500/pages/stock/viewstock.html?stock_name=" + encodeURIComponent(nameValue);
-   const url = "./viewstock.html?stock_name=" + encodeURIComponent(nameValue);
-   
-             //anchor
-             a_tag = document.createElement("a");
-             a_tag.setAttribute("class", "arrow");
-             a_tag.innerText = "→";
-             a_tag.setAttribute("href", url);
-             table_coloumn_1_arrow.append(a_tag);
-            
-          
-   
-   
-             
-           }
-           document.querySelector("main").append(main_table)   
-   
-   
-       
-   // checking
-   
-         
-   
-           
-   
-   
-   
-       </script>
+                            </footer>
 </body>
 
 </html>

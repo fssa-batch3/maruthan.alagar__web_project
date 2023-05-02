@@ -1,226 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M A M Billing</title>
-    <link rel="stylesheet" href="../../assets/css/item/additem.css">
-    <link rel="stylesheet" href="../../assets/css/normalize.css">
-    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>M A M Billing</title>
+        <link rel="stylesheet" href="../../assets/css/item/additem.css">
+        <link rel="stylesheet" href="../../assets/css/normalize.css">
+        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+        
+    </head>
 
-<body>
-    <header>
-        <div>
-            <div class="nav">
-                <div class="logo">
-                    <img src="../../assets/Imges/M_A_M.png    " alt="Logo pic" />
-                </div>
-                <div class="list">
-                    <ul class="link">
-                        <li class="navlist"><a class="navlist" href="../item/item.html">&#8592; Back To Items</a></li>
-                    </ul>
+    <body>
+        <header>
+            <div>
+                <div class="nav">
+                    <div class="logo">
+                        <img src="../../assets/Imges/M_A_M.png    " alt="Logo pic">
+                    </div>
+                    <div class="list">
+                        <ul class="link">
+                            <li class="navlist">
+                                <a class="navlist" href="../item/item.html">&#8592; Back To Items</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
-        <div class="one">
-            <form id="signup-form" onsubmit="(event)">
-                <h2>Add New Item</h2>
-                <div class="parts">
-                    <div class="part1">
-                        <div class="content">
-                            <label class="forms">Product Name</label>
-                            <input class="lists" id="product_name" type="text" placeholder="Product Name"
-                                pattern="[a-zA-Z]+"
-                                title="Use Letters to Add Product Name.Don't use space or any special Characters"
-                                required />
+        </header>
+        <main>
+            <div class="one">
+                <form id="additem_form">
+                    <h2>Add New Item</h2>
+                    <div class="parts">
+                        <div class="part1">
+                            <div class="content">
+                                <label class="forms">Product Name</label>
+                                <input class="lists" id="product_name" type="text" placeholder="Product Name"
+                                    pattern="[a-zA-Z]+"
+                                    title="Use Letters to Add Product Name.Don't use space or any special Characters"
+                                    required>
 
-                        </div>
-
-
-
-
-                        <div class="content">
-                            <div class="label">
-                                <label class="forms">Quantity:</label>
-                                <label for="type" id="tp">Type:</label>
                             </div>
-                            <div class="quan">
-                                <input class="lists" id="quantity" type="number" placeholder="Choose Number"
-                                    oninput="checkQuan()" required />
-                                <div class="typeport">
 
-                                    <select class="lists" name="type" id="type" required >
-                                        <option value="">--Select--</option>
-                                        <option value="kgs">kg</option>
-                                        <option value="mg">mg</option>
-                                        <option value="g">g</option>
-                                        <option value="ml">ml</option>
-                                        <option value="ltr">Ltr</option>
-                                        <option value="nos">Nos</option>
-                                    </select>
+                            <div class="content">
+                                <div class="label">
+                                    <label class="forms">Quantity:</label>
+                                    <label for="type" id="tp">Type:</label>
+                                </div>
+                                <div class="quan">
+                                    <input class="lists" id="quantity" type="number" placeholder="Choose Number"
+                                         required>
+                                    <div class="typeport">
+
+                                        <select class="lists" name="type" id="type" required>
+                                            <option value="">--Select--</option>
+                                            <option value="kgs">kg</option>
+                                            <option value="mg">mg</option>
+                                            <option value="g">g</option>
+                                            <option value="ml">ml</option>
+                                            <option value="ltr">Ltr</option>
+                                            <option value="nos">Nos</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
+                            <div class="content">
+                                <label class="forms">MRP(per Piece)</label>
+                                <input class="lists" id="mrp" type="number" placeholder="Enter MRP" required>
+                            </div>
 
-
-
-                        <div class="content">
-                            <label class="forms">MRP(per Piece)</label>
-                            <input class="lists" id="mrp" type="number" placeholder="Enter MRP" required />
+                            <div class="content">
+                                <label class="forms">Price(per piece)</label>
+                                <input class="lists" id="price" type="number" placeholder="Enter price" required>
+                            </div>
                         </div>
-
-                        <div class="content">
-                            <label class="forms">Price(per piece)</label>
-                            <input class="lists" id="price" type="number" placeholder="Enter price" required />
-                        </div>
-                    </div>
-                    <div class="part1">
-                        <div class="content">
-                            <label class="forms">Tax(%)</label>
-                            <input class="lists" id="tax" type="number" placeholder="Enter Tax" oninput="checkTax()"
-                                required />
-                        </div>
-                        <div class="content">
-                            <label class="forms">Discount(%)</label>
-                            <input class="lists" id="discount" type="number" placeholder="Enter Discount"
-                                oninput="checkDis()" required />
-                        </div>
-                        <div class="content">
-                            <label class="forms">ID Number</label>
-                            <input class="lists" id="product_id" type="text" pattern="[A-Za-z0-9]+"
-                                placeholder="Enter ID" required />
-                        </div>
-                        <div class="content">
-                            <label class="forms">Special name(optional)</label>
-                            <input class="lists" id="special_name" type="text" placeholder="Enter special name"
-                                pattern="[A-Za-z]+"
-                                title="Use Letters to Add Special Name. Don't use space or any special Characters" />
+                        <div class="part1">
+                            <div class="content">
+                                <label class="forms">Tax(%)</label>
+                                <input class="lists" id="tax" type="number" placeholder="Enter Tax" 
+                                    required>
+                            </div>
+                            <div class="content">
+                                <label class="forms">Discount(%)</label>
+                                <input class="lists" id="discount" type="number" placeholder="Enter Discount"
+                                     required>
+                            </div>
+                            <div class="content">
+                                <label class="forms">ID Number</label>
+                                <input class="lists" id="product_id" type="text" pattern="[A-Za-z0-9]+"
+                                    placeholder="Enter ID" required>
+                            </div>
+                            <div class="content">
+                                <label class="forms">Special name(optional)</label>
+                                <input class="lists" id="special_name" type="text" placeholder="Enter special name"
+                                    pattern="[A-Za-z]+"
+                                    title="Use Letters to Add Special Name. Don't use space or any special Characters">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="content1">
-                    <button class="button" type="submit">
-                        Save<span>&#8594;</span></button>
-                </div>
+                    <div class="content1">
+                        <button class="button" type="submit">
+                            Save<span>&#8594;</span>
+                        </button>
+                    </div>
 
-            </form>
-        </div>
+                </form>
+            </div>
 
-    </main>
+        </main>
+        <script src="./../../assets/js/item/additem.js"></script>
 
-    <script>
-        let form = document.getElementById("signup-form");
-        let product_name = document.getElementById("product_name");
-        let quantity = document.getElementById("quantity");
-        let type = document.getElementById("type");
-        let mrp = document.getElementById("mrp");
-        let price = document.getElementById("price");
-        let tax = document.getElementById("tax");
-        let discount = document.getElementById("discount");
-        let product_id = document.getElementById("product_id");
-        let special_name = document.getElementById("special_name");
-
-        let uuid = uuidv4();
-
-
-
-        const productDetails = JSON.parse(localStorage.getItem("productDetails")) || [];
-
-
-        form.addEventListener("submit", function (event) {
-            event.preventDefault();
-
-
-
-
-            if (productDetails.some(record => record.product_name === product_name.value)) {
-                alert("Product is already exists! ");
-                return;
-            }
-            else if (productDetails.some(record => record.product_id === product_id.value)) {
-                alert("ID Number is already exists!");
-                return;
-            }
-            else if (productDetails.some(record => record.special_name === special_name.value)) {
-                alert("Special Name is already exists!");
-                return;
-            }
-
-            //  else if (userRecords.some(record => record.email === email.value)) {
-            //     alert("Email already exists");
-            //     return;
-            //   }
-            else {
-
-                let newProduct = {
-                    product_name: product_name.value,
-                    quantity: quantity.value,
-                    mrp: mrp.value,
-                    price: price.value,
-                    tax: tax.value,
-                    discount: discount.value,
-                    product_id: product_id.value,
-                    special_name: special_name.value,
-                    type:type.value,
-                    radioValue:"in stock",
-                    unique: uuid
-                };
-
-
-
-                productDetails.push(newProduct);
-                localStorage.setItem("productDetails", JSON.stringify(productDetails));
-                localStorage.setItem("product_id", product_id.value);
-                alert("Product is Sucessfully Created");
-                window.location.href = "./item.html"
-                event.preventDefault();
-
-            }
-        });
-
-        function checkDis() {
-
-            if (discount.value.length > 2) {
-                alert("Discount should be between 0 % - 100 %")
-                document.getElementById("discount").value = "";
-
-            }
-        }
-
-        function checkTax() {
-            if (tax.value.length > 2) {
-                alert("Tax should be between 0 % - 100 %")
-                document.getElementById("tax").value = "";
-
-            }
-        }
-
-
-
-        function checkQuan() {
-            if (quantity.value.length > 3) {
-                alert("Quantity should be between 0 - 1000")
-                document.getElementById("quantity").value = "";
-
-            }
-        }
-
-
-
-
-    </script>
-
-
-
-
-
-
-</body>
+    </body>
 
 </html>

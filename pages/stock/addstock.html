@@ -1,187 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M A M Billing</title>
-    <link rel="stylesheet" href="../../assets/css/stock/addstock.css">
-    <link rel="stylesheet" href="../../assets/css/normalize.css">
-    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>M A M Billing</title>
+        <link rel="stylesheet" href="../../assets/css/stock/addstock.css">
+        <link rel="stylesheet" href="../../assets/css/normalize.css">
+        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+       
+    </head>
 
-<body>
-    <header>
-        <div>
-            <div class="nav">
-                <div class="logo">
-                    <img src="../../assets/Imges/M_A_M.png    " alt="Logo pic" />
-                </div>
-                <div class="list">
-                    <ul class="link">
-                        <li class="navlist"><a class="navlist" href="../stock/stock.html">&#8592; Back To Stocks</a>
-                        </li>
-                    </ul>
+    <body>
+        <header>
+            <div>
+                <div class="nav">
+                    <div class="logo">
+                        <img src="../../assets/Imges/M_A_M.png    " alt="Logo pic">
+                    </div>
+                    <div class="list">
+                        <ul class="link">
+                            <li class="navlist">
+                                <a class="navlist" href="../stock/stock.html">&#8592; Back To Stocks</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
-        <div class="one">
-            <form  id="signup-form" onsubmit="(event)">
-                <h2>Add New Stock</h2>
-                <div class="parts">
-                    <div class="part1">
-                        <div class="content">
-                            <label class="forms">Name</label>
-                            <input class="lists" id="stock_name" type="text" placeholder="Name" pattern="[a-zA-Z]+" title="Use Letters to Add Stock Name.Don't use space and Numbers or any special Characters" required />
+        </header>
+        <main>
+            <div class="one">
+                <form id="addstock_form">
+                    <h2>Add New Stock</h2>
+                    <div class="parts">
+                        <div class="part1">
+                            <div class="content">
+                                <label class="forms">Name</label>
+                                <input class="lists" id="stock_name" type="text" placeholder="Name" pattern="[a-zA-Z]+" title="Use Letters to Add Stock Name.Don't use space and Numbers or any special Characters" required>
 
-                        </div>
-                        <div class="content">
-                            <label class="forms">Brand Name</label>
-                            <input class="lists" id="brand_name" type="text" placeholder="Enter Brand Name"  required />
-                        </div>
-                        <div class="content">
-                            <label class="forms">Quantity</label>
-                            <input class="lists" id="quantity" type="number" maxlength="100" placeholder="Choose Number" required />
-                        </div>
-                        <div class="content">
-                            <label class="forms">MRP(per box/sack)</label>
-                            <input class="lists" id="mrp" type="number" placeholder="Enter MRP" required />
-                        </div>
+                            </div>
+                            <div class="content">
+                                <label class="forms">Brand Name</label>
+                                <input class="lists" id="brand_name" type="text" placeholder="Enter Brand Name" required>
+                            </div>
+                            <div class="content">
+                                <label class="forms">Quantity</label>
+                                <input class="lists" id="quantity" type="number" maxlength="100" placeholder="Choose Number" required>
+                            </div>
+                            <div class="content">
+                                <label class="forms">MRP(per box/sack)</label>
+                                <input class="lists" id="mrp" type="number" placeholder="Enter MRP" required>
+                            </div>
 
-                        <div class="content">
-                            <label class="forms">Price(per box/sack)</label>
-                            <input class="lists" id="price" type="number" placeholder="Enter price" required />
-                        </div>
+                            <div class="content">
+                                <label class="forms">Price(per box/sack)</label>
+                                <input class="lists" id="price" type="number" placeholder="Enter price" required>
+                            </div>
                         
+                        </div>
+                        <div class="part1">
+                            <div class="content">
+                                <label class="forms">Tax(%)</label>
+                                <input class="lists" id="tax" type="number" placeholder="Enter Tax">
+                            </div>
+                            <div class="content">
+                                <label class="forms">Discount(%)</label>
+                                <input class="lists" id="discount" type="number" placeholder="Enter Discount" >
+                            </div>
+                            <div class="content">
+                                <label class="forms">Agency ID</label>
+                                <input class="lists" id="agency_id" type="text" maxlength="100" placeholder="Enter Agency ID" required>
+                            </div>
+                            <div class="content">
+                                <label class="forms">Agency Details</label>
+                                <input class="lists" id="agency_details" type="text" placeholder="Enter Agency Details" required>
+                            </div>
+                            <div class="content">
+                                <label class="forms">Date</label>
+                                <input class="lists" id="date" type="date" placeholder="Enter Agency Details" style="width: 13.5em;" required>
+                            </div>
+                        </div>
                     </div>
-                    <div class="part1">
-                        <div class="content">
-                            <label class="forms">Tax(%)</label>
-                            <input class="lists" id="tax" type="number" placeholder="Enter Tax"  oninput="checkTax()" />
-                        </div>
-                        <div class="content">
-                            <label class="forms">Discount(%)</label>
-                            <input class="lists" id="discount" type="number" placeholder="Enter Discount" oninput="checkDis()" />
-                        </div>
-                        <div class="content">
-                            <label class="forms">Agency ID</label>
-                            <input class="lists" id="agency_id" type="text" maxlength="100" placeholder="Enter Agency ID" required />
-                        </div>
-                        <div class="content">
-                            <label class="forms">Agency Details</label>
-                            <input class="lists" id="agency_details" type="text"  placeholder="Enter Agency Details" required/>
-                        </div>
-                        <div class="content">
-                            <label class="forms">Date</label>
-                            <input class="lists" id="date" type="date" placeholder="Enter Agency Details" style="width: 13.5em;"  required/>
-                        </div>
+                    <div class="content1">
+                        <button class="button" type="submit" class="registerbtn">
+                            Save<span>&#8594;</span>
+                        </button>
                     </div>
-                </div>
-                <div class="content1">
-                    <button class="button" type="submit" class="registerbtn">
-                            Save<span>&#8594;</span></button>
-                </div>
 
-            </form>
-        </div>
+                </form>
+            </div>
 
-    </main>
-   
+        </main>
+        <script src="./../../assets/js/stock/addstock.js"></script>
 
-    <script>
-        let form = document.getElementById("signup-form");
-         let stock_name = document.getElementById("stock_name");
-         let quantity = document.getElementById("quantity");
-         let mrp = document.getElementById("mrp");
-         let price = document.getElementById("price");
-         let tax = document.getElementById("tax");
-         let discount = document.getElementById("discount");
-         let agency_id = document.getElementById("agency_id");
-         let agency_details = document.getElementById("agency_details");
-         let brand_name = document.getElementById("brand_name");
-         let date = document.getElementById("date");
-
-         let uuid = uuidv4();
- 
- 
-      const stockDetails = JSON.parse(localStorage.getItem("stockDetails")) || [];
- 
- 
- form.addEventListener("submit", function(event) {
-   event.preventDefault();
-   
- 
- 
- 
-  if (stockDetails.some(record => record.stock_name === stock_name.value)) {
-     alert("Stock is already exists! ");
-     return;
-   }
-
- else{
- 
-   let newStock = {
-    stock_name: stock_name.value,
-     quantity: quantity.value,
-     mrp: mrp.value,
-     price: price.value,
-     tax: tax.value,
-     discount: discount.value,
-     agency_id: agency_id.value,
-     agency_details: agency_details.value,
-     brand_name: brand_name.value,
-     date: date.value,
-      unique :uuid     
-   };
- 
- 
- 
-   stockDetails.push(newStock);
-   localStorage.setItem("stockDetails", JSON.stringify(stockDetails));
-   localStorage.setItem("stock_name", stock_name.value);
-   alert("Stock is Sucessfully Created");
-   window.location.href="./stock.html"
-   event.preventDefault();
-   
- }});
- 
- 
-         
- 
-
-
-
-
- function checkDis(){
-   
-   if(discount.value.length > 2){
-       alert("Discount should be between 0 % - 100 %")
-       document.getElementById("discount").value = "";
-       
-   }
- }
-
- function checkTax(){
-   if(tax.value.length > 2 ){
-       alert("Tax should be between 0 % - 100 %")
-       document.getElementById("tax").value = "";
-      
-   }
-}
-
- 
- 
- 
-     </script>
- 
-
-
-
-
-
-</body>
+    </body>
 
 </html>
