@@ -21,6 +21,7 @@ function saveData() {
   } else {
     alert("Please Check your details");
   }
+  preventDefault();
 }
 
 const sumbit = document.getElementById("login_form");

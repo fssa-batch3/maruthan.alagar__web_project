@@ -63,6 +63,7 @@ function userName() {
   console.log(userRecords);
   window.location.href = "./login.html";
   alert("Your Username is successfully Created ");
+  preventDefault();
 }
 
 document.getElementById("new_password").addEventListener("input", showRulez);

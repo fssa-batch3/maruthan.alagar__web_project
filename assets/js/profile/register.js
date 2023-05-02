@@ -46,7 +46,7 @@ function registerForm() {
     alert("Your details successfully registered");
     
   }
- 
+ preventDefault();
 }
 
 function login() {
