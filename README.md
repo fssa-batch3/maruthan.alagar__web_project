@@ -30,8 +30,8 @@ M A M Billing-Modules & Features
     2. Create customer List   
     3. Read / Update Customer Details  
 
-5. Bill Module (Yet to Start)   
-    1. Create Bill   
+5. Bill Module (working on)   
+    1. Create Bill (completed)    
     2. Read Bill   
 6. Store history Module (Yet to Start)      
     1. Customer Purchase history   
