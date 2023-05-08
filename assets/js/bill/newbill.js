@@ -79,7 +79,7 @@ let total_4 = 0;
 let total_5 = 0;
 let total_6 = 0;
 
-if ((total_1 = " ")) {
+if ((total_2 = " ")) {
   document.getElementById("total_quantity").value = "0/-";
   document.getElementById("total_mrp").value = "0/-";
   document.getElementById("total_tax").value = "0/-";
@@ -92,6 +92,9 @@ if ((total_1 = " ")) {
 
 document.getElementById("cus_form").addEventListener("submit", () => {
   newDetail();
+});
+document.getElementById("cus_form").addEventListener("submit", () => {
+  cus();
 });
 
 const uuid = uuidv4();
@@ -302,17 +305,7 @@ document.getElementById("payment").addEventListener("submit", () => {
 });
 
 function saveData() {
-  event.preventDefault();
   const order_bills = JSON.parse(localStorage.getItem("order_bill")) || [];
-
-  const total_quantity = document.getElementById("total_quantity");
-  const total_mrp = document.getElementById("total_mrp");
-  const total_tax = document.getElementById("total_tax");
-  const total_price = document.getElementById("total_price");
-  const total_amount = document.getElementById("total_amount");
-  const total_discount = document.getElementById("total_discount");
-  const sub_total = document.getElementById("sub_total");
-  const total = document.getElementById("total");
 
   const checkBoxes = document.querySelectorAll('input[name="payment"]');
 
@@ -350,16 +343,24 @@ function saveData() {
   location.reload();
 }
 
+
+
+document.getElementById("customer_phone").addEventListener("change", selectCustomer)
+document.getElementById("product_id").addEventListener("change", selectProduct)
+let findData=[]
+
 function selectCustomer() {
   let customer_name = document.getElementById("customer_name").value;
   let customer_phone = document.getElementById("customer_phone").value;
   let customer_id = document.getElementById("customer_id").value;
   const customerDetails = JSON.parse(localStorage.getItem("customerDetails"));
 
-  const findData = customerDetails.filter(
-    (data) => data.customer_id == customer_id
+  findData = customerDetails.filter(
+    (data) => data.customer_phone == customer_phone
   );
-
+ 
+  console.log(findData);
+ 
   // let findDetail = customerDetails.filter(data =>
   // data.customer_phone == customer_phone)
 
@@ -370,5 +371,87 @@ function selectCustomer() {
       findData[i].customer_phone;
     customer_id = document.getElementById("customer_id").value =
       findData[i].customer_id;
+  }
+}
+
+
+function cus(event) {
+  if(findData.length==0){
+  preventDefault();
+  const uuid = uuidv4();
+const customerDetails = JSON.parse(localStorage.getItem("customerDetails"))
+  if (
+    customerDetails.some(
+      (record) => record.customer_phone === customer_phone.value
+    )
+  ) {
+    alert("Customer Phone Number is already exists! ");
+  } else {
+    const newCustomer = {
+      customer_name: customer_name.value,
+      customer_phone: customer_phone.value,
+      customer_id: customer_id.value,
+      unique: uuid,
+    };
+
+    customerDetails.push(newCustomer);
+    localStorage.setItem("customerDetails", JSON.stringify(customerDetails));
+    event.preventDefault();
+  }
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function selectProduct() {
+  let product_id = document.getElementById("product_id").value
+  const productDetails = JSON.parse(localStorage.getItem("productDetails"));
+  let filterData = productDetails.filter(
+    (detail) => detail.product_id === product_id
+  );
+
+
+
+  for (let i = 0; i < productDetails.length; i++) {
+    document.getElementById("product_name").value =
+      filterData[i].product_name;
+    document.getElementById("product_id").value =
+      filterData[i].product_id;
+    document.getElementById("tax").value =
+      filterData[i].tax;
+    document.getElementById("mrp").value =
+      filterData[i].mrp;
+    document.getElementById("discount").value =
+      filterData[i].discount;
+    document.getElementById("price").value =
+      filterData[i].price;
+
   }
 }
