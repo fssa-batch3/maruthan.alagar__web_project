@@ -34,15 +34,15 @@
                             <h2>Add New Customer</h2>
                             <div class="content">
                                 <label class="forms">Customer Name</label>
-                                <input class="lists" type="text" id="customer_name" placeholder="Enter Customer Name" pattern="[a-zA-Z]+" title="Use Letters to Add Customer Name.Don't use space or any special Characters" required>
+                                <input class="lists" type="text" id="customer_name" placeholder="Enter Customer Name"  pattern="[^\s][a-zA-Z]+(\s[a-zA-Z]+)?[^\s]" title="Use Letters to Add Customer Name.Don't use Numbers or any special Characters" required>
                             </div>
                             <div class="content">
                                 <label class="forms">Phone Number</label>
-                                <input class="lists" type="tel" id="customer_phone" placeholder="Enter Mobile Number" maxlength="10" pattern="^[6789]\d{9,9}$" title="Use Numbers begin with 7,8,9 and must Enter 10 Characters" required>
+                                <input class="lists" type="tel" id="customer_phone" placeholder="Enter Mobile Number" maxlength="10" pattern="^[6789]\d{9,9}$" title="Use Numbers begin with 6,7,8,9 and must Enter 10 Characters" required>
                             </div>
                             <div class="content">
                                 <label class="forms">ID Number</label>
-                                <input class="lists" type="text" id="customer_id" placeholder="Enter ID Number" required>
+                                <input class="lists" type="text" id="customer_id" placeholder="Enter ID Number"  pattern="[A-Z0-9]+" title="Use Capital letters and Numbers for ID Number" required>
                             </div>
                             <div class="content">
                                 <label class="forms">E-Mail Address (optional)</label>

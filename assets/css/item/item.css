@@ -88,6 +88,12 @@ table {
     background-color: darkblue !important;
     color: white;
 }
+.highlight {
+    background-color: rgb(243, 65, 62);
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+  }
 
 @media screen and (max-width: 400px) {
 

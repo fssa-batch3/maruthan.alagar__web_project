@@ -31,7 +31,7 @@
                         <div class="part1">
                             <div class="content">
                                 <label class="forms">Name</label>
-                                <input class="lists" id="stock_name" type="text" pattern="[a-zA-Z]+" title="Use Letters to Add Stock Name.Don't use space or any special Characters" required>
+                                <input class="lists" id="stock_name" type="text"  pattern="[^\s][a-zA-Z]+(\s[a-zA-Z]+)?[^\s]" title="Use Letters to Add Stock Name.Don't use Numbers and any special Characters" required>
                             </div>
                             <div class="content">
                                 <label class="forms">Brand Name</label>

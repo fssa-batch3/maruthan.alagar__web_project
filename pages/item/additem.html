@@ -38,8 +38,8 @@
                             <div class="content">
                                 <label class="forms">Product Name</label>
                                 <input class="lists" id="product_name" type="text" placeholder="Product Name"
-                                    pattern="[a-zA-Z]+"
-                                    title="Use Letters to Add Product Name.Don't use space or any special Characters"
+                                pattern="[^\s][a-zA-Z]+(\s[a-zA-Z]+)?[^\s]"
+                                    title="Use Letters to Add Product Name.Don't use Numbers any special Characters"
                                     required>
 
                             </div>
@@ -90,14 +90,14 @@
                             </div>
                             <div class="content">
                                 <label class="forms">ID Number</label>
-                                <input class="lists" id="product_id" type="text" pattern="[A-Za-z0-9]+"
+                                <input class="lists" id="product_id" type="text" pattern="[A-Z0-9]+" title="Use Capital letters and Numbers for ID Number"
                                     placeholder="Enter ID" required>
                             </div>
                             <div class="content">
                                 <label class="forms">Special name(optional)</label>
                                 <input class="lists" id="special_name" type="text" placeholder="Enter special name"
-                                    pattern="[A-Za-z]+"
-                                    title="Use Letters to Add Special Name. Don't use space or any special Characters">
+                                pattern="[^\s][a-zA-Z]+(\s[a-zA-Z]+)?[^\s]"
+                                    title="Use Letters to Add Special Name. Don't use Numbers or any special Characters">
                             </div>
                         </div>
                     </div>

@@ -142,7 +142,7 @@ function newDetail() {
     // alert("")
   }
 
-  amount += (price - discount + tax) * quantity;
+  amount = (price - discount + tax) * quantity;
 
   const exists =
     order_products.length &&
@@ -214,16 +214,15 @@ function newDetail() {
         table_row_1.append(table_coloumn_7);
 
         table_coloumn_8 = document.createElement("td");
-        table_coloumn_8.innerText = findData[i].amount;
+        table_coloumn_8.innerText = findData[i].amount +"/-";
         table_row_1.append(table_coloumn_8);
 
         _price.value = _price.defaultValue;
         _discount.value = _discount.defaultValue;
         _quantity.value = _quantity.defaultValue;
         _tax.value = _tax.defaultValue;
-        // product_id.value = product_id.defaultValue;
-        // product_name.value = product_name.defaultValue;
-        // mrp.value = mrp.defaultValue;
+
+
         document.getElementById("product_id").value = "";
         document.getElementById("product_name").value = "";
         document.getElementById("mrp").value = "";
@@ -285,12 +284,12 @@ function findTotal() {
   sub_total.value = `${sum_6}/-`;
   total.value = `${sum_6}/-`;
 
-  total_1 += sum_1;
-  total_2 += sum_2;
-  total_3 += sum_3;
-  total_4 += sum_4;
-  total_5 += sum_5;
-  total_6 += sum_6;
+  total_1 = sum_1;
+  total_2 = sum_2;
+  total_3 = sum_3;
+  total_4 = sum_4;
+  total_5 = sum_5;
+  total_6 = sum_6;
 }
 
 const num = Math.floor(Math.random() * 100000000);
@@ -301,6 +300,7 @@ document.getElementById("txn_id").value = txn_id;
 document.getElementById("cash").setAttribute("checked", "checked");
 
 document.getElementById("payment").addEventListener("submit", () => {
+
   saveData();
 });
 
@@ -308,8 +308,15 @@ function saveData() {
   const order_bills = JSON.parse(localStorage.getItem("order_bill")) || [];
 
   const checkBoxes = document.querySelectorAll('input[name="payment"]');
+  const total_quantity = document.getElementById("total_quantity").value;
 
   let selectedValue = "cash";
+
+
+  if(total_quantity<=0 ) {
+    alert("Please add atleast one product")
+  }else{
+
 
   for (let i = 0; i < checkBoxes.length; i++) {
     const element = checkBoxes[i];
@@ -342,90 +349,73 @@ function saveData() {
   document.getElementById("cus_form").reset();
   location.reload();
 }
+}
 
 
 
 document.getElementById("customer_phone").addEventListener("change", selectCustomer)
 document.getElementById("product_id").addEventListener("change", selectProduct)
-let findData=[]
+let findData = []
 
 function selectCustomer() {
-  let customer_name = document.getElementById("customer_name").value;
+  
   let customer_phone = document.getElementById("customer_phone").value;
-  let customer_id = document.getElementById("customer_id").value;
   const customerDetails = JSON.parse(localStorage.getItem("customerDetails"));
 
   findData = customerDetails.filter(
     (data) => data.customer_phone == customer_phone
   );
- 
+
   console.log(findData);
- 
+
   // let findDetail = customerDetails.filter(data =>
   // data.customer_phone == customer_phone)
 
-  for (let i = 0; i < customerDetails.length; i++) {
+
+  for (let i = 0; i < findData.length; i++) {
     customer_name = document.getElementById("customer_name").value =
       findData[i].customer_name;
     customer_phone = document.getElementById("customer_phone").value =
       findData[i].customer_phone;
     customer_id = document.getElementById("customer_id").value =
       findData[i].customer_id;
+    break;
   }
 }
 
 
-function cus(event) {
-  if(findData.length==0){
-  preventDefault();
-  const uuid = uuidv4();
-const customerDetails = JSON.parse(localStorage.getItem("customerDetails"))
-  if (
-    customerDetails.some(
-      (record) => record.customer_phone === customer_phone.value
-    )
-  ) {
-    alert("Customer Phone Number is already exists! ");
-  } else {
-    const newCustomer = {
-      customer_name: customer_name.value,
-      customer_phone: customer_phone.value,
-      customer_id: customer_id.value,
-      unique: uuid,
-    };
 
-    customerDetails.push(newCustomer);
-    localStorage.setItem("customerDetails", JSON.stringify(customerDetails));
-    event.preventDefault();
-  }
+function cus(event) {
+  if (findData.length == 0) {
+    const uuid = uuidv4();
+    const customerDetails = JSON.parse(localStorage.getItem("customerDetails"))
+    if (
+      customerDetails.some(
+        (record) => record.customer_phone === customer_phone.value
+      )
+    ) {
+      alert("Customer Phone Number is already exists! ");
+    }
+    else if (
+      customerDetails.some(
+        (record) => record.customer_id === customer_id.value
+      )
+    ) {
+      alert("Customer ID Number is already exists! ");
+    } else {
+      const newCustomer = {
+        customer_name: customer_name.value,
+        customer_phone: customer_phone.value,
+        customer_id: customer_id.value,
+        unique: uuid,
+      };
+
+      customerDetails.push(newCustomer);
+      localStorage.setItem("customerDetails", JSON.stringify(customerDetails));
+      event.preventDefault();
+    }
   }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -433,25 +423,34 @@ const customerDetails = JSON.parse(localStorage.getItem("customerDetails"))
 function selectProduct() {
   let product_id = document.getElementById("product_id").value
   const productDetails = JSON.parse(localStorage.getItem("productDetails"));
+
+
+
+
   let filterData = productDetails.filter(
     (detail) => detail.product_id === product_id
   );
+  if (filterData.length > 0) {
 
 
 
-  for (let i = 0; i < productDetails.length; i++) {
-    document.getElementById("product_name").value =
-      filterData[i].product_name;
-    document.getElementById("product_id").value =
-      filterData[i].product_id;
-    document.getElementById("tax").value =
-      filterData[i].tax;
-    document.getElementById("mrp").value =
-      filterData[i].mrp;
-    document.getElementById("discount").value =
-      filterData[i].discount;
-    document.getElementById("price").value =
-      filterData[i].price;
+    for (let i = 0; i < productDetails.length; i++) {
+      document.getElementById("product_name").value =
+        filterData[i].product_name;
+      document.getElementById("product_id").value =
+        filterData[i].product_id;
+      document.getElementById("tax").value =
+        filterData[i].tax;
+      document.getElementById("mrp").value =
+        filterData[i].mrp;
+      document.getElementById("discount").value =
+        filterData[i].discount;
+      document.getElementById("price").value =
+        filterData[i].price;
+      break;
 
+    }
+  } else {
+    alert("Product is not found! Please Add in your product List");
   }
 }

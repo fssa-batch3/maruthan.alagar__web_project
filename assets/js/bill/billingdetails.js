@@ -60,10 +60,20 @@ table_coloumn = document.createElement("th");
 table_coloumn.innerText = "Quantity";
 table_row.append(table_coloumn);
 
-// table coloumn_4
 table_coloumn = document.createElement("th");
 table_coloumn.innerText = "Price";
 table_row.append(table_coloumn);
+
+
+table_coloumn = document.createElement("th");
+table_coloumn.innerText = "Tax";
+table_row.append(table_coloumn);
+
+table_coloumn = document.createElement("th");
+table_coloumn.innerText = "Discount";
+table_row.append(table_coloumn);
+// table coloumn_4
+
 
 table_coloumn = document.createElement("th");
 table_coloumn.innerText = "Total Amount";
@@ -105,6 +115,16 @@ for (let i = 0; i < product_records.length; i++) {
     table_coloumn_1 = document.createElement("td");
     table_coloumn_1.innerText =product_records[i].price+"/-";
     table_row_1.append(table_coloumn_1);
+
+    table_coloumn_1 = document.createElement("td");
+    table_coloumn_1.innerText =product_records[i].tax+"/-";
+    table_row_1.append(table_coloumn_1);
+
+    table_coloumn_1 = document.createElement("td");
+    table_coloumn_1.innerText =product_records[i].discount+"/-";
+    table_row_1.append(table_coloumn_1);
+
+    
     
     table_coloumn_1 = document.createElement("td");
     table_coloumn_1.innerText =product_records[i].amount +"/-";

@@ -6,9 +6,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>M A M Billing</title>
-        <link rel="stylesheet" href="../../../assets/css/item/viewitem.css">
-        <link rel="stylesheet" href="../../../assets/css/normalize.css">
-       
+        <link rel="stylesheet" href="../../assets/css/item/additem.css">
+        <link rel="stylesheet" href="../../assets/css/normalize.css">
+        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+        
     </head>
 
     <body>
@@ -16,23 +17,33 @@
             <div>
                 <div class="nav">
                     <div class="logo">
-                        <img src="../../../assets/Imges/M_A_M.png    " alt="Logo pic">
+                        <img src="../../assets/Imges/M_A_M.png    " alt="Logo pic">
+                    </div>
+                    <div class="list">
+                        <ul class="link">
+                            <li class="navlist">
+                                <a class="navlist" href="../billing/newbill.html">&#8592; Back To Billing</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </header>
         <main>
             <div class="one">
-                <form id="edit_item">
-                    <h2>View Item Details</h2>
+                <form id="additem_form">
+                    <h2>Add New Item</h2>
                     <div class="parts">
                         <div class="part1">
                             <div class="content">
                                 <label class="forms">Product Name</label>
-                                <input class="lists" type="text" id="product_name"  pattern="[^\s][a-zA-Z]+(\s[a-zA-Z]+)?[^\s]" title="Use Letters to Add Product Name.Don't use Numbers or any special Characters" required>
+                                <input class="lists" id="product_name" type="text" placeholder="Product Name"
+                                pattern="[^\s][a-zA-Z]+(\s[a-zA-Z]+)?[^\s]"
+                                    title="Use Letters to Add Product Name.Don't use Numbers any special Characters"
+                                    required>
 
                             </div>
-                        
+
                             <div class="content">
                                 <div class="label">
                                     <label class="forms">Quantity:</label>
@@ -52,55 +63,47 @@
                                             <option value="ltr">Ltr</option>
                                             <option value="nos">Nos</option>
                                         </select>
-                                    
                                     </div>
                                 </div>
                             </div>
 
                             <div class="content">
                                 <label class="forms">MRP(per Piece)</label>
-                                <input class="lists" type="number" id="mrp" required>
+                                <input class="lists" id="mrp" type="number" placeholder="Enter MRP" required>
                             </div>
 
                             <div class="content">
                                 <label class="forms">Price(per piece)</label>
-                                <input class="lists"type="number" id="price" required>
+                                <input class="lists" id="price" type="number" placeholder="Enter price" required>
                             </div>
                         </div>
                         <div class="part1">
                             <div class="content">
                                 <label class="forms">Tax(%)</label>
-                                <input class="lists" type="number" id="tax" required>
+                                <input class="lists" id="tax" type="number" placeholder="Enter Tax" 
+                                    required>
                             </div>
                             <div class="content">
                                 <label class="forms">Discount(%)</label>
-                                <input class="lists" type="number" id="discount"  required>
+                                <input class="lists" id="discount" type="number" placeholder="Enter Discount"
+                                     required>
                             </div>
                             <div class="content">
                                 <label class="forms">ID Number</label>
-                                <input class="lists" type="text" id="product_id"pattern="[A-Z0-9]+" title="Use Capital letters and Numbers for ID Number" required>
+                                <input class="lists" id="product_id" type="text" pattern="[A-Z0-9]+" title="Use Capital letters and Numbers for ID Number"
+                                    placeholder="Enter ID" required>
                             </div>
                             <div class="content">
                                 <label class="forms">Special name(optional)</label>
-                                <input class="lists" type="text" id="special_name"  pattern="[^\s][a-zA-Z]+(\s[a-zA-Z]+)?[^\s]" title="Use Letters to Edit Special Name. Don't use Numbers or any special Characters">
+                                <input class="lists" id="special_name" type="text" placeholder="Enter special name"
+                                pattern="[^\s][a-zA-Z]+(\s[a-zA-Z]+)?[^\s]"
+                                    title="Use Letters to Add Special Name. Don't use Numbers or any special Characters">
                             </div>
-                            <div class="radio">
-                                <input type="radio" name="stock" id="instock" value="in stock">
-                                <label> In Stock </label>
-                                <input type="radio" name="stock" id="outofstock" value="out of stock">
-                                <label> Out Of
-                                    Stock </label>
-                            </div>
-
                         </div>
-
                     </div>
                     <div class="content1">
-                        <button class="button_1" type="button">
-                            <span>&#10094;</span>Back
-                        </button>
                         <button class="button" type="submit">
-                            Save<span>&#10095;</span>
+                            Save<span>&#8594;</span>
                         </button>
                     </div>
 
@@ -108,7 +111,7 @@
             </div>
 
         </main>
-        <script src="./../../../assets/js/item/viewitem.js"></script>
+        <script src="./../../assets/js/item/billingside.js"></script>
 
     </body>
 

@@ -29,7 +29,7 @@
 
                         <div class="content">
                             <label class="forms">Customer Name</label>
-                            <input class="lists" type="text" id="customer_name" pattern="[a-zA-Z]+" title="Use Letters to Add Customer Name.Don't use space or any special Characters" required>
+                            <input class="lists" type="text" id="customer_name" pattern="[^\s][a-zA-Z]+(\s[a-zA-Z]+)?[^\s]" title="Use Letters to Add Customer Name.Don't use Numbers or any special Characters" required>
 
                         </div>
                         <div class="content">

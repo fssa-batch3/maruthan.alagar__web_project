@@ -34,28 +34,26 @@
                     <div id="customer">
                         <div>
                             <label>Customer Name:</label>
-                            <input class="lists" type="text" id="customer_name" placeholder="Enter Customer Name" required>
+                            <input class="lists" type="text" id="customer_name" placeholder="Enter Customer Name"   pattern="[^\s][a-zA-Z]+(\s[a-zA-Z]+)?[^\s]" title="Use Letters to Add Customer Name.Don't use Numbers or any special Characters" required>
                         </div>
                         <div>
                             <label>ID Number:</label>
-                            <input class="lists" type="text" id="customer_id"  placeholder="Enter ID Number"
+                            <input class="lists" type="text" id="customer_id" pattern="[A-Z0-9]+" title="Use Capital letters and Numbers for ID Number"  placeholder="Enter ID Number"
                                 required>
                         </div>
                         <div>
                             <label>Phone Number:</label>
-                            <input class="lists" type="tel" id="customer_phone" placeholder="Enter Mobile Number" required>
+                            <input class="lists" type="tel" id="customer_phone"  maxlength="10" pattern="^[6789]\d{9,9}$" title="Use Numbers begin with 7,8,9 and must Enter 10 Characters" placeholder="Enter Mobile Number" required>
                         </div>
                         <div>
                             <label>Date</label>
                             <input type="date" id="date-input">
                         </div>
-                        <a href="../customer/billingside.html">
+                        <a href="../item/billingside.html">
                             <button type="button" id="add">
                                 <img src="../../assets/Imges/plus.jfif" id="customerpic" alt="plus pic">
                             </button></a>
                     </div>
-                    <!-- </form>
-                        <form id="pro"> -->
                     <div id="top">
                         <div>
                             <label>Product Name:</label>

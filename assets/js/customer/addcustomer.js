@@ -18,7 +18,13 @@ form.addEventListener("submit", function (event) {
     )
   ) {
     alert("Customer Phone Number is already exists! ");
-  } else {
+  } else if (
+    customerDetails.some(
+      (record) => record.customer_id === customer_id.value
+    )
+  ){
+    alert("Customer ID Number is already exists! ");
+  }  else {
     const newCustomer = {
       customer_name: customer_name.value,
       customer_phone: customer_phone.value,
