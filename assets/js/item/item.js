@@ -41,10 +41,34 @@ for (i = 0; i < productDetails.length; i++) {
   // label_name.innerText = register_shop[i]["name"];
   main_table.append(table_row_1);
 
-  // table coloumn_1
+
+
+if( productDetails[i].radioValue == "out of stock"){
+
+const table_column_1 = document.createElement("td");
+
+const outOfStockSpan = document.createElement("span");
+outOfStockSpan.innerText = "Out of stock";
+outOfStockSpan.classList.add("highlight"); 
+
+table_column_1.innerText = productDetails[i].product_name + " ";
+table_column_1.append(outOfStockSpan);
+
+table_row_1.append(table_column_1);
+
+
+}else{
+
   table_coloumn_1 = document.createElement("td");
   table_coloumn_1.innerText = productDetails[i].product_name;
   table_row_1.append(table_coloumn_1);
+
+}
+
+
+
+
+ 
   // table coloumn_1
   table_coloumn_1 = document.createElement("td");
   table_coloumn_1.innerText = productDetails[i].special_name;

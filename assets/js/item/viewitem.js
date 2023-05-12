@@ -85,6 +85,7 @@ for (let i = 0; i < productDetails.length; i++) {
     document.getElementById("outofstock").setAttribute("checked", "checked");
   }
 }
+document.getElementById("product_id").addEventListener("click", giveNo);
 
 function checkDis() {
   if (discount.value.length > 2) {
@@ -105,3 +106,7 @@ function checkQuan() {
     document.getElementById("quantity").value= product_records.quantity ;
   }
 }
+function giveNo() {
+  alert("This is not Editable or Can't be Change");
+}
+
