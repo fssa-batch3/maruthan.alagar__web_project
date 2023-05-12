@@ -100,7 +100,7 @@ document.getElementById("cus_form").addEventListener("submit", () => {
 const uuid = uuidv4();
 let product_records;
 
-function newDetail() {
+function newDetail(event) {
   event.preventDefault();
   const orders = JSON.parse(localStorage.getItem("orders")) || [];
   const order_products =
@@ -214,7 +214,7 @@ function newDetail() {
         table_row_1.append(table_coloumn_7);
 
         table_coloumn_8 = document.createElement("td");
-        table_coloumn_8.innerText = findData[i].amount +"/-";
+        table_coloumn_8.innerText = findData[i].amount + "/-";
         table_row_1.append(table_coloumn_8);
 
         _price.value = _price.defaultValue;
@@ -304,7 +304,9 @@ document.getElementById("payment").addEventListener("submit", () => {
   saveData();
 });
 
-function saveData() {
+function saveData(event) {
+  event.preventDefault();
+
   const order_bills = JSON.parse(localStorage.getItem("order_bill")) || [];
 
   const checkBoxes = document.querySelectorAll('input[name="payment"]');
@@ -313,42 +315,42 @@ function saveData() {
   let selectedValue = "cash";
 
 
-  if(total_quantity<=0 ) {
+  if (total_quantity <= 0) {
     alert("Please add atleast one product")
-  }else{
+  } else {
 
 
-  for (let i = 0; i < checkBoxes.length; i++) {
-    const element = checkBoxes[i];
+    for (let i = 0; i < checkBoxes.length; i++) {
+      const element = checkBoxes[i];
 
-    if (element.checked === true) {
-      selectedValue = element.value;
-      break;
+      if (element.checked === true) {
+        selectedValue = element.value;
+        break;
+      }
     }
+
+    const bill_no = order_bills.length + 1;
+
+    const order_bill = {
+      order_id: uuid,
+      bill_date: dateInput.value,
+      payment_method: selectedValue,
+      bill_no: `B${bill_no}`,
+      transaction_id: txn_id,
+      total_quantity: total_1,
+      total_mrp: total_2,
+      total_price: total_3,
+      total_tax: total_4,
+      total_discount: total_5,
+      total_amount: total_6,
+    };
+
+    order_bills.push(order_bill);
+    localStorage.setItem("order_bill", JSON.stringify(order_bills));
+    alert("Bill Successfully Saved");
+    document.getElementById("cus_form").reset();
+    location.reload();
   }
-
-  const bill_no = order_bills.length + 1;
-
-  const order_bill = {
-    order_id: uuid,
-    bill_date: dateInput.value,
-    payment_method: selectedValue,
-    bill_no: `B${bill_no}`,
-    transaction_id: txn_id,
-    total_quantity: total_1,
-    total_mrp: total_2,
-    total_price: total_3,
-    total_tax: total_4,
-    total_discount: total_5,
-    total_amount: total_6,
-  };
-
-  order_bills.push(order_bill);
-  localStorage.setItem("order_bill", JSON.stringify(order_bills));
-  alert("Bill Successfully Saved");
-  document.getElementById("cus_form").reset();
-  location.reload();
-}
 }
 
 
@@ -358,7 +360,7 @@ document.getElementById("product_id").addEventListener("change", selectProduct)
 let findData = []
 
 function selectCustomer() {
-  
+
   let customer_phone = document.getElementById("customer_phone").value;
   const customerDetails = JSON.parse(localStorage.getItem("customerDetails"));
 

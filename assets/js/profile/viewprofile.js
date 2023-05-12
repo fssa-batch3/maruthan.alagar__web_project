@@ -32,7 +32,8 @@ document.getElementById("licence_number").value = user_records.licence_number;
 document.getElementById("user_email").value = user_records.user_email;
 document.getElementById("phone_number").value = user_records.phone_number;
 
-function update(e) {
+function update(event) {
+  event.preventDefault();
   const shop_name = document.getElementById("shop_name").value;
   const phone_number = document.getElementById("phone_number").value;
   const gstn_number = document.getElementById("gstn_number").value;

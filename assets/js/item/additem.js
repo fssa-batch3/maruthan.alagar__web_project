@@ -17,6 +17,7 @@ document.getElementById("discount").addEventListener("input", checkDis);
 document.getElementById("quantity").addEventListener("input", checkQuan);
 
 form.addEventListener("submit", function (event) {
+  event.preventDefault();
   if (
     productDetails.some((record) => record.product_name === product_name.value)
   ) {
@@ -55,7 +56,7 @@ form.addEventListener("submit", function (event) {
     localStorage.setItem("product_id", product_id.value);
     window.location.href = "./item.html";
     alert("Product is Sucessfully Created");
-    event.preventDefault();
+    
   }
 });
 

@@ -17,6 +17,7 @@ document.getElementById("log-in").addEventListener("click", function () {
 });
 
 function registerForm(event) {
+  event.preventDefault();
   console.log("Entering registerForm method");
  
 
@@ -46,7 +47,7 @@ function registerForm(event) {
     alert("Your details successfully registered");
     
   }
-  event.preventDefault();
+  
 }
 
 function login() {

@@ -1,4 +1,5 @@
 function saveData(event) {
+  event.preventDefault();
   let user_email;
   let pw;
   user_email = document.getElementById("user_email").value;
@@ -21,7 +22,7 @@ function saveData(event) {
   } else {
     alert("Please Check your details");
   }
-  event.preventDefault();
+  
 }
 
 const sumbit = document.getElementById("login_form");

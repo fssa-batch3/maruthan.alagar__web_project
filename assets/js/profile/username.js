@@ -11,6 +11,7 @@ document.getElementById("user_form").addEventListener("submit", function () {
 });
 
 function userName(event) {
+  event.preventDefault();
   if (pw.value !== new_pw.value) {
     alert("Passwords do not match");
     return;
@@ -63,7 +64,7 @@ function userName(event) {
   console.log(userRecords);
   window.location.href = "./login.html";
   alert("Your Username is successfully Created ");
-  event.preventDefault();
+
 }
 
 document.getElementById("new_password").addEventListener("input", showRulez);
