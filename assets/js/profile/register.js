@@ -9,9 +9,9 @@ const uuid = uuidv4();
 
 const userRecords = JSON.parse(localStorage.getItem("userRecords")) || [];
 
-document.getElementById("signup_form").addEventListener("submit", function registerForm() {
+document.getElementById("signup_form").addEventListener("submit", function registerForm(e) {
   // registerForm();
-  // event.preventDefault();
+  e.preventDefault();
 
   console.log("Entering registerForm method");
 
