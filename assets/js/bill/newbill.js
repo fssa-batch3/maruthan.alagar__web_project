@@ -100,8 +100,7 @@ document.getElementById("cus_form").addEventListener("submit", () => {
 const uuid = uuidv4();
 let product_records;
 
-function newDetail(event) {
-  event.preventDefault();
+function newDetail() {
   const orders = JSON.parse(localStorage.getItem("orders")) || [];
   const order_products =
     JSON.parse(localStorage.getItem("order_products")) || [];
@@ -304,8 +303,8 @@ document.getElementById("payment").addEventListener("submit", () => {
   saveData();
 });
 
-function saveData(event) {
-  event.preventDefault();
+function saveData() {
+
 
   const order_bills = JSON.parse(localStorage.getItem("order_bill")) || [];
 
