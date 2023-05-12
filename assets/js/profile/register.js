@@ -9,17 +9,16 @@ const uuid = uuidv4();
 
 const userRecords = JSON.parse(localStorage.getItem("userRecords")) || [];
 
-document.getElementById("signup_form").addEventListener("submit", function (event) {
-  event.preventDefault();
+document.getElementById("signup_form").addEventListener("submit", function () {
   registerForm();
 });
-document.getElementById("log-in").addEventListener("click", function (event) {
-  event.preventDefault();
+document.getElementById("log-in").addEventListener("click", function () {
   login();
 });
 
 function registerForm(event) {
   event.preventDefault();
+
   console.log("Entering registerForm method");
 
 
