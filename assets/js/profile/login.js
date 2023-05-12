@@ -1,5 +1,5 @@
-function saveData(event) {
-  event.preventDefault();
+function saveData() {
+  
   let user_email;
   let pw;
   user_email = document.getElementById("user_email").value;
