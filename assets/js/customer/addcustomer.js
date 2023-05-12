@@ -10,6 +10,7 @@ const customerDetails =
   JSON.parse(localStorage.getItem("customerDetails")) || [];
 
 form.addEventListener("submit", function (event) {
+  event.preventDefault();
 
   if (
     customerDetails.some(
@@ -38,6 +39,6 @@ form.addEventListener("submit", function (event) {
     localStorage.setItem("customer_phone", customer_phone.value);
     alert("Customer Sucessfully Created");
     window.location.href = "./customer.html";
-    event.preventDefault();
+    
   }
 });

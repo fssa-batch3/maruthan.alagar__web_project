@@ -15,7 +15,8 @@ sumbit.addEventListener("submit", update);
 const back = document.getElementById("backbutton");
 back.addEventListener("click", backbutton);
 
-function update() {
+function update(event) {
+  event.preventDefault();
   const customer_name = document.getElementById("customer_name").value;
   const customer_id = document.getElementById("customer_id").value;
   const customer_email = document.getElementById("customer_email").value;

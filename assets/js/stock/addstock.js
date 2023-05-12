@@ -20,6 +20,7 @@ document.getElementById("discount").addEventListener("input", checkDis);
 document.getElementById("quantity").addEventListener("input", checkQuan);
 
 form.addEventListener("submit", function (event) {
+  event.preventDefault();
 
   if (stockDetails.some((record) => record.stock_name === stock_name.value)) {
     alert("Stock is already exists! ");
@@ -43,7 +44,7 @@ form.addEventListener("submit", function (event) {
     localStorage.setItem("stock_name", stock_name.value);
     alert("Stock is Sucessfully Created");
     window.location.href = "./stock.html";
-    event.preventDefault();
+    
   }
 });
 
