@@ -1,9 +1,9 @@
-function saveData() {
-  
+function saveData(e) {
+  e.preventDefault();
   let user_email;
   let pw;
   user_email = document.getElementById("user_email").value;
-  pw = document.getElementById("password").value;
+  pw = document.getElementById("current_password").value;
   let user_details = new Array();
   user_details = JSON.parse(localStorage.getItem("userRecords"))
     ? JSON.parse(localStorage.getItem("userRecords"))
