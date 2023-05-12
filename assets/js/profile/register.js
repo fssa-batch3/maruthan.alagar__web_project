@@ -9,17 +9,19 @@ const uuid = uuidv4();
 
 const userRecords = JSON.parse(localStorage.getItem("userRecords")) || [];
 
-document.getElementById("signup_form").addEventListener("submit", function () {
+document.getElementById("signup_form").addEventListener("submit", function (event) {
+  event.preventDefault();
   registerForm();
 });
-document.getElementById("log-in").addEventListener("click", function () {
+document.getElementById("log-in").addEventListener("click", function (event) {
+  event.preventDefault();
   login();
 });
 
 function registerForm(event) {
   event.preventDefault();
   console.log("Entering registerForm method");
- 
+
 
   if (userRecords.some((record) => record.user_email === user_email.value)) {
     alert("Email already exists Please try another one! ");
@@ -45,9 +47,9 @@ function registerForm(event) {
     localStorage.setItem("unique", user_email.value);
     window.location.href = "./pages/login/username.html";
     alert("Your details successfully registered");
-    
+
   }
-  
+
 }
 
 function login() {
