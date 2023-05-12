@@ -10,7 +10,6 @@ const customerDetails =
   JSON.parse(localStorage.getItem("customerDetails")) || [];
 
 form.addEventListener("submit", function (event) {
-  event.preventDefault();
 
   if (
     customerDetails.some(

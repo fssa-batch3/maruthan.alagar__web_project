@@ -12,14 +12,6 @@ const myParamValue = params.get("order_id");
 const param= new URLSearchParams(window.location.search);
 const ParamValue = params.get("customer_id");
 
-// function findDetail(e) {
-//   return e.order_id === myParamValue;
-// }
-
-
-// function findCustomer(e) {
-//     return e.customer_id === ParamValue;
-//   }
 
 
 var customer_records = customerDetails.find(e => e.customer_id === ParamValue );
