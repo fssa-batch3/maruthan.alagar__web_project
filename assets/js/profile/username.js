@@ -10,9 +10,9 @@ document.getElementById("user_form").addEventListener("submit", function () {
   userName();
 });
 
-function userName() {
+function userName(e) {
 
-  // event.preventDefault();
+  e.preventDefault();
   console.log("rajini")
   if (pw.value !== new_pw.value) {
     alert("Passwords do not match");
