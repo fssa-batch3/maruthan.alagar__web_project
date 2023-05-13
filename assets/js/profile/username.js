@@ -10,9 +10,8 @@ document.getElementById("user_form").addEventListener("submit", function () {
   userName();
 });
 
-function userName(e) {
+function userName() {
 
-  e.preventDefault();
   console.log("rajini")
   if (pw.value !== new_pw.value) {
     alert("Passwords do not match");
@@ -63,7 +62,6 @@ function userName(e) {
   users_records.pw = pw.value;
 
   localStorage.setItem("userRecords", JSON.stringify(userRecords));
-  console.log(userRecords);
   window.location.href = "./login.html";
   alert("Your Username is successfully Created ");
 
