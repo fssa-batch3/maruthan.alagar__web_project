@@ -369,9 +369,6 @@ function selectCustomer() {
 
   console.log(findData);
 
-  // let findDetail = customerDetails.filter(data =>
-  // data.customer_phone == customer_phone)
-
 
   for (let i = 0; i < findData.length; i++) {
     customer_name = document.getElementById("customer_name").value =
@@ -386,7 +383,7 @@ function selectCustomer() {
 
 
 
-function cus(event) {
+function cus() {
   if (findData.length == 0) {
     const uuid = uuidv4();
     const customerDetails = JSON.parse(localStorage.getItem("customerDetails"))
@@ -413,7 +410,7 @@ function cus(event) {
 
       customerDetails.push(newCustomer);
       localStorage.setItem("customerDetails", JSON.stringify(customerDetails));
-      event.preventDefault();
+  
     }
   }
 };
