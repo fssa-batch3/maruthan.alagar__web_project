@@ -60,9 +60,8 @@ document.getElementById("user_form").addEventListener("submit", function userNam
   users_records.pw = pw.value;
 
   localStorage.setItem("userRecords", JSON.stringify(userRecords));
-  alert("Your Username is successfully Created ");
   window.location.href = "./login.html";
- 
+  alert("Your Username is successfully Created ");
 
 });
 
