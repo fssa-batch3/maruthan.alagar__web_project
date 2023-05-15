@@ -1,17 +1,13 @@
 const user_email = document.getElementById("user_email");
-const new_pw = document.getElementById("new_password");
-const pw = document.getElementById("password");
+const new_pw = document.getElementById("new-password");
+const pw = document.getElementById("re-password");
 
 const userRecords = JSON.parse(localStorage.getItem("userRecords"));
 const unique = localStorage.getItem("unique");
 console.log(unique);
 
-document.getElementById("user_form").addEventListener("submit", function () {
-  userName();
-});
-
-function userName(event) {
-  event.preventDefault();
+document.getElementById("user_form").addEventListener("submit", function userName(e) {
+  e.preventDefault();
 
 
   console.log("rajini")
@@ -67,7 +63,9 @@ function userName(event) {
   window.location.href = "./login.html";
   alert("Your Username is successfully Created ");
 
-}
+});
+
+
 
 document.getElementById("new_password").addEventListener("input", showRulez);
 
