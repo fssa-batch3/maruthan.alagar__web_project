@@ -232,7 +232,8 @@ function newDetail() {
   }
 }
 
-function findTotal() {
+function findTotal(e) {
+  e.preventDefault();
   const total_quantity = document.getElementById("total_quantity");
   const total_mrp = document.getElementById("total_mrp");
   const total_tax = document.getElementById("total_tax");
@@ -303,8 +304,8 @@ document.getElementById("payment").addEventListener("submit", () => {
   saveData();
 });
 
-function saveData() {
-
+function saveData(e) {
+  e.preventDefault();
 
   const order_bills = JSON.parse(localStorage.getItem("order_bill")) || [];
 
@@ -358,7 +359,8 @@ document.getElementById("customer_phone").addEventListener("change", selectCusto
 document.getElementById("product_id").addEventListener("change", selectProduct)
 let findData = []
 
-function selectCustomer() {
+function selectCustomer(e) {
+  e.preventDefault();
 
   let customer_phone = document.getElementById("customer_phone").value;
   const customerDetails = JSON.parse(localStorage.getItem("customerDetails"));
@@ -383,7 +385,8 @@ function selectCustomer() {
 
 
 
-function cus() {
+function cus(e) {
+  e.preventDefault();
   if (findData.length == 0) {
     const uuid = uuidv4();
     const customerDetails = JSON.parse(localStorage.getItem("customerDetails"))
@@ -410,7 +413,7 @@ function cus() {
 
       customerDetails.push(newCustomer);
       localStorage.setItem("customerDetails", JSON.stringify(customerDetails));
-  
+
     }
   }
 };
@@ -418,7 +421,8 @@ function cus() {
 
 
 
-function selectProduct() {
+function selectProduct(e) {
+  e.preventDefault();
   let product_id = document.getElementById("product_id").value
   const productDetails = JSON.parse(localStorage.getItem("productDetails"));
 

@@ -6,6 +6,7 @@ const params = new URLSearchParams(window.location.search);
 const myParamValue = params.get("stock_name");
 
 function findDetail(e) {
+  e.preventDefault();
   return e.stock_name === myParamValue;
 }
 const stock_records = stockDetails.find(findDetail);
@@ -49,10 +50,11 @@ function update(event) {
 
   // again paste it to the
   localStorage.setItem("stockDetails", JSON.stringify(stockDetails));
-  window.location.href = "./stock.html";
   alert("Stock Details Successfully Updated");
+  window.location.href = "./stock.html";
+  
 
-  event.preventDefault();
+  
 }
 
 function backbutton() {
