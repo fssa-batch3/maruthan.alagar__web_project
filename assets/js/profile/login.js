@@ -10,16 +10,14 @@ function saveData(e) {
     : [];
   if (
     user_details.some((v) => {
-      return v.user_email === user_email && v.pw === pw;
+      return v.user_email == user_email && v.pw == pw;
     })
   ) {
     const current_user = user_details.filter((v) => {
-      return v.user_email === user_email && v.pw === pw;
+      return v.user_email == user_email && v.pw == pw;
     })[0];
-  
     window.location.href = "../homepage/homepage.html";
     alert("Successfully Logined ");
-   
     localStorage.setItem("unique", current_user.user_email);
   } else {
     alert("Please Check your details");
