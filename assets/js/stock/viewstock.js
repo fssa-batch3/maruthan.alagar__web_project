@@ -25,6 +25,7 @@ document.getElementById("discount").addEventListener("input", checkDis);
 document.getElementById("quantity").addEventListener("input", checkQuan);
 
 function update(event) {
+  event.preventDefault();
   //
   const stock_name = document.getElementById("stock_name").value;
   const quantity = document.getElementById("quantity").value;
