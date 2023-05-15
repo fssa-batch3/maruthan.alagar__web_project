@@ -49,7 +49,7 @@ function update(event) {
   localStorage.setItem("userRecords", JSON.stringify(userRecords));
 }
 
-if (user_records.gstn_number.value === "undefiened") {
+if (user_records.gstn_number === "undefiened") {
   gstn_number.setAttribute("placeholder", "Enter GSTN Number");
 }
 
