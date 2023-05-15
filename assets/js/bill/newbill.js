@@ -100,7 +100,8 @@ document.getElementById("cus_form").addEventListener("submit", () => {
 const uuid = uuidv4();
 let product_records;
 
-function newDetail() {
+function newDetail(event) {
+  event.preventDefault();
   const orders = JSON.parse(localStorage.getItem("orders")) || [];
   const order_products =
     JSON.parse(localStorage.getItem("order_products")) || [];
@@ -232,8 +233,8 @@ function newDetail() {
   }
 }
 
-function findTotal(e) {
-  e.preventDefault();
+function findTotal() {
+ 
   const total_quantity = document.getElementById("total_quantity");
   const total_mrp = document.getElementById("total_mrp");
   const total_tax = document.getElementById("total_tax");
@@ -304,8 +305,8 @@ document.getElementById("payment").addEventListener("submit", () => {
   saveData();
 });
 
-function saveData(e) {
-  e.preventDefault();
+function saveData() {
+ 
 
   const order_bills = JSON.parse(localStorage.getItem("order_bill")) || [];
 
@@ -349,7 +350,7 @@ function saveData(e) {
     localStorage.setItem("order_bill", JSON.stringify(order_bills));
     alert("Bill Successfully Saved");
     document.getElementById("cus_form").reset();
-    location.reload();
+    location.reload;
   }
 }
 
@@ -359,8 +360,8 @@ document.getElementById("customer_phone").addEventListener("change", selectCusto
 document.getElementById("product_id").addEventListener("change", selectProduct)
 let findData = []
 
-function selectCustomer(e) {
-  e.preventDefault();
+function selectCustomer() {
+ 
 
   let customer_phone = document.getElementById("customer_phone").value;
   const customerDetails = JSON.parse(localStorage.getItem("customerDetails"));
@@ -385,8 +386,8 @@ function selectCustomer(e) {
 
 
 
-function cus(e) {
-  e.preventDefault();
+function cus() {
+ 
   if (findData.length == 0) {
     const uuid = uuidv4();
     const customerDetails = JSON.parse(localStorage.getItem("customerDetails"))
@@ -421,8 +422,8 @@ function cus(e) {
 
 
 
-function selectProduct(e) {
-  e.preventDefault();
+function selectProduct() {
+ 
   let product_id = document.getElementById("product_id").value
   const productDetails = JSON.parse(localStorage.getItem("productDetails"));
 
