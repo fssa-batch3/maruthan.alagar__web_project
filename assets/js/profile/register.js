@@ -38,8 +38,9 @@ document.getElementById("signup_form").addEventListener("submit", function regis
     userRecords.push(newUser);
     localStorage.setItem("userRecords", JSON.stringify(userRecords));
     localStorage.setItem("unique", user_email.value);
-    window.location.href = "./pages/login/username.html";
     alert("Your details successfully registered");
+    window.location.href = "./pages/login/username.html";
+
 
   }
 });
