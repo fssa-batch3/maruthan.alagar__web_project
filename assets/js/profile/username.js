@@ -1,12 +1,12 @@
 const user_email = document.getElementById("user_email");
-const new_pw = document.getElementById("new-password");
-const pw = document.getElementById("re-password");
+const new_pw = document.getElementById("new_password");
+const pw = document.getElementById("password");
 
 const userRecords = JSON.parse(localStorage.getItem("userRecords"));
 const unique = localStorage.getItem("unique");
 console.log(unique);
 
-document.getElementById("user_form").addEventListener("submit", function userName(e) {
+document.getElementById("user_form").addEventListener("submit",function userName(e) {
   e.preventDefault();
 
 
