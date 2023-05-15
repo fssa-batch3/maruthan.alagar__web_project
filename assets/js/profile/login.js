@@ -10,11 +10,11 @@ function saveData(e) {
     : [];
   if (
     user_details.some((v) => {
-      return v.user_email == user_email && v.pw == pw;
+      return v.user_email === user_email && v.pw === pw;
     })
   ) {
     const current_user = user_details.filter((v) => {
-      return v.user_email == user_email && v.pw == pw;
+      return v.user_email === user_email && v.pw === pw;
     })[0];
     alert("Successfully Logined ");
     window.location.href = "../homepage/homepage.html";
