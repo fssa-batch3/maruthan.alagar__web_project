@@ -10,7 +10,9 @@ document.getElementById("user_form").addEventListener("submit", function () {
   userName();
 });
 
-function userName() {
+function userName(event) {
+  event.preventDefault();
+
 
   console.log("rajini")
   if (pw.value !== new_pw.value) {
