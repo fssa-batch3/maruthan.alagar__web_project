@@ -6,8 +6,8 @@ const userRecords = JSON.parse(localStorage.getItem("userRecords"));
 const unique = localStorage.getItem("unique");
 console.log(unique);
 
-document.getElementById("user_form").addEventListener("submit",function userName(e) {
-  e.preventDefault();
+document.getElementById("user_form").addEventListener("submit",function userName(event) {
+  event.preventDefault();
 
 
   console.log("rajini")
@@ -62,7 +62,7 @@ document.getElementById("user_form").addEventListener("submit",function userName
   localStorage.setItem("userRecords", JSON.stringify(userRecords));
   alert("Your Username is successfully Created ");
   window.location.href = "./login.html";
-
+ 
 
 });
 
