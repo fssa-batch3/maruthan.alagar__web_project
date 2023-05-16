@@ -10,21 +10,10 @@ function findDetail(e) {
 }
 const stock_records = stockDetails.find(findDetail);
 
-document.getElementById("edit_form").addEventListener("submit", function () {
-  update();
-});
-
-document.getElementById("backbutton").addEventListener("click", function () {
-  backbutton();
-});
-
-
-document.getElementById("tax").addEventListener("input", checkTax);
-document.getElementById("discount").addEventListener("input", checkDis);
-document.getElementById("quantity").addEventListener("input", checkQuan);
-
-function update(event) {
-  event.preventDefault();
+// document.getElementById("edit_form").addEventListener("submit", function () {
+//   update();
+document.getElementById("edit_form").addEventListener("submit", function update(e) {
+  e.preventDefault();
   //
   const stock_name = document.getElementById("stock_name").value;
   const quantity = document.getElementById("quantity").value;
@@ -55,7 +44,19 @@ function update(event) {
   
 
   
-}
+});
+
+
+
+document.getElementById("backbutton").addEventListener("click", function () {
+  backbutton();
+});
+
+
+document.getElementById("tax").addEventListener("input", checkTax);
+document.getElementById("discount").addEventListener("input", checkDis);
+document.getElementById("quantity").addEventListener("input", checkQuan);
+
 
 function backbutton() {
   confirm("Are You Sure Discard Changes!");

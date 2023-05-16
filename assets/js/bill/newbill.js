@@ -87,6 +87,7 @@ if ((total_2 = " ")) {
   document.getElementById("total").value = "0/-";
 }
 
+
 document.getElementById("cus_form").addEventListener("submit", () => {
   newDetail();
   cus();
@@ -95,8 +96,7 @@ document.getElementById("cus_form").addEventListener("submit", () => {
 const uuid = uuidv4();
 let product_records;
 
-function newDetail(event) {
-  event.preventDefault();
+function newDetail() {
   const orders = JSON.parse(localStorage.getItem("orders")) || [];
   const order_products =
     JSON.parse(localStorage.getItem("order_products")) || [];
