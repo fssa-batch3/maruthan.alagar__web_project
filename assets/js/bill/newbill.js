@@ -6,7 +6,6 @@ main_table.setAttribute("id", "table");
 // table row
 table_row = document.createElement("tr");
 table_row.setAttribute("class", "tb1");
-// label_name.innerText = register_shop[i]["name"];
 main_table.append(table_row);
 
 // table coloumn_1
@@ -18,8 +17,6 @@ table_row.append(table_coloumn);
 table_coloumn = document.createElement("th");
 table_coloumn.innerText = "Item Name";
 table_row.append(table_coloumn);
-
-// table coloumn_3
 
 // table coloumn_3
 table_coloumn = document.createElement("th");
@@ -57,7 +54,7 @@ table_coloumn = document.createElement("th");
 table_coloumn.innerText = "Amount";
 table_row.append(table_coloumn);
 
-// const customer_bill_Details = JSON.parse(sessionStorage.getItem("customer_bill_Details")) || {};
+
 
 document.querySelector("main").append(main_table);
 
@@ -92,8 +89,6 @@ if ((total_2 = " ")) {
 
 document.getElementById("cus_form").addEventListener("submit", () => {
   newDetail();
-});
-document.getElementById("cus_form").addEventListener("submit", () => {
   cus();
 });
 
@@ -126,10 +121,7 @@ function newDetail(event) {
 
   let amount = 0;
 
-  // let order_details = {
-  //     customer_id: customer_id,
-  //     order_id: uuid
-  // }
+ 
 
   const exist = orders.length && orders.some((data) => data.order_id == uuid);
 
@@ -139,7 +131,7 @@ function newDetail(event) {
       order_id: uuid,
     });
     localStorage.setItem("orders", JSON.stringify(orders));
-    // alert("")
+
   }
 
   amount = (price - discount + tax) * quantity;
@@ -301,7 +293,6 @@ document.getElementById("txn_id").value = txn_id;
 document.getElementById("cash").setAttribute("checked", "checked");
 
 document.getElementById("payment").addEventListener("submit", () => {
-
   saveData();
 });
 

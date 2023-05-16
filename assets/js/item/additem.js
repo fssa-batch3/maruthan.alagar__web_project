@@ -54,8 +54,9 @@ form.addEventListener("submit", function (event) {
     productDetails.push(newProduct);
     localStorage.setItem("productDetails", JSON.stringify(productDetails));
     localStorage.setItem("product_id", product_id.value);
-    window.location.href = "./item.html";
     alert("Product is Sucessfully Created");
+    window.location.href = "./item.html";
+    
     
   }
 });

@@ -6,7 +6,6 @@ const params = new URLSearchParams(window.location.search);
 const myParamValue = params.get("stock_name");
 
 function findDetail(e) {
-  e.preventDefault();
   return e.stock_name === myParamValue;
 }
 const stock_records = stockDetails.find(findDetail);
