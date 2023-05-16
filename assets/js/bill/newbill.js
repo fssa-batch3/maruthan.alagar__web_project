@@ -343,7 +343,7 @@ document.getElementById("payment").addEventListener("submit", function saveData(
     localStorage.setItem("order_bill", JSON.stringify(order_bills));
     alert("Bill Successfully Saved");
     document.getElementById("cus_form").reset();
-    location.reload;
+    location.reload();
   }
 });
 
