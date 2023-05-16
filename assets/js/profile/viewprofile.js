@@ -49,9 +49,16 @@ function update() {
   localStorage.setItem("userRecords", JSON.stringify(userRecords));
 }
 
-if (user_records.gstn_number === "undefiened") {
-  gstn_number.setAttribute("placeholder", "Enter GSTN Number");
+if (user_records.gstn_number === "undefined") {
+  gstn_number.setAttribute("placeholder", "Please enter GSTN Number");
 }
+if (user_records.address === "undefined") {
+  gstn_number.setAttribute("placeholder", "Please enter Your address");
+}
+if (user_records.nameforprint === "undefined") {
+  gstn_number.setAttribute("placeholder", "Please enter Print name");
+}
+
 
 document.getElementById("gstn_number").value = user_records.gstn_number;
 document.getElementById("address").value = user_records.address;

@@ -88,15 +88,15 @@ if ((total_2 = " ")) {
 }
 
 
-document.getElementById("cus_form").addEventListener("submit", () => {
-  newDetail();
-  cus();
-});
+// document.getElementById("cus_form").addEventListener("submit", () => {
+//   newDetail();
+// });
 
 const uuid = uuidv4();
 let product_records;
 
-function newDetail() {
+document.getElementById("cus_form").addEventListener("submit", function newDetail(e) {
+  e.preventDefault();
   const orders = JSON.parse(localStorage.getItem("orders")) || [];
   const order_products =
     JSON.parse(localStorage.getItem("order_products")) || [];
@@ -223,7 +223,7 @@ function newDetail() {
       }
     }
   }
-}
+});
 
 function findTotal() {
  
@@ -292,12 +292,14 @@ document.getElementById("txn_id").value = txn_id;
 
 document.getElementById("cash").setAttribute("checked", "checked");
 
-document.getElementById("payment").addEventListener("submit", () => {
-  saveData();
-});
+// document.getElementById("payment").addEventListener("submit", () => {
+//   saveData();
+// });
 
-function saveData() {
- 
+
+
+document.getElementById("payment").addEventListener("submit", function saveData(e) {
+  e.preventDefault();
 
   const order_bills = JSON.parse(localStorage.getItem("order_bill")) || [];
 
@@ -343,7 +345,7 @@ function saveData() {
     document.getElementById("cus_form").reset();
     location.reload;
   }
-}
+});
 
 
 
