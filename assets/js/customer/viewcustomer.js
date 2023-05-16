@@ -33,8 +33,9 @@ function update(event) {
 
   // again paste it to the
   localStorage.setItem("customerDetails", JSON.stringify(customerDetails));
-  window.location.href = "./customer.html";
   alert("Customer Details Successfully Updated");
+  window.location.href = "./customer.html";
+
 }
 
 function backbutton() {
