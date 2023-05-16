@@ -49,13 +49,13 @@ function update() {
   localStorage.setItem("userRecords", JSON.stringify(userRecords));
 }
 
-if (user_records.gstn_number === "undefined") {
+if (user_records.gstn_number.value === "undefined") {
   gstn_number.setAttribute("placeholder", "Please enter GSTN Number");
 }
-if (user_records.address === "undefined") {
+if (user_records.address.value === "undefined") {
   gstn_number.setAttribute("placeholder", "Please enter Your address");
 }
-if (user_records.nameforprint === "undefined") {
+if (user_records.nameforprint.value === "undefined") {
   gstn_number.setAttribute("placeholder", "Please enter Print name");
 }
 
