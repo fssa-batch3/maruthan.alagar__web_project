@@ -10,10 +10,13 @@
         <link rel="stylesheet" href="../../assets/css/footer.css">
         <link rel="stylesheet" href="../../assets/css/normalize.css">
         <link rel="icon" href="../../assets/Imges/M_A_M.png">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+       
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-
     <body>
+       
         <header>
             <div class="header">
                 <img class="logo" src="../../assets/Imges/M_A_M.png" alt="logo" width="110px">
@@ -39,50 +42,52 @@
 
             </div>
         </header>
-        <main>
-            <div class="cards">
-                <div class="card1">
-                    <div id="shadow" class="top1">
+        <main class="main">
+         
+        <section>
+            <div class="buttons">
+               
+                    <a href="./../billing/newbill.html"><button type="button" id="bill" class="button">+New Bill</button></a>
 
-                        <h1>$20</h1>
-                        <h2>Basic plan</h2>
-                        <p>For small businesses and freelancers to track expenses and mileage claims.</p>
-                        <button class="btn" type="submit">
-                            <a href="../homepage/cards.html">Contact Us</a>
-                        </button>
-                    </div>
-                    <div id="shadow" class="top2">
-                        <h2>$50</h2>
-                        <h2>Silver plan</h2>
-                        <p>For growing businesses to manage corporate cards and streamline end-to-end expense reporting.</p>
-                        <button class="btn" type="submit">
-                            <a href="../homepage/cards.html">Contact Us</a>
-                        </button>
-                    </div>
-                </div>
-                <div class="card2">
-                    <div id="shadow" class="bottom1">
-                        <h1>$80</h1>
-                        <h2>Gold plan</h2>
-                        <p>For global businesses with high volume of expenses, in need of powerful controls and robust
-                            workflows.</p>
-                        <button class="btn" type="submit">
-                            <a href="../homepage/cards.html">Contact Us</a>
-                        </button>
-                    </div>
-                    <div id="shadow" class="bottom2">
-                        <h1>$100</h1>
-                        <h2>Platinum plan</h2>
-                        <p>Built for businesses that need a highly customizable and integrated solution to suit their
-                            complex needs.</p>
-                        <button class="btn" type="submit">
-                            <a href="../homepage/cards.html">Contact Us</a>
-                        </button>
-                    </div>
-                </div>
+                    <a href="./../item/additem.html"><button type="button" id="item" class="button">+Add New Item</button></a>
+                
+                               
+
+                  <a href="./../stock/addstock.html"><button type="button" id="stock" class="button">+Add New Stock</button></a>
+
+                  <a href="./../customer/addcustomer.html"><button type="button" id="customer" class="button">+Add New Customer</button></a>
+            
             </div>
 
-        </main>
+
+        </section>
+        <aside class="aside">
+        <canvas id="chart" style="max-width:69em"></canvas>
+
+        <div class="cards">
+          <div class="card red">
+              <p class="tip">Total Items</p>
+              <p class="second-text" id="total_item_text"></p>
+          </div>
+          <div class="card blue"> 
+              <p class="tip">Total Stocks</p>
+              <p class="second-text"  id="total_stock_text"></p>
+          </div>
+          <div class="card green">
+              <p class="tip">Total Customers</p>
+              <p class="second-text"  id="total_customer_text"></p>
+          </div>
+          <div class="card yellow">
+            <p class="tip">Total Bills</p>
+            <p class="second-text"  id="total_bill_text"></p>
+        </div>
+      </div>
+
+
+      </aside>
+
+    </main>
+    
         <footer>
             <h3>Copyright © 2023 M A M Software Solutions Pvt.Ltd</h3>
 
@@ -91,6 +96,8 @@
             </button>
 
         </footer>
+       
     </body>
+    <script src="../../assets/js/homepage/homepage.js"></script>
 
 </html>
