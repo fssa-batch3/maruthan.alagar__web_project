@@ -40,7 +40,6 @@ document.getElementById("signup_form").addEventListener("submit", function regis
     localStorage.setItem("unique", user_email.value);
      alert("Your details successfully registered");
     window.location.href = "./pages/login/username.html";
-    alert("Your details successfully registered");
 
   }
 });
