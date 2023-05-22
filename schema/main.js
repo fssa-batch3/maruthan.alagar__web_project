@@ -2,6 +2,9 @@ let usersRecords;
 let productDetails;
 let stockDetails;
 let customerDetails;
+let order_bill;
+let orders;
+let order_products;
 
 if (JSON.parse(localStorage.getItem("userRecords"))) {
   console.log("userRecords");
@@ -136,4 +139,83 @@ if (JSON.parse(localStorage.getItem(customerDetails))) {
     },
   ];
   localStorage.setItem("customerDetails", JSON.stringify(customerDetails));
+}
+
+
+if (JSON.parse(localStorage.getItem(order_bill))) {
+  console.log("order_bill");
+} else {
+  order_bill = [
+    {
+      bill_date: "2023-05-22",
+      bill_no: "B1",
+      order_id: "1ac5744e-f61d-49ef-827f-89335565b76d",
+      payment_method: "cash",
+      total_amount: 190,
+      total_discount: 1,
+      total_mrp: 20,
+      total_price: 18,
+      total_quantity: 10,
+      total_tax: 2,
+      transaction_id: "T2362863"
+    }
+  ];
+  localStorage.setItem("order_bill", JSON.stringify(order_bill));
+
+}
+
+
+if (JSON.parse(localStorage.getItem(order_products))) {
+  console.log("order_products");
+} else {
+  order_products = [
+    {
+      amount:
+        190,
+      discount
+        :
+        1,
+      mrp
+        :
+        "20",
+      order_id
+        :
+        "1ac5744e-f61d-49ef-827f-89335565b76d",
+      price
+        :
+        18,
+      product_id
+        :
+        "S0098",
+      product_name
+        :
+        "Sugar",
+      quantity
+        :
+        10,
+      tax
+        :
+        2
+    }
+  ];
+  localStorage.setItem("order_products", JSON.stringify(order_products));
+
+}
+
+
+if (JSON.parse(localStorage.getItem(orders))) {
+  console.log("orders");
+} else {
+  orders = [
+    {
+      customer_id
+        :
+        "A0098",
+      order_id
+        :
+        "1ac5744e-f61d-49ef-827f-89335565b76d"
+    }
+  ];
+  localStorage.setItem("orders", JSON.stringify(orders));
+
 }

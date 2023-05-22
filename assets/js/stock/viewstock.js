@@ -53,9 +53,13 @@ document.getElementById("backbutton").addEventListener("click", function () {
 });
 
 
+
 document.getElementById("tax").addEventListener("input", checkTax);
 document.getElementById("discount").addEventListener("input", checkDis);
 document.getElementById("quantity").addEventListener("input", checkQuan);
+document.getElementById("mrp").addEventListener("input", checkMrp);
+document.getElementById("price").addEventListener("input", checkPrice);
+document.getElementById("agency_id").addEventListener("input", checkId);
 
 
 function backbutton() {
@@ -75,22 +79,67 @@ document.getElementById("date").value = stock_records.date;
 
 function checkDis() {
   if (discount.value.length > 2) {
-    alert("Discount should be between 0 % - 100 %");
+    alert("Discount should be between 0 % - 99 %");
+    document.getElementById("discount").value = stock_records.discount;
+  }
+  else if (discount.value < 0){
+    alert("Value should not be negative");
     document.getElementById("discount").value = stock_records.discount;
   }
 }
 
 function checkTax() {
   if (tax.value.length > 2) {
-    alert("Tax should be between 0 % - 100 %");
+    alert("Tax should be between 0 % - 99 %");
+    document.getElementById("tax").value = stock_records.tax;
+  }
+  else if (tax.value < 0){
+    alert("Value should not be negative");
     document.getElementById("tax").value = stock_records.tax;
   }
 }
 
 function checkQuan() {
-  if (quantity.value.length > 4) {
-    alert("Quantity should be between 0 - 10000");
-    document.getElementById("quantity").value =stock_records.quantity;
+  if (quantity.value.length > 3) {
+    alert("Quantity should be between 0 - 999");
+    document.getElementById("quantity").value = stock_records.quantity;
   }
+  else if (quantity.value < 0){
+    alert("Value should not be negative");
+    document.getElementById("quantity").value = stock_records.quantity;
+  }
+}
+
+function checkPrice() {
+  if (price.value > 25000) {
+    alert("Price should be between 0 - 25000");
+    document.getElementById("price").value = stock_records.price;
+  }
+  else if (price.value < 0){
+    alert("Value should not be negative");
+    document.getElementById("price").value = stock_records.price;
+  }
+}
+
+function checkMrp() {
+  if (mrp.value > 25000) {
+    alert("MRP should be between 0 - 25000");
+    document.getElementById("mrp").value = stock_records.mrp;
+  }
+  else if (mrp.value < 0){
+    alert("Value should not be negative");
+    document.getElementById("mrp").value = stock_records.mrp;
+  }
+}
+function checkId() {
+  if (agency_id.value.length > 9) {
+    alert("Agency ID should be 9 characters long");
+    document.getElementById("agency_id").value = stock_records.agency_id;
+  }
+ else if (agency_id.value.length < 2) {
+    alert("Agency ID should be 2 to 9 characters long");
+    document.getElementById("agency_id").value = stock_records.agency_id;
+  }
+
 }
 

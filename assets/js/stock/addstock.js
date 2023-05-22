@@ -18,11 +18,15 @@ const stockDetails = JSON.parse(localStorage.getItem("stockDetails")) || [];
 document.getElementById("tax").addEventListener("input", checkTax);
 document.getElementById("discount").addEventListener("input", checkDis);
 document.getElementById("quantity").addEventListener("input", checkQuan);
+document.getElementById("mrp").addEventListener("input", checkMrp);
+document.getElementById("price").addEventListener("input", checkPrice);
+document.getElementById("agency_id").addEventListener("input", checkId);
+
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  if (stockDetails.some((record) => record.stock_name === stock_name.value)) {
+  if (stockDetails.some((record) => record.stock_name === stock_name.value && record.date === date.value && record.brand_name === brand_name.value && record.agency_id === agency_id.value )) {
     alert("Stock is already exists! ");
   } else {
     const newStock = {
@@ -50,22 +54,68 @@ form.addEventListener("submit", function (event) {
 
 function checkDis() {
   if (discount.value.length > 2) {
-    alert("Discount should be between 0 % - 100 %");
+    alert("Discount should be between 0 % - 99 %");
+    document.getElementById("discount").value = "";
+  }
+  else if (discount.value < 0){
+    alert("Value should not be negative");
     document.getElementById("discount").value = "";
   }
 }
 
 function checkTax() {
   if (tax.value.length > 2) {
-    alert("Tax should be between 0 % - 100 %");
+    alert("Tax should be between 0 % - 99 %");
+    document.getElementById("tax").value = "";
+  }
+  else if (tax.value < 0){
+    alert("Value should not be negative");
     document.getElementById("tax").value = "";
   }
 }
 
 function checkQuan() {
-  if (quantity.value.length > 4) {
-    alert("Quantity should be between 0 - 10000");
+  if (quantity.value.length > 3) {
+    alert("Quantity should be between 0 - 999");
+    document.getElementById("quantity").value = "";
+  }
+  else if (quantity.value < 0){
+    alert("Value should not be negative");
     document.getElementById("quantity").value = "";
   }
 }
+
+function checkPrice() {
+  if (price.value > 25000) {
+    alert("Price should be between 0 - 25000");
+    document.getElementById("price").value = "";
+  }
+  else if (price.value < 0){
+    alert("Value should not be negative");
+    document.getElementById("price").value = "";
+  }
+}
+
+function checkMrp() {
+  if (mrp.value > 25000) {
+    alert("MRP should be between 0 - 25000");
+    document.getElementById("mrp").value = "";
+  }
+  else if (mrp.value < 0){
+    alert("Value should not be negative");
+    document.getElementById("mrp").value = "";
+  }
+}
+function checkId() {
+  if (agency_id.value.length > 9) {
+    alert("Agency ID should be 9 characters long");
+    document.getElementById("agency_id").value = "";
+  }
+ else if (agency_id.value.length < 4) {
+    alert("Agency ID should be 4 to 9 characters long");
+    document.getElementById("agency_id").value = "";
+  }
+
+}
+
 

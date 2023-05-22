@@ -351,6 +351,7 @@ document.getElementById("payment").addEventListener("submit", function saveData(
 
 document.getElementById("customer_phone").addEventListener("change", selectCustomer)
 document.getElementById("product_id").addEventListener("change", selectProduct)
+document.getElementById("quantity").addEventListener("input", checkQuan)
 let findData = []
 
 function selectCustomer() {
@@ -448,5 +449,16 @@ function selectProduct() {
     }
   } else {
     alert("Product is not found! Please Add in your product List");
+  }
+}
+
+function checkQuan() {
+  if (quantity.value.length > 3) {
+    alert("Quantity should be between 0 - 999");
+    document.getElementById("quantity").value = "";
+  }
+  else if (quantity.value < 0){
+    alert("Value should not be negative");
+    document.getElementById("quantity").value = "";
   }
 }

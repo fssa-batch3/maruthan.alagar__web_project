@@ -14,6 +14,7 @@ sumbit.addEventListener("submit", update);
 
 const back = document.getElementById("backbutton");
 back.addEventListener("click", backbutton);
+document.getElementById("customer_id").addEventListener("input", checkId);
 
 function update(event) {
   event.preventDefault();
@@ -51,3 +52,12 @@ document.getElementById("customer_phone").value =
   customer_records.customer_phone;
 document.getElementById("customer_address").value =
   customer_records.customer_address;
+
+  function checkId() {
+    if (customer_id.value.length > 9) {
+      alert("Customer ID should be 9 characters long");
+      document.getElementById("customer_id").value =customer_records.customer_id;
+    }
+  
+  
+  }
