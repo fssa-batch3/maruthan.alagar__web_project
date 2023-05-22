@@ -30,7 +30,7 @@ table_row.append(table_coloumn);
 
 
 table_coloumn = document.createElement("th");
-table_coloumn.innerText = "Details";
+table_coloumn.innerText = "Date";
 table_row.append(table_coloumn);
 
 
@@ -76,7 +76,7 @@ const cus_name =  customer_records[0].customer_name;
     // table coloumn_3
     table_coloumn_1 = document.createElement("td");
     table_coloumn_1.setAttribute("class", "forres");
-    table_coloumn_1.innerText = order_bill[i].total_quantity + " Items";
+    table_coloumn_1.innerText = order_bill[i].bill_date;
     table_row_1.append(table_coloumn_1);
 
 

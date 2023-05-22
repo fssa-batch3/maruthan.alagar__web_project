@@ -15,6 +15,9 @@ const productDetails = JSON.parse(localStorage.getItem("productDetails")) || [];
 document.getElementById("tax").addEventListener("input", checkTax);
 document.getElementById("discount").addEventListener("input", checkDis);
 document.getElementById("quantity").addEventListener("input", checkQuan);
+document.getElementById("price").addEventListener("input", checkPrice);
+document.getElementById("mrp").addEventListener("input", checkMrp);
+document.getElementById("product_id").addEventListener("input", checkId);
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -63,21 +66,67 @@ form.addEventListener("submit", function (event) {
 
 function checkDis() {
   if (discount.value.length > 2) {
-    alert("Discount should be between 0 % - 100 %");
+    alert("Discount should be between 0 % - 99 %");
+    document.getElementById("discount").value = "";
+  }
+  else if (discount.value < 0){
+    alert("Value should not be negative");
     document.getElementById("discount").value = "";
   }
 }
 
 function checkTax() {
   if (tax.value.length > 2) {
-    alert("Tax should be between 0 % - 100 %");
+    alert("Tax should be between 0 % - 99 %");
+    document.getElementById("tax").value = "";
+  }
+  else if (tax.value < 0){
+    alert("Value should not be negative");
     document.getElementById("tax").value = "";
   }
 }
 
 function checkQuan() {
   if (quantity.value.length > 3) {
-    alert("Quantity should be between 0 - 1000");
+    alert("Quantity should be between 0 - 999");
+    document.getElementById("quantity").value = "";
+  }
+  else if (quantity.value < 0){
+    alert("Value should not be negative");
     document.getElementById("quantity").value = "";
   }
 }
+
+function checkPrice() {
+  if (price.value > 2500) {
+    alert("Price should be between 0 - 2500");
+    document.getElementById("price").value = "";
+  }
+  else if (price.value < 0){
+    alert("Value should not be negative");
+    document.getElementById("price").value = "";
+  }
+}
+
+function checkMrp() {
+  if (mrp.value > 2500) {
+    alert("MRP should be between 0 - 2500");
+    document.getElementById("mrp").value = "";
+  }
+  else if (mrp.value < 0){
+    alert("Value should not be negative");
+    document.getElementById("mrp").value = "";
+  }
+}
+function checkId() {
+  if (product_id.value.length > 7) {
+    alert("Product ID should be 7 characters long");
+    document.getElementById("product_id").value = "";
+  }
+
+}
+
+
+
+
+

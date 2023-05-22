@@ -8,6 +8,8 @@ const myParamValue = params.get("product_id");
 document.getElementById("tax").addEventListener("input", checkTax);
 document.getElementById("discount").addEventListener("input", checkDis);
 document.getElementById("quantity").addEventListener("input", checkQuan);
+document.getElementById("price").addEventListener("input", checkPrice);
+document.getElementById("mrp").addEventListener("input", checkMrp);
 
 const sumbit = document.getElementById("edit_item");
 sumbit.addEventListener("submit", update);
@@ -87,25 +89,62 @@ for (let i = 0; i < productDetails.length; i++) {
 }
 document.getElementById("product_id").addEventListener("click", giveNo);
 
+
 function checkDis() {
   if (discount.value.length > 2) {
-    alert("Discount should be between 0 % - 100 %");
+    alert("Discount should be between 0 % - 99 %");
+    document.getElementById("discount").value =product_records.discount;
+  }
+  else if (discount.value < 0){
+    alert("Value should not be negative");
     document.getElementById("discount").value = product_records.discount;
   }
 }
 
 function checkTax() {
   if (tax.value.length > 2) {
-    alert("Tax should be between 0 % - 100 %");
+    alert("Tax should be between 0 % - 99 %");
+    document.getElementById("tax").value = product_records.tax;
+  }
+  else if (tax.value < 0){
+    alert("Value should not be negative");
     document.getElementById("tax").value = product_records.tax;
   }
 }
+
 function checkQuan() {
   if (quantity.value.length > 3) {
-    alert("Quantity should be between 0 - 1000");
-    document.getElementById("quantity").value= product_records.quantity ;
+    alert("Quantity should be between 0 - 999");
+    document.getElementById("quantity").value = product_records.quantity;
+  }
+  else if (quantity.value < 0){
+    alert("Value should not be negative");
+    document.getElementById("quantity").value = product_records.quantity;
   }
 }
+
+function checkPrice() {
+  if (price.value > 2500) {
+    alert("Price should be between 0 - 2500");
+    document.getElementById("price").value = product_records.price;
+  }
+  else if (price.value < 0){
+    alert("Value should not be negative");
+    document.getElementById("price").value = product_records.price;
+  }
+}
+
+function checkMrp() {
+  if (mrp.value > 2500) {
+    alert("MRP should be between 0 - 2500");
+    document.getElementById("mrp").value = product_records.mrp;
+  }
+  else if (mrp.value < 0){
+    alert("Value should not be negative");
+    document.getElementById("mrp").value = product_records.mrp;
+  }
+}
+
 function giveNo() {
   alert("This is not Editable or Can't be Change");
 }

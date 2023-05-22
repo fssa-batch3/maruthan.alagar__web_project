@@ -8,6 +8,7 @@ const uuid = uuidv4();
 
 const customerDetails =
   JSON.parse(localStorage.getItem("customerDetails")) || [];
+  document.getElementById("customer_id").addEventListener("input", checkId);
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -42,3 +43,12 @@ form.addEventListener("submit", function (event) {
     
   }
 });
+
+function checkId() {
+  if (customer_id.value.length > 9) {
+    alert("Customer ID should be 9 characters long");
+    document.getElementById("customer_id").value ="";
+  }
+
+
+}
