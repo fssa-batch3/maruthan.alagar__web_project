@@ -44,15 +44,19 @@
             <div class="addstock">
                 <h2>Stock List</h2>
                 <div class="search">
-                    <button>
+                    <button id="addstock_button" class="addstock_button">
                         <a class="top" href="../stock/addstock.html">
                             <span> &#x002B;</span> Add New stock 
                         </a>
                     </button>
-                    <button>
-                        <a href="./searchstock.html">
-                            <i class="fa fa-search"></a></i></button>
-        </div>
+                    <div class="div_search">
+                        <input class="searchbox" type="text" id="searchInput" placeholder="Enter Item Name Or ID">
+                        <button  class="srch" id="searchButton">
+                          <span>
+                            <i id="icon" class="fa fa-search"></i>
+                          </span>
+                        </button>
+                      </div>
         </div>
     </main> 
                             <script src="./../../assets/js/stock/stock.js"></script>
