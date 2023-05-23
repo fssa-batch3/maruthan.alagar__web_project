@@ -1,7 +1,33 @@
+// Get the "Add Item" button and the search elements
+var addItemButton = document.getElementById('addstock_button');
+var searchInput = document.getElementById('searchInput');
+var searchButton = document.getElementById('searchButton');
+
+// Hide the search input initially
+searchInput.style.display = 'none';
+
+// Add click event listener to the search button
+searchButton.addEventListener('click', function() {
+  // Toggle the visibility of the elements
+  if (searchInput.style.display === 'none') {
+    searchInput.style.display = 'block';
+    addItemButton.style.display = 'none';
+  } else {
+    searchInput.style.display = 'none';
+    addItemButton.style.display = 'block';
+    location.reload();
+  }
+});
+
+
+
+
+
 const stockDetails = JSON.parse(localStorage.getItem("stockDetails"));
 
 // main table
 main_table = document.createElement("table");
+main_table.setAttribute("id","tableBody");
 main_table.setAttribute("class", "table");
 // table row
 table_row = document.createElement("tr");
@@ -78,3 +104,43 @@ for (i = 0; i < stockDetails.length; i++) {
   table_coloumn_1_arrow.append(a_tag);
 }
 document.querySelector("main").append(main_table);
+
+
+
+// Get the search input element
+var searchInput = document.getElementById('searchInput');
+
+// Get the table body element
+var tableBody = document.getElementById('tableBody');
+
+// Add event listener to the search input
+searchInput.addEventListener('keyup', function() {
+  var searchValue = searchInput.value.toLowerCase();
+  var rows = tableBody.getElementsByTagName('tr');
+  
+  // Loop through all rows of the table
+  for (var i = 0; i < rows.length; i++) {
+    var cells = rows[i].getElementsByTagName('td');
+    var matchFound = false;
+
+    // Loop through all cells of the current row
+    for (var j = 0; j < cells.length; j++) {
+      var cellText = cells[j].textContent.toLowerCase();
+
+      // Check if the cell text starts with the search value
+      if (cellText.startsWith(searchValue)) {
+        matchFound = true;
+        break;
+      }
+    }
+
+    // Show/hide the row based on the match
+    if (matchFound) {
+
+      rows[i].style.display = '';
+    } else {
+      rows[i].style.display = 'none';
+      
+    }
+  }
+});

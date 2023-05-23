@@ -15,7 +15,7 @@
     justify-content: end;
     width: fit-content;
     border-radius: 5px;
-    height: 2em;
+    height: 58px;
     border-color: lightblue;
     color: white;
     margin-left:19px ;
@@ -25,6 +25,7 @@
 .additem h2 {
     font-size: 30px;
     margin: 1em;
+    margin-bottom: 0px;
 }
 .search{
     margin: 1em;
@@ -41,8 +42,16 @@
     background-color: lightblue;
     border-color: lightblue;
     margin-left:0 !important;
+    margin-right: 20px;
+   
 
 
+}
+.div_search{
+    margin-top: 10px;
+}
+#icon{
+    color: black;
 }
 /* ended here */
 

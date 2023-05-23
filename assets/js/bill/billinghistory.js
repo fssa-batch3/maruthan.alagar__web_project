@@ -10,6 +10,7 @@ const order_bill = JSON.parse(localStorage.getItem("order_bill"));
 
 // main table
 main_table = document.createElement("table");
+main_table.setAttribute("id", "dataTable");
 main_table.setAttribute("class", "table");
 
 // table row
@@ -102,3 +103,24 @@ for (let i = 0; i < order_bill.length; i++) {
     table_coloumn_1_arrow.append(a_tag);
 }
 document.querySelector("main").append(main_table);
+
+
+
+document.getElementById("dateInput").addEventListener("input",function filterTable() {
+    var input = document.getElementById("dateInput");
+    var filterDate = input.value;
+    var table = document.getElementById("dataTable");
+    var rows = table.getElementsByTagName("tr");
+
+    for (var i = 0; i < rows.length; i++) {
+      var dateCell = rows[i].getElementsByTagName("td")[0];
+      if (dateCell) {
+        var cellDate = dateCell.textContent || dateCell.innerText;
+        if (cellDate === filterDate) {
+          rows[i].style.display = "";
+        } else {
+          rows[i].style.display = "none";
+        }
+      }
+    }
+  });
