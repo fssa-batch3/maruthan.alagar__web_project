@@ -82,6 +82,54 @@ input[type=radio] {
 }
 
 
+.button_group{
+    font-size: 30px;
+    background-color: lightblue;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.plus_button{
+    font-size: 42px;
+    background-color: lightblue;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 33px;
+
+ 
+
+}
+
+
+#add_group_div{
+    display: flex;
+    flex-direction: column;
+}
+#add_group_div_none{
+    display: none;
+}
+#option{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+.content1 .button span {
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+
 
 .typeport{
     display: flex;
@@ -99,13 +147,36 @@ input[type=radio] {
     border: 2px solid;
     
 }
-.quan input{
+#quantity,#tax{
     margin-right: 20px;
 }
 .label{
     display: flex;
+    
    
 }
 #tp{
     margin-left: 86px;
+}
+#discount_label{
+    margin-left: 133px;
+    font-size: 23px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#group{
+    width: 290px;
+    margin-right: 9px;
 }

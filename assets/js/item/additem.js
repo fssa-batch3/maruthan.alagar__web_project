@@ -1,7 +1,56 @@
+
+document.getElementById("add_group").addEventListener("click",addNewGroup)
+let Groups = JSON.parse(localStorage.getItem("Groups")) || []
+
+function addNewGroup() {
+  let newGroupInput = document.getElementById('newGroupInput');
+  let groupSelect = document.getElementById('group');
+  let newGroup = newGroupInput.value;
+
+  if (newGroup.trim() !== '') {
+    var option = document.createElement('option');
+    option.value = newGroup;
+    option.text = newGroup;
+    groupSelect.add(option);
+    Groups.push(newGroup); 
+    localStorage.setItem("Groups", JSON.stringify(Groups));
+    alert("Group Successfully Added");
+    newGroupInput.value = '';
+  }
+}
+
+let selectElement = document.getElementById("group"); 
+
+Groups.forEach(function(optionText) {
+  let option = document.createElement("option");
+  option.text = optionText;
+  selectElement.appendChild(option);
+});
+
+
+
+
+document.getElementById("plus_button").addEventListener("click", showDiv)
+
+function showDiv(){
+  let div=document.getElementById("add_group_div_none")
+
+  if(div.style.display==="none"){
+  div.style.display="block"
+}else{
+  div.style.display="none"
+}
+}
+
+
+
+
+
 const form = document.getElementById("additem_form");
 const product_name = document.getElementById("product_name");
 const quantity = document.getElementById("quantity");
 const type = document.getElementById("type");
+const group = document.getElementById("group");
 const mrp = document.getElementById("mrp");
 const price = document.getElementById("price");
 const tax = document.getElementById("tax");
@@ -50,6 +99,7 @@ form.addEventListener("submit", function (event) {
       product_id: product_id.value,
       special_name: special_name.value,
       type: type.value,
+      group: group.value,
       radioValue: "in stock",
       unique: uuid,
     };
@@ -125,8 +175,3 @@ function checkId() {
   }
 
 }
-
-
-
-
-

@@ -7,6 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>M A M Billing</title>
         <link rel="stylesheet" href="../../assets/css/billing/billingdetails.css">
+        <link rel="stylesheet" href="../../assets/css/billing/bill_design.css">
+
         <link rel="icon" href="../../assets/Imges/M_A_M.png">
     </head>
 
@@ -59,7 +61,48 @@
                 
                 <aside>
 
-                    <img src="../../assets/Imges/billpic.png" alt="Picture of Bill">
+                  
+                      <div class="bill-container" id="bill_div">
+                        <div id="shop">
+                        <h2 id="shop_name"></h2>
+                        <h3 id="phone_number"></h3>
+                        <h3 id="Adress"></h3>
+                    </div>
+                    
+                        <div class="shop-details">
+                            <div>
+                         
+                          <p id="cus_name"></p>
+                          <p id="bill_no"></p>
+                        
+                        </div>
+                        <div>
+                           
+                         <p id="date"></p>
+                        <p id="payment"></p>
+                        </div>
+                    
+                      </div>
+                    
+                    
+                    
+                        <div id="bill_table_div">
+                          <h3>Product Details:</h3>
+                    
+                        </div>
+                        <div id="total">
+                        <div>
+                            <h4>Sub Total:</h4>
+                          <h3>Total Amount:</h3>
+                    
+                        </div>
+                        <div>
+                            <h4 id="sub_total"></h4>
+                            <h3 id="total_amount"></h3>
+                        </div>
+                    </div>
+                    <span id="span">* Includes all tax and discount</span>
+                      </div>
                 </aside>
             </main>
             <script src="./../../assets/js/bill/billingdetails.js"></script>

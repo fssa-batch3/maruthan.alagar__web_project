@@ -1,3 +1,52 @@
+
+document.getElementById("add_group").addEventListener("click",addNewGroup)
+let Groups = JSON.parse(localStorage.getItem("Groups")) || []
+
+function addNewGroup() {
+  let newGroupInput = document.getElementById('newGroupInput');
+  let groupSelect = document.getElementById('group');
+  let newGroup = newGroupInput.value;
+
+  if (newGroup.trim() !== '') {
+    var option = document.createElement('option');
+    option.value = newGroup;
+    option.text = newGroup;
+    groupSelect.add(option);
+    Groups.push(newGroup); 
+    localStorage.setItem("Groups", JSON.stringify(Groups));
+    alert("Group Successfully Added");
+    newGroupInput.value = '';
+    let div=document.getElementById("add_group_div_none")
+  div.style.display="none"; 
+  }
+}
+
+var selectElement = document.getElementById("group"); // Select element
+
+// Add new options
+Groups.forEach(function(optionText) {
+  var option = document.createElement("option");
+  option.text = optionText;
+  selectElement.appendChild(option);
+});
+
+
+
+
+document.getElementById("plus_button").addEventListener("click", showDiv)
+
+function showDiv(){
+  let div=document.getElementById("add_group_div_none")
+
+  if(div.style.display==="none"){
+  div.style.display="block"
+}else{
+  div.style.display="none"
+}
+}
+
+
+
 const productDetails = JSON.parse(localStorage.getItem("productDetails"));
 const product_id = localStorage.getItem("product_id");
 
@@ -27,6 +76,7 @@ function update(event) {
   const product_name = document.getElementById("product_name").value;
   const quantity = document.getElementById("quantity").value;
   const type = document.getElementById("type").value;
+  const group = document.getElementById("group").value;
   const mrp = document.getElementById("mrp").value;
   const price = document.getElementById("price").value;
   const tax = document.getElementById("tax").value;
@@ -51,6 +101,7 @@ function update(event) {
   product_records.product_name = product_name;
   product_records.quantity = quantity;
   product_records.type = type;
+  product_records.group = group;
   product_records.mrp = mrp;
   product_records.price = price;
   product_records.tax = tax;
@@ -72,6 +123,7 @@ function backbutton() {
 document.getElementById("product_name").value = product_records.product_name;
 document.getElementById("quantity").value = product_records.quantity;
 document.getElementById("type").value = product_records.type;
+document.getElementById("group").value = product_records.group;
 document.getElementById("mrp").value = product_records.mrp;
 document.getElementById("price").value = product_records.price;
 document.getElementById("tax").value = product_records.tax;

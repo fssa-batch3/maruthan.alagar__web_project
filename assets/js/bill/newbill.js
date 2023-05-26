@@ -77,7 +77,7 @@ let total_5 = 0;
 let total_6 = 0;
 
 if ((total_2 = " ")) {
-  document.getElementById("total_quantity").value = "0/-";
+  document.getElementById("total_quantity").value = "0";
   document.getElementById("total_mrp").value = "0/-";
   document.getElementById("total_tax").value = "0/-";
   document.getElementById("total_price").value = "0/-";
@@ -342,8 +342,12 @@ document.getElementById("payment").addEventListener("submit", function saveData(
     order_bills.push(order_bill);
     localStorage.setItem("order_bill", JSON.stringify(order_bills));
     alert("Bill Successfully Saved");
-    document.getElementById("cus_form").reset();
-    location.reload();
+    const url = `./bill_design.html?order_id=${encodeURIComponent(
+      uuid
+    )}`
+    window.location.href = url
+    // document.getElementById("cus_form").reset();
+    // location.reload();
   }
 });
 

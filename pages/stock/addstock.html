@@ -46,12 +46,30 @@
                                 <input class="lists" id="brand_name" type="text" value="Selam Mark" placeholder="Enter Brand Name" required>
                             </div>
                             <div class="content">
-                                <label class="forms">Quantity</label> 
-                                <input class="lists" id="quantity" type="number" value="30"  maxlength="100" placeholder="Choose Number" required>
+                                <div class="label">
+                                    <label class="forms">Quantity:</label>
+                                    <label for="type" id="tp">Type:</label>
+                                </div>
+                                <div class="quan">
+                                    <input class="lists" id="quantity" value="12" type="number" placeholder="Choose Number"
+                                         required>
+                                    <div class="typeport">
+
+                                        <select class="lists" name="type" id="type"  required>
+                                            <option value="">--Select--</option>
+                                            <option value="kgs">kg</option>
+                                            <option value="mg">mg</option>
+                                            <option value="g">g</option>
+                                            <option value="ml">ml</option>
+                                            <option value="ltr">Ltr</option>
+                                            <option value="nos">Nos</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <div class="content">
-                                <label class="forms">MRP(per box/sack)</label>
-                                <input class="lists" id="mrp" type="number" value="60" placeholder="Enter MRP" required>
+                                <label class="forms">Total Quantity</label>
+                                <input class="lists" id="total_quantity" type="number" value="60" placeholder="Enter Total Quantity " required>
                             </div>
 
                             <div class="content">
@@ -70,8 +88,8 @@
                                 <input class="lists" id="discount" type="number" value="2" placeholder="Enter Discount" >
                             </div>
                             <div class="content">
-                                <label class="forms">Agency ID</label>
-                                <input class="lists" id="agency_id" type="text" value="A999890" maxlength="100" placeholder="Enter Agency ID" required>
+                                <label class="forms" id="label_gst">Invoice GSTN Number(optional)</label>
+                                <input class="lists"  id="invoice_gst" type="text" value="33AAACH7409R1Z8" pattern="\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}"  placeholder="Enter Invoice GSTN Number" >
                             </div>
                             <div class="content">
                                 <label class="forms">Agency Details</label>
