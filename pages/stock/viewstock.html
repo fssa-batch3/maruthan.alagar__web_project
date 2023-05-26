@@ -39,12 +39,32 @@
                                 <input class="lists" id="brand_name" type="text" required>
                             </div>
                             <div class="content">
-                                <label class="forms">Quantity</label>
-                                <input class="lists" id="quantity" type="number" required>
+                                <div class="label">
+                                    <label class="forms">Quantity:</label>
+                                    <label for="type" id="tp">Type:</label>
+                                </div>
+                                <div class="quan">
+                                    <input class="lists" id="quantity" type="number" placeholder="Choose Number"
+                                         required>
+                                    <div class="typeport">
+
+                                        <select class="lists" name="type" id="type" required>
+                                            <option value="">--Select--</option>
+                                            <option value="kgs">kg</option>
+                                            <option value="mg">mg</option>
+                                            <option value="g">g</option>
+                                            <option value="ml">ml</option>
+                                            <option value="ltr">Ltr</option>
+                                            <option value="nos">Nos</option>
+                                        </select>
+                                    
+                                    </div>
+                                </div>
                             </div>
+
                             <div class="content">
-                                <label class="forms">MRP(per box/sack)</label>
-                                <input class="lists" id="mrp" type="number" required>
+                                <label class="forms">Total Quantity</label>
+                                <input class="lists" id="total_quantity" type="number" required>
                             </div>
 
                             <div class="content">
@@ -62,8 +82,8 @@
                                 <input class="lists" id="discount" type="number">
                             </div>
                             <div class="content">
-                                <label class="forms">Agency ID</label>
-                                <input class="lists" id="agency_id" type="text" required>
+                                <label class="forms" id="label_gst">Invoice GSTN Number(optional)</label>
+                                <input class="lists" pattern="\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}" id="invoice_gst" type="text" required>
                             </div>
                             <div class="content">
                                 <label class="forms">Agency Details</label>

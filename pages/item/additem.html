@@ -79,16 +79,39 @@
                             </div>
                         </div>
                         <div class="part1">
+
                             <div class="content">
-                                <label class="forms">Tax(Rs)</label>
-                                <input class="lists" id="tax" type="number" value="0" placeholder="Enter Tax" 
+                                <div class="label">
+                                    <label class="forms">Tax:</label>
+                                    <label for="type" id="discount_label">Discount:</label>
+                                </div>
+                                <div class="quan">
+                                    <input class="lists" id="tax" type="number" value="0" placeholder="Enter Tax" 
                                     required>
+                                    <div class="typeport">
+                                        <input class="lists" id="discount" type="number" value="0" placeholder="Enter Discount"
+                                        required>
+                                    </div>
+                                </div>
                             </div>
+
                             <div class="content">
-                                <label class="forms">Discount(Rs)</label>
-                                <input class="lists" id="discount" type="number" value="0" placeholder="Enter Discount"
-                                     required>
+                                <label class="forms">Group:</label>
+                                <div id="option">
+                                <select class="lists" name="group" id="group" required>
+                                  <option value="">--Select--</option>
+                                </select>
+                                <span class="plus_button" id="plus_button">+</span>
                             </div>
+                            <div id="add_group_div_none">
+                                <div id="add_group_div">
+                                <input type="text" class="lists" id="newGroupInput" placeholder="Enter a new group">
+                                <span class="button_group" id="add_group">+Add Group</span>
+                            </div>
+                        </div>
+                             
+                            </div>
+
                             <div class="content">
                                 <label class="forms">ID Number</label>
                                 <input class="lists" id="product_id" type="text" value="C9980"  pattern="[A-Z0-9]+" title="Use Capital letters and Numbers for ID Number"

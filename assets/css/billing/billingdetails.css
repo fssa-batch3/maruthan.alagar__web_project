@@ -25,13 +25,13 @@ form input {
 
 }
 
-main aside img {
+main aside  {
     width: 10em;
     width: 20em;
     float: right;
 }
 
-table {
+#main_table {
     width: 500px;
     text-align: center;
     font-size: 17px;
@@ -51,7 +51,7 @@ table {
     color: white;
 }
 
-table td {
+#main_table td {
     background-color: white;
 }
 
@@ -61,7 +61,7 @@ table td {
     color: white;
 }
 
-td {
+#main_table td {
     text-align: center;
     background-color: white;
     color: black;
@@ -69,9 +69,12 @@ td {
 
 }
 
-th{
+#main_table th{
     height: 3.5em;
     width: 0%;
+}
+.bill-container {
+    max-width: 329px !important;
 }
 
 

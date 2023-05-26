@@ -70,8 +70,13 @@ table_row.append(table_coloumn);
 
 // table coloumn_3
 table_coloumn = document.createElement("th");
-table_coloumn.innerText = "ID";
+table_coloumn.innerText = "Product ID";
 table_row.append(table_coloumn);
+
+table_coloumn = document.createElement("th");
+table_coloumn.innerText = "Product Group";
+table_row.append(table_coloumn);
+
 
 // table coloumn_4
 table_coloumn = document.createElement("th");
@@ -127,6 +132,17 @@ table_row_1.append(table_column_1);
   table_coloumn_1.innerText = productDetails[i].product_id;
   table_row_1.append(table_coloumn_1);
   // table coloumn_1
+
+  table_coloumn_1 = document.createElement("td");
+  table_coloumn_1.innerText = productDetails[i].group;
+  table_row_1.append(table_coloumn_1)
+
+
+
+
+
+
+
   table_coloumn_1 = document.createElement("td");
   table_coloumn_1.innerText = productDetails[i].price;
   table_row_1.append(table_coloumn_1);

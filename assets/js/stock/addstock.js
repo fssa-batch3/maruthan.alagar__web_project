@@ -1,11 +1,12 @@
 const form = document.getElementById("addstock_form");
 const stock_name = document.getElementById("stock_name");
 const quantity = document.getElementById("quantity");
-const mrp = document.getElementById("mrp");
+const total_quantity = document.getElementById("total_quantity");
 const price = document.getElementById("price");
 const tax = document.getElementById("tax");
+const type = document.getElementById("type");
 const discount = document.getElementById("discount");
-const agency_id = document.getElementById("agency_id");
+const invoice_gst = document.getElementById("invoice_gst");
 const agency_details = document.getElementById("agency_details");
 const brand_name = document.getElementById("brand_name");
 const date = document.getElementById("date");
@@ -18,27 +19,28 @@ const stockDetails = JSON.parse(localStorage.getItem("stockDetails")) || [];
 document.getElementById("tax").addEventListener("input", checkTax);
 document.getElementById("discount").addEventListener("input", checkDis);
 document.getElementById("quantity").addEventListener("input", checkQuan);
-document.getElementById("mrp").addEventListener("input", checkMrp);
+document.getElementById("total_quantity").addEventListener("input", checkTotal);
 document.getElementById("price").addEventListener("input", checkPrice);
-document.getElementById("agency_id").addEventListener("input", checkId);
+// document.getElementById("invoice_gst").addEventListener("input", checkId);
 
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  if (stockDetails.some((record) => record.stock_name === stock_name.value && record.date === date.value && record.brand_name === brand_name.value && record.agency_id === agency_id.value )) {
+  if (stockDetails.some((record) => record.stock_name === stock_name.value && record.date === date.value && record.brand_name === brand_name.value)) {
     alert("Stock is already exists! ");
   } else {
     const newStock = {
       stock_name: stock_name.value,
       quantity: quantity.value,
-      mrp: mrp.value,
+      total_quantity: total_quantity.value,
       price: price.value,
       tax: tax.value,
       discount: discount.value,
-      agency_id: agency_id.value,
+      invoice_gst: invoice_gst.value,
       agency_details: agency_details.value,
       brand_name: brand_name.value,
+      type: type.value,
       date: date.value,
       unique: uuid,
     };
@@ -96,26 +98,26 @@ function checkPrice() {
   }
 }
 
-function checkMrp() {
-  if (mrp.value > 25000) {
-    alert("MRP should be between 0 - 25000");
-    document.getElementById("mrp").value = "";
+function checkTotal() {
+  if (total_quantity.value > 2500) {
+    alert("Total Quantity should be between 0 - 2500");
+    document.getElementById("total_quantity").value ="";
   }
-  else if (mrp.value < 0){
+  else if (total_quantity.value < 0){
     alert("Value should not be negative");
-    document.getElementById("mrp").value = "";
+    document.getElementById("total_quantity").value = "";
   }
 }
-function checkId() {
-  if (agency_id.value.length > 9) {
-    alert("Agency ID should be 9 characters long");
-    document.getElementById("agency_id").value = "";
-  }
- else if (agency_id.value.length < 4) {
-    alert("Agency ID should be 4 to 9 characters long");
-    document.getElementById("agency_id").value = "";
-  }
+// function checkId() {
+//   if (invoice_gst.value.length !== 15) {
+//     alert("Invoice GSTN Number should be 15 characters long");
+//     document.getElementById("invoice_gst").value = "";
+//   }
+//  else if (invoice_gst.value.length !== 15 ) {
+//     alert("Agency ID should be 4 to 9 characters long");
+//     document.getElementById("invoice_gst").value = "";
+//   }
 
-}
+// }
 
 

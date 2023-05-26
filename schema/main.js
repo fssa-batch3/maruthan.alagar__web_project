@@ -5,6 +5,7 @@ let customerDetails;
 let order_bill;
 let orders;
 let order_products;
+let Groups;
 
 if (JSON.parse(localStorage.getItem("userRecords"))) {
   console.log("userRecords");
@@ -60,6 +61,7 @@ if (JSON.parse(localStorage.getItem(productDetails))) {
       product_name: "Sugar",
       quantity: "2",
       type: "kgs",
+      group: "Groceries",
       radioValue: "in stock",
       special_name: "Sarkkarai",
       tax: "2",
@@ -76,6 +78,7 @@ if (JSON.parse(localStorage.getItem(productDetails))) {
       special_name: "Pulungal Arisi",
       tax: "2",
       type: "kgs",
+      group: "Groceries",
       unique: "93a93b51-9191-4c0a-8748-a65c9f8da478",
     },
   ];
@@ -88,11 +91,12 @@ if (JSON.parse(localStorage.getItem(stockDetails))) {
   stockDetails = [
     {
       agency_details: "Theradi Veethi,Pudukkottai",
-      agency_id: "AG8890",
+      invoice_gst: "33AAACH7409R1Z8",
       brand_name: "Sri Kirushna",
+      type: "kgs",
       date: "2023-03-30",
       discount: "1",
-      mrp: "2300",
+      total_quantity: "2300",
       price: "2200",
       quantity: "30",
       stock_name: "Rice",
@@ -102,11 +106,12 @@ if (JSON.parse(localStorage.getItem(stockDetails))) {
 
     {
       agency_details: "Pudukkottai",
-      agency_id: "AG8890",
+      invoice_gst: "33AAACI7409R1Z8",
       brand_name: "Aandaal",
       date: "2023-03-31",
       discount: "1",
-      mrp: "20",
+      total_quantity: "20",
+      type: "kgs",
       price: "18",
       quantity: "10",
       stock_name: "Sugar",
@@ -217,5 +222,15 @@ if (JSON.parse(localStorage.getItem(orders))) {
     }
   ];
   localStorage.setItem("orders", JSON.stringify(orders));
+
+}
+if (JSON.parse(localStorage.getItem(Groups))) {
+  console.log("Groups");
+} else {
+  Groups = [
+    "Groceries"
+    
+  ];
+  localStorage.setItem("Groups", JSON.stringify(Groups));
 
 }

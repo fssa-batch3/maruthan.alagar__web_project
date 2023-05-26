@@ -1,15 +1,14 @@
-// Get the "Add Item" button and the search elements
-var addItemButton1 = document.getElementById('addcustomer_button1');
-var addItemButton2 = document.getElementById('addcustomer_button2');
-var searchInput = document.getElementById('searchInput');
-var searchButton = document.getElementById('searchButton');
 
-// Hide the search input initially
+const addItemButton1 = document.getElementById('addcustomer_button1');
+const addItemButton2 = document.getElementById('addcustomer_button2');
+const searchInput = document.getElementById('searchInput');
+const searchButton = document.getElementById('searchButton');
+
 searchInput.style.display = 'none';
 
-// Add click event listener to the search button
+
 searchButton.addEventListener('click', function() {
-  // Toggle the visibility of the elements
+
   if (searchInput.style.display === 'none') {
     searchInput.style.display = 'block';
     addItemButton1.style.display = 'none';
@@ -106,25 +105,21 @@ document.querySelector("main").append(main_table);
 
 
 
-// Get the search input element
-var searchInput = document.getElementById('searchInput');
+const search = document.getElementById('searchInput');
 
-// Get the table body element
-var tableBody = document.getElementById('tableBody');
+let tableBody = document.getElementById('tableBody');
 
-// Add event listener to the search input
-searchInput.addEventListener('keyup', function() {
-  var searchValue = searchInput.value.toLowerCase();
-  var rows = tableBody.getElementsByTagName('tr');
+search.addEventListener('keyup', function() {
+  let searchValue = search.value.toLowerCase();
+  let rows = tableBody.getElementsByTagName('tr');
   
-  // Loop through all rows of the table
-  for (var i = 0; i < rows.length; i++) {
-    var cells = rows[i].getElementsByTagName('td');
-    var matchFound = false;
+  for (let i = 0; i < rows.length; i++) {
+     cells = rows[i].getElementsByTagName('td');
+    let matchFound = false;
 
     // Loop through all cells of the current row
-    for (var j = 0; j < cells.length; j++) {
-      var cellText = cells[j].textContent.toLowerCase();
+    for (let j = 0; j < cells.length; j++) {
+      let cellText = cells[j].textContent.toLowerCase();
 
       // Check if the cell text starts with the search value
       if (cellText.startsWith(searchValue)) {

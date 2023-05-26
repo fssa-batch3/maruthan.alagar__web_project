@@ -17,11 +17,12 @@ document.getElementById("edit_form").addEventListener("submit", function update(
   //
   const stock_name = document.getElementById("stock_name").value;
   const quantity = document.getElementById("quantity").value;
-  const mrp = document.getElementById("mrp").value;
+  const total_quantity = document.getElementById("total_quantity").value;
   const price = document.getElementById("price").value;
+  const type = document.getElementById("type").value;
   const tax = document.getElementById("tax").value;
   const discount = document.getElementById("discount").value;
-  const agency_id = document.getElementById("agency_id").value;
+  const invoice_gst = document.getElementById("invoice_gst").value;
   const agency_details = document.getElementById("agency_details").value;
   const date = document.getElementById("date").value;
 
@@ -29,11 +30,12 @@ document.getElementById("edit_form").addEventListener("submit", function update(
 
   stock_records.stock_name = stock_name;
   stock_records.quantity = quantity;
-  stock_records.mrp = mrp;
+  stock_records.total_quantity = total_quantity;
   stock_records.price = price;
+  stock_records.type = type;
   stock_records.tax = tax;
   stock_records.discount = discount;
-  stock_records.agency_id = agency_id;
+  stock_records.invoice_gst = invoice_gst;
   stock_records.agency_details = agency_details;
   stock_records.date = date;
 
@@ -57,9 +59,9 @@ document.getElementById("backbutton").addEventListener("click", function () {
 document.getElementById("tax").addEventListener("input", checkTax);
 document.getElementById("discount").addEventListener("input", checkDis);
 document.getElementById("quantity").addEventListener("input", checkQuan);
-document.getElementById("mrp").addEventListener("input", checkMrp);
+document.getElementById("total_quantity").addEventListener("input", checkTotal);
 document.getElementById("price").addEventListener("input", checkPrice);
-document.getElementById("agency_id").addEventListener("input", checkId);
+// document.getElementById("invoice_gst").addEventListener("input", checkId);
 
 
 function backbutton() {
@@ -68,11 +70,12 @@ function backbutton() {
 }
 document.getElementById("stock_name").value = stock_records.stock_name;
 document.getElementById("quantity").value = stock_records.quantity;
-document.getElementById("mrp").value = stock_records.mrp;
+document.getElementById("total_quantity").value = stock_records.total_quantity;
 document.getElementById("price").value = stock_records.price;
+document.getElementById("type").value = stock_records.type;
 document.getElementById("tax").value = stock_records.tax;
 document.getElementById("discount").value = stock_records.discount;
-document.getElementById("agency_id").value = stock_records.agency_id;
+document.getElementById("invoice_gst").value = stock_records.invoice_gst;
 document.getElementById("agency_details").value = stock_records.agency_details;
 document.getElementById("brand_name").value = stock_records.brand_name;
 document.getElementById("date").value = stock_records.date;
@@ -121,25 +124,25 @@ function checkPrice() {
   }
 }
 
-function checkMrp() {
-  if (mrp.value > 25000) {
-    alert("MRP should be between 0 - 25000");
-    document.getElementById("mrp").value = stock_records.mrp;
+function checkTotal() {
+  if (total_quantity.value > 2500) {
+    alert("Total Quantity should be between 0 - 2500");
+    document.getElementById("total_quantity").value = stock_records.total_quantity;
   }
-  else if (mrp.value < 0){
+  else if (total_quantity.value < 0){
     alert("Value should not be negative");
-    document.getElementById("mrp").value = stock_records.mrp;
+    document.getElementById("total_quantity").value = stock_records.total_quantity;
   }
 }
-function checkId() {
-  if (agency_id.value.length > 9) {
-    alert("Agency ID should be 9 characters long");
-    document.getElementById("agency_id").value = stock_records.agency_id;
-  }
- else if (agency_id.value.length < 2) {
-    alert("Agency ID should be 2 to 9 characters long");
-    document.getElementById("agency_id").value = stock_records.agency_id;
-  }
+// function checkId() {
+//   if (invoice_gst.value.length !==15) {
+//     alert("Invoice GSTN Number should be 15 characters long");
+//     document.getElementById("invoice_gst").value = stock_records.invoice_gst;
+//   }
+//  else if (invoice_gst.value.length !== 15) {
+//     alert("Invoice GSTN Number should be 15 characters long");
+//     document.getElementById("invoice_gst").value = stock_records.invoice_gst;
+//   }
 
-}
+// }
 

@@ -47,7 +47,7 @@ table_row.append(table_coloumn);
 // table coloumn_3
 table_coloumn = document.createElement("th");
 table_coloumn.setAttribute("class", "forres");
-table_coloumn.innerText = "Quantity(in box / pack)";
+table_coloumn.innerText = "Total Quantity";
 table_row.append(table_coloumn);
 
 // table coloumn_4
@@ -78,7 +78,7 @@ for (i = 0; i < stockDetails.length; i++) {
   // table coloumn_1
   table_coloumn_1 = document.createElement("td");
   table_coloumn_1.setAttribute("class", "forres");
-  table_coloumn_1.innerText = stockDetails[i].quantity;
+  table_coloumn_1.innerText = stockDetails[i].total_quantity;
   table_row_1.append(table_coloumn_1);
   // table coloumn_1
   table_coloumn_1 = document.createElement("td");
