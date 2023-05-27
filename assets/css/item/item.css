@@ -106,8 +106,24 @@ table {
 .highlight {
     background-color: rgb(243, 65, 62);
     font-weight: bold;
+    padding: 3px;
+    margin: 2px;
     font-size: 15px;
     color: white;
+  }
+  @keyframes blink-animation {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  .highlight_warning {
+    background-color: yellow;
+    font-weight: bold;
+    padding: 3px;
+    margin: 2px;
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    animation: blink-animation 1s infinite;
   }
 
 @media screen and (max-width: 400px) {

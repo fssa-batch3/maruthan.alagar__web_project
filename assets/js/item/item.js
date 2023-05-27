@@ -7,7 +7,7 @@ var searchButton = document.getElementById('searchButton');
 searchInput.style.display = 'none';
 
 // Add click event listener to the search button
-searchButton.addEventListener('click', function() {
+searchButton.addEventListener('click', function () {
   // Toggle the visibility of the elements
   if (searchInput.style.display === 'none') {
     searchInput.style.display = 'block';
@@ -44,7 +44,7 @@ searchButton.addEventListener('click', function() {
 
 
 
-
+const order_products = JSON.parse(localStorage.getItem("order_products"));
 
 const productDetails = JSON.parse(localStorage.getItem("productDetails"));
 
@@ -77,6 +77,11 @@ table_coloumn = document.createElement("th");
 table_coloumn.innerText = "Product Group";
 table_row.append(table_coloumn);
 
+table_coloumn = document.createElement("th");
+table_coloumn.innerText = "Current Quantity";
+table_row.append(table_coloumn);
+
+
 
 // table coloumn_4
 table_coloumn = document.createElement("th");
@@ -97,32 +102,44 @@ for (i = 0; i < productDetails.length; i++) {
 
 
 
-if( productDetails[i].radioValue == "out of stock"){
+  if (productDetails[i].radioValue == "out of stock" || productDetails[i].total_quantity <= 0) {
 
-const table_column_1 = document.createElement("td");
+    const table_column_1 = document.createElement("td");
 
-const outOfStockSpan = document.createElement("span");
-outOfStockSpan.innerText = "Out of stock";
-outOfStockSpan.classList.add("highlight"); 
+    const outOfStockSpan = document.createElement("span");
+    outOfStockSpan.innerText = "Out of stock";
+    outOfStockSpan.classList.add("highlight");
 
-table_column_1.innerText = productDetails[i].product_name + " ";
-table_column_1.append(outOfStockSpan);
+    table_column_1.innerText = productDetails[i].product_name + " ";
+    table_column_1.append(outOfStockSpan);
 
-table_row_1.append(table_column_1);
+    table_row_1.append(table_column_1);
+
+  }
+  else if (productDetails[i].total_quantity < 5 && productDetails[i].total_quantity > 0) {
+
+    const table_column_1 = document.createElement("td");
+
+    const outOfStockSpan = document.createElement("span");
+    outOfStockSpan.innerText = "Only few stock Left";
+    outOfStockSpan.classList.add("highlight_warning");
+
+    table_column_1.innerText = productDetails[i].product_name + " ";
+    table_column_1.append(outOfStockSpan);
+
+    table_row_1.append(table_column_1);
 
 
-}else{
-
-  table_coloumn_1 = document.createElement("td");
-  table_coloumn_1.innerText = productDetails[i].product_name;
-  table_row_1.append(table_coloumn_1);
-
-}
 
 
+  } else {
 
+    table_coloumn_1 = document.createElement("td");
+    table_coloumn_1.innerText = productDetails[i].product_name;
+    table_row_1.append(table_coloumn_1);
 
- 
+  }
+
   // table coloumn_1
   table_coloumn_1 = document.createElement("td");
   table_coloumn_1.innerText = productDetails[i].special_name;
@@ -137,6 +154,16 @@ table_row_1.append(table_column_1);
   table_coloumn_1.innerText = productDetails[i].group;
   table_row_1.append(table_coloumn_1)
 
+
+
+  let filterData = order_products.filter(
+    (detail) => detail.product_id === productDetails[i].product_id
+  );
+
+
+  table_coloumn_1 = document.createElement("td");
+  table_coloumn_1.innerText = productDetails[i].total_quantity;
+  table_row_1.append(table_coloumn_1)
 
 
 
@@ -166,25 +193,35 @@ table_row_1.append(table_column_1);
 }
 document.querySelector("main").append(main_table);
 
+
+
+
+
+
+
+
+
+
+
 // Get the search input element
 var searchInput = document.getElementById('searchInput');
 
 // Get the table body element
-var tableBody = document.getElementById('tableBody');
+let tableBody = document.getElementById('tableBody');
 
 // Add event listener to the search input
-searchInput.addEventListener('keyup', function() {
-  var searchValue = searchInput.value.toLowerCase();
-  var rows = tableBody.getElementsByTagName('tr');
-  
+searchInput.addEventListener('keyup', function () {
+  let searchValue = searchInput.value.toLowerCase();
+  let rows = tableBody.getElementsByTagName('tr');
+
   // Loop through all rows of the table
-  for (var i = 0; i < rows.length; i++) {
-    var cells = rows[i].getElementsByTagName('td');
-    var matchFound = false;
+  for (let i = 0; i < rows.length; i++) {
+    let cells = rows[i].getElementsByTagName('td');
+    let matchFound = false;
 
     // Loop through all cells of the current row
-    for (var j = 0; j < cells.length; j++) {
-      var cellText = cells[j].textContent.toLowerCase();
+    for (let j = 0; j < cells.length; j++) {
+      let cellText = cells[j].textContent.toLowerCase();
 
       // Check if the cell text starts with the search value
       if (cellText.startsWith(searchValue)) {

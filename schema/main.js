@@ -60,6 +60,7 @@ if (JSON.parse(localStorage.getItem(productDetails))) {
       product_id: "S0098",
       product_name: "Sugar",
       quantity: "2",
+      total_quantity: "52",
       type: "kgs",
       group: "Groceries",
       radioValue: "in stock",
@@ -68,12 +69,13 @@ if (JSON.parse(localStorage.getItem(productDetails))) {
       unique: "dd876553-0cff-4339-8843-252573e0ab75",
     },
     {
-      discount: "12",
+      discount: "0",
       mrp: "2300",
       price: "2200",
       product_id: "R0097",
       product_name: "Rice",
       quantity: "2",
+      total_quantity: "52",
       radioValue: "in stock",
       special_name: "Pulungal Arisi",
       tax: "2",
@@ -153,6 +155,7 @@ if (JSON.parse(localStorage.getItem(order_bill))) {
   order_bill = [
     {
       bill_date: "2023-05-22",
+      bill_time:"10:05:21 am",
       bill_no: "B1",
       order_id: "1ac5744e-f61d-49ef-827f-89335565b76d",
       payment_method: "cash",
@@ -200,7 +203,7 @@ if (JSON.parse(localStorage.getItem(order_products))) {
         10,
       tax
         :
-        2
+        1
     }
   ];
   localStorage.setItem("order_products", JSON.stringify(order_products));

@@ -67,4 +67,18 @@ new Chart(ctx, {
     }
 });
 
+const hasAlertBeenShown = localStorage.getItem('profileAlertShown');
+
+if (!hasAlertBeenShown) {
+  // Show the alert
+  
+  confirm('Please Complete your profile');
+  
+  // Set the flag to indicate the alert has been shown
+  localStorage.setItem('profileAlertShown', true);
+  
+  // Redirect to the profile page
+  window.location.href = '../profile/viewprofile.html';
+}
+
 

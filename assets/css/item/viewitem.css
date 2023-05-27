@@ -119,18 +119,6 @@ input[type=radio] {
 
 
 
-
-
-
-
-
-.content1 .button span {
-    padding-left: 15px;
-    margin-top: 5px;
-}
-
-
-
 .typeport{
     display: flex;
     flex-direction: column;
@@ -150,7 +138,7 @@ input[type=radio] {
 #quantity,#tax{
     margin-right: 20px;
 }
-.label{
+.label ,.price_label{
     display: flex;
     
    
@@ -158,9 +146,19 @@ input[type=radio] {
 #tp{
     margin-left: 86px;
 }
+#price_label{
+    margin-left: 112px;
+}
+#mrp_label{
+    margin-left: 2px;
+}
 #discount_label{
     margin-left: 133px;
     font-size: 23px;
+}
+
+#price{
+    margin-left: 20px;
 }
 
 
