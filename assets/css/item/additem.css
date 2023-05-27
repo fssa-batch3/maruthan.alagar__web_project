@@ -128,7 +128,7 @@ form h2 {
 #quantity,#tax{
     margin-right: 20px;
 }
-.label{
+.label ,.price_label{
     display: flex;
     
    
@@ -136,20 +136,20 @@ form h2 {
 #tp{
     margin-left: 86px;
 }
+#price_label{
+    margin-left: 112px;
+}
+#mrp_label{
+    margin-left: 2px;
+}
 #discount_label{
     margin-left: 133px;
     font-size: 23px;
 }
 
-
-
-
-
-
-
-
-
-
+#price{
+    margin-left: 20px;
+}
 
 
 

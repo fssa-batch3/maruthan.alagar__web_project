@@ -53,36 +53,46 @@
                         <input type="text" id="amount" >
 
                     </div>
+                    <button class="button" id="button">
+                        Re-Print Bill
+                    </button>
                 </form>
                <section>
 
-                
+               
                </section>
                 
                 <aside>
 
                   
-                      <div class="bill-container" id="bill_div">
+                    <div class="bill-container" id="bill_div">
+                        <div id="heading">
                         <div id="shop">
-                        <h2 id="shop_name"></h2>
-                        <h3 id="phone_number"></h3>
-                        <h3 id="Adress"></h3>
+                        <h2 id="shop_name">Supermarket Bill</h2>
+                        <h3 id="phone_number">Evergreen Supermarket</h3>
+                        <h3 id="Adress">Trichy</h3>
+                    </div>
                     </div>
                     
-                        <div class="shop-details">
-                            <div>
-                         
-                          <p id="cus_name"></p>
-                          <p id="bill_no"></p>
-                        
-                        </div>
-                        <div>
-                           
-                         <p id="date"></p>
-                        <p id="payment"></p>
-                        </div>
+                    <div id="bottom_label">
+                      <div id="b_lab">
+                        <p >GSTN No :</p>
+                    <p >Bill No :</p>
+                    <p>Date :</p>
                     
-                      </div>
+                    
+                    </div>
+                    <div id="b_con">
+                      <p id="gstn_no"></p>
+                      <p id="bill_no"></p>
+                      <p id="date"></p>
+                    
+                    </div>
+                    </div>
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -91,19 +101,57 @@
                     
                         </div>
                         <div id="total">
-                        <div>
-                            <h4>Sub Total:</h4>
-                          <h3>Total Amount:</h3>
+                        <div id="bottom">
+                           
+                            <h5>Total Tax :</h5>
+                          
+                              <h5>Total discount :</h5>
+                            <hr/>
+                          <h2>Total Amount :</h2>
+                          <hr/>
                     
                         </div>
-                        <div>
-                            <h4 id="sub_total"></h4>
-                            <h3 id="total_amount"></h3>
+                        <div  id="bottom">
+                           
+                            <h5 id="total_tax"></h5>
+                    
+                              <h5 id="total_discount"></h5>
+                            <hr/>
+                            <h2 id="total_amount"></h2>
+                            <hr/>
                         </div>
+                     
                     </div>
-                    <span id="span">* Includes all tax and discount</span>
+                    
+                    
+                    <div id="bottom_label">
+                      <div id="b_lab">
+                    <p >Customer Name :</p>
+                    <p>Paid By :</p>
+                    <p>Transaction ID :</p>
+                    
+                    
+                    </div>
+                    <div id="b_con">
+                      <p id="cus_name"></p>
+                      <p id="payment"></p>
+                      <p id="trans_id"></p>
+                    
+                    </div>
+                    
+                    </div>
+                    <div id="thank">
+                    <p>THANK YOU !</p>
+                    
+                    </div>
+                    
+                    
+                    
                       </div>
+                      
+                     
                 </aside>
+                
             </main>
             <script src="./../../assets/js/bill/billingdetails.js"></script>
         </body>

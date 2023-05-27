@@ -48,6 +48,8 @@ function showDiv(){
 
 
 const productDetails = JSON.parse(localStorage.getItem("productDetails"));
+const order_products = JSON.parse(localStorage.getItem("order_products"));
+
 const product_id = localStorage.getItem("product_id");
 
 const url = window.location.href;
@@ -59,6 +61,7 @@ document.getElementById("discount").addEventListener("input", checkDis);
 document.getElementById("quantity").addEventListener("input", checkQuan);
 document.getElementById("price").addEventListener("input", checkPrice);
 document.getElementById("mrp").addEventListener("input", checkMrp);
+document.getElementById("total_quantity").addEventListener("input", checkTotal);
 
 const sumbit = document.getElementById("edit_item");
 sumbit.addEventListener("submit", update);
@@ -71,10 +74,16 @@ function findDetail(e) {
 }
 const product_records = productDetails.find(findDetail);
 
+
+
+
+
+
 function update(event) {
   event.preventDefault();
   const product_name = document.getElementById("product_name").value;
   const quantity = document.getElementById("quantity").value;
+  const total_quantity = document.getElementById("total_quantity").value;
   const type = document.getElementById("type").value;
   const group = document.getElementById("group").value;
   const mrp = document.getElementById("mrp").value;
@@ -100,6 +109,7 @@ function update(event) {
 
   product_records.product_name = product_name;
   product_records.quantity = quantity;
+  product_records.total_quantity = total_quantity;
   product_records.type = type;
   product_records.group = group;
   product_records.mrp = mrp;
@@ -120,8 +130,12 @@ function backbutton() {
   window.location.href = "../item.html";
 }
 
+
+
+
 document.getElementById("product_name").value = product_records.product_name;
 document.getElementById("quantity").value = product_records.quantity;
+document.getElementById("total_quantity").value =product_records.total_quantity;
 document.getElementById("type").value = product_records.type;
 document.getElementById("group").value = product_records.group;
 document.getElementById("mrp").value = product_records.mrp;
@@ -135,10 +149,20 @@ for (let i = 0; i < productDetails.length; i++) {
   if (product_records.radioValue === "in stock") {
     document.getElementById("instock").setAttribute("checked", "checked");
     break;
-  } else if (product_records.radioValue === "out of stock") {
+  }
+  else if (product_records.total_quantity <= 0 ) {
+    document.getElementById("outofstock").setAttribute("checked", "checked");
+  }
+  else if (product_records.radioValue === "out of stock") {
     document.getElementById("outofstock").setAttribute("checked", "checked");
   }
 }
+
+
+
+
+
+
 document.getElementById("product_id").addEventListener("click", giveNo);
 
 
@@ -196,8 +220,22 @@ function checkMrp() {
     document.getElementById("mrp").value = product_records.mrp;
   }
 }
+function checkTotal() {
+  if (total_quantity.value > 2500) {
+    alert("Total Quantity should be between 0 - 2500");
+    document.getElementById("total_quantity").value = product_records.total_quantity;
+  }
+  else if (total_quantity.value < 0){
+    alert("Value should not be negative");
+    document.getElementById("total_quantity").value = product_records.total_quantity;
+  }
+}
+
+
 
 function giveNo() {
   alert("This is not Editable or Can't be Change");
 }
+
+
 

@@ -49,6 +49,7 @@ function showDiv(){
 const form = document.getElementById("additem_form");
 const product_name = document.getElementById("product_name");
 const quantity = document.getElementById("quantity");
+const total_quantity = document.getElementById("total_quantity");
 const type = document.getElementById("type");
 const group = document.getElementById("group");
 const mrp = document.getElementById("mrp");
@@ -64,6 +65,7 @@ const productDetails = JSON.parse(localStorage.getItem("productDetails")) || [];
 document.getElementById("tax").addEventListener("input", checkTax);
 document.getElementById("discount").addEventListener("input", checkDis);
 document.getElementById("quantity").addEventListener("input", checkQuan);
+document.getElementById("total_quantity").addEventListener("input", checkTotal);
 document.getElementById("price").addEventListener("input", checkPrice);
 document.getElementById("mrp").addEventListener("input", checkMrp);
 document.getElementById("product_id").addEventListener("input", checkId);
@@ -92,6 +94,7 @@ form.addEventListener("submit", function (event) {
     const newProduct = {
       product_name: product_name.value,
       quantity: quantity.value,
+      total_quantity: total_quantity.value,
       mrp: mrp.value,
       price: price.value,
       tax: tax.value,
@@ -174,4 +177,14 @@ function checkId() {
     document.getElementById("product_id").value = "";
   }
 
+}
+function checkTotal() {
+  if (total_quantity.value > 2500) {
+    alert("Total Quantity should be between 0 - 2500");
+    document.getElementById("total_quantity").value ="";
+  }
+  else if (total_quantity.value < 0){
+    alert("Value should not be negative");
+    document.getElementById("total_quantity").value = "";
+  }
 }

@@ -69,6 +69,10 @@ const dateString = `${year}-${month}-${day}`;
 
 dateInput.value = dateString;
 
+
+let currentTime = new Date().toLocaleTimeString("en-IN", { timeZone: "Asia/Kolkata" });
+
+
 let total_1 = 0;
 let total_2 = 0;
 let total_3 = 0;
@@ -142,8 +146,10 @@ document.getElementById("cus_form").addEventListener("submit", function newDetai
       (data) => data.order_id == uuid && data.product_id == product_id
     );
 
-  let a = true;
 
+  
+  
+    let a = true;
   if (!exists) {
     order_products.push({
       product_name,
@@ -292,9 +298,7 @@ document.getElementById("txn_id").value = txn_id;
 
 document.getElementById("cash").setAttribute("checked", "checked");
 
-// document.getElementById("payment").addEventListener("submit", () => {
-//   saveData();
-// });
+
 
 
 
@@ -328,6 +332,7 @@ document.getElementById("payment").addEventListener("submit", function saveData(
     const order_bill = {
       order_id: uuid,
       bill_date: dateInput.value,
+      bill_time: currentTime,
       payment_method: selectedValue,
       bill_no: `B${bill_no}`,
       transaction_id: txn_id,
@@ -355,7 +360,7 @@ document.getElementById("payment").addEventListener("submit", function saveData(
 
 document.getElementById("customer_phone").addEventListener("change", selectCustomer)
 document.getElementById("product_id").addEventListener("change", selectProduct)
-document.getElementById("quantity").addEventListener("input", checkQuan)
+document.getElementById("quantity").addEventListener("change", getQuantity)
 let findData = []
 
 function selectCustomer() {
@@ -456,13 +461,33 @@ function selectProduct() {
   }
 }
 
-function checkQuan() {
-  if (quantity.value.length > 3) {
-    alert("Quantity should be between 0 - 999");
+
+function getQuantity() {
+  
+
+  const productDetails = JSON.parse(localStorage.getItem("productDetails"));
+  let total_1_quantity= document.getElementById("quantity").value
+  const product_id = document.getElementById("product_id").value;
+
+  console.log(product_id)
+  console.log(total_1_quantity)
+
+   
+
+
+    function findData_Quan(e) {
+      return e.product_id === product_id;
+    }
+    const filterData = productDetails.find(findData_Quan);
+ console.log(filterData)
+    console.log(filterData.total_quantity)
+  
+if (total_1_quantity > filterData.total_quantity) {
+    alert("Product is Out of Stock or Try with less than " + filterData.total_quantity )
     document.getElementById("quantity").value = "";
-  }
-  else if (quantity.value < 0){
-    alert("Value should not be negative");
-    document.getElementById("quantity").value = "";
-  }
+}else if (total_1_quantity <= filterData.total_quantity ) {
+  filterData.total_quantity = (filterData.total_quantity - total_1_quantity);
+  localStorage.setItem("productDetails", JSON.stringify(productDetails));
+}
+ 
 }

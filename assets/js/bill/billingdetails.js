@@ -39,6 +39,14 @@ const product_records = order_products.filter((data) => data.order_id == myParam
   const shop_records = shop_details.find(findemail);
 
 
+
+  let total_tax=0;
+let total_discount=0;
+for(let i = 0; i < product_records.length; i++){
+  total_tax += product_records[i].quantity* product_records[i].tax
+  total_discount+= product_records[i].quantity * product_records[i].discount
+}
+
 document.getElementById("customer_name").value = customer_records.customer_name;
 document.getElementById("customer_id").value = customer_records.customer_id;
 document.getElementById("amount").value = bill_records.total_amount +"/-";
@@ -46,12 +54,15 @@ document.getElementById("bill_date").value = bill_records.bill_date;
 document.getElementById("shop_name").innerText = shop_records.shop_name
 document.getElementById("phone_number").innerText = "Ph No: "+shop_records.phone_number
 document.getElementById("Adress").innerText = shop_records.address
-document.getElementById("cus_name").innerText = "Customer Name: "+customer_records.customer_name
-document.getElementById("bill_no").innerText = "Bill No: "+bill_records.bill_no
-document.getElementById("date").innerText = "Date: "+bill_records.bill_date
-document.getElementById("payment").innerText = "Payment Method: "+bill_records.payment_method
-document.getElementById("sub_total").innerText = bill_records.total_amount +"/-"
+document.getElementById("cus_name").innerText =customer_records.customer_name
+document.getElementById("bill_no").innerText =bill_records.bill_no
+document.getElementById("date").innerText =bill_records.bill_date+" "+bill_records.bill_time
+document.getElementById("payment").innerText =bill_records.payment_method
 document.getElementById("total_amount").innerText =bill_records.total_amount+"/-"
+document.getElementById("total_tax").innerText ="+"+" "+total_tax+"/-"
+document.getElementById("gstn_no").innerText =shop_records.gstn_number
+document.getElementById("trans_id").innerText =bill_records.transaction_id
+document.getElementById("total_discount").innerText ="-"+" "+total_discount+"/-"
 
 
 
@@ -198,8 +209,7 @@ const product1Quantity = document.createElement('td');
 product1Quantity.textContent = product_records[i].quantity;
 
 const product1Total = document.createElement('td');
-product1Total.textContent = product_records[i].amount + "/-";
-
+product1Total.textContent =(product_records[i].price*product_records[i].quantity)+"/-";
 tableBody.appendChild(productRow1);
 productRow1.appendChild(product1Name);
 productRow1.appendChild(product1Price);
@@ -225,9 +235,18 @@ tableHeadRow.appendChild(totalHeading);
 productTable.appendChild(tableBody);
 
 
+let moving = bill_records.order_id;
 
 
+document.getElementById("button").addEventListener("click", move)
+function move(event){
+  event.preventDefault();
+  const url = `./bill_design.html?order_id=${encodeURIComponent(
+    moving
+  )}`
+  window.location.href = url
 
+};
 
 
 
