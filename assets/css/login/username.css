@@ -92,6 +92,7 @@ form {
     float: right;
     color: white;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .content_1 .button span {

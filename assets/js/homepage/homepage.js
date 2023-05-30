@@ -37,10 +37,13 @@ const chartData = {
         {
             label: 'Total Sales Amount',
             data: sumOfPrices,
-            backgroundColor: 'rgba(75, 192, 192, 0.2)', 
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1
+            
+            fill: false,
+      lineTension: 0,
+      backgroundColor: "rgba(0,0,255,1.0)",
+      borderColor: "rgba(0,0,255,0.1)",
         }
+        
     ]
 };
 
@@ -53,13 +56,13 @@ new Chart(ctx, {
         scales: {
             x: {
                 max: 10,
-                text: 'Price' // Set the maximum value for the x-axis here
+                title: 'Price' // Set the maximum value for the x-axis here
               },
             y: {
                 beginAtZero: true,
-                title: {
+                label: {
                     display: true,
-                    text: 'Price'
+                    text: 'date'
                     // Label for y-axis
                 }
             }
