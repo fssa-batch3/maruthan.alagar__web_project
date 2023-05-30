@@ -89,6 +89,7 @@ main .forms {
     border-color: rgb(59, 139, 237);
     float: right;
     color: white;
+    cursor: pointer;
 }
 
  .button span {
