@@ -16,6 +16,8 @@ function addNewGroup() {
     localStorage.setItem("Groups", JSON.stringify(Groups));
     alert("Group Successfully Added");
     newGroupInput.value = '';
+    let div=document.getElementById("add_group_div_none")
+  div.style.display="none"; 
   }
 }
 
