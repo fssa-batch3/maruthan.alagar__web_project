@@ -26,8 +26,7 @@ form input {
 }
 
 main aside  {
-    width: 10em;
-    width: 20em;
+    width: 21em;
     float: right;
 }
 
@@ -74,7 +73,7 @@ main aside  {
     width: 0%;
 }
 .bill-container {
-    max-width: 329px !important;
+    max-width: 333px !important;
 }
 .button {
     padding: 1em 2em;
