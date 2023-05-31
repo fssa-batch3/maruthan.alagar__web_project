@@ -4,8 +4,8 @@
 .nav1{
     border-bottom: 3px solid blue;
 }
-.addstock button {
-
+.addstock_button {
+    margin-top: 15px;
     font-size: 30px;
     background-color: lightblue;
     display: inline;
@@ -16,6 +16,12 @@
     border-color: lightblue;
     color: white;
     margin-left:19px 
+}
+.div_search{
+    display: flex;
+    margin: 1em;
+    height: 59px;
+    border-radius: 2px;
 }
 
 .addstock {
@@ -30,10 +36,14 @@
 .addstock h2 {
     font-size: 30px;
     margin: 1em;
+    margin-top: 48px;
 }
 .search{
     display: flex;
     margin: 1em;
+}
+#icon{
+    color: black;
 }
 /* this is for search item page */
 .searchbox{
@@ -41,12 +51,14 @@
     height: 60px;
     font-size: 25px;
     background-color: lightblue;
+    margin-right: 20px;
 }
 .srch{
     font-size: 25px;
     background-color: lightblue;
     border-color: lightblue;
     margin-left:0 !important;
+    border-radius: 4px;
 
 
 }

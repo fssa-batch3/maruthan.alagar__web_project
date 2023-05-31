@@ -1,253 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M A M Billing</title>
-    <link rel="stylesheet" href="../../assets/css/profile/viewprofile.css">
-    <link rel="stylesheet" href="../../assets/css/normalize.css" />
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>M A M Billing</title>
+        <link rel="stylesheet" href="../../assets/css/profile/viewprofile.css">
+        <link rel="stylesheet" href="../../assets/css/normalize.css">
+        <link rel="icon" href="../../assets/Imges/M_A_M.png">
+       
+    </head>
 
-<body>
-    <header>
+    <body>
+        <header>
 
-        <div>
-            <div class="nav">
-                <div class="list">
-                    <ul class="link">
+            <div>
+                <div class="nav">
+                    <div class="list">
+                        <ul class="link">
                         
-                        <button class="button_2" onclick="remove()"  type="submit">
-                            Delete My Account</button>
+                            <button class="button_2" type="button">
+                                Delete My Account</button>
                       
-                            <button class="button_2_1" onclick="logout()"  type="submit">
+                            <button class="button_2_1" type="button">
                                 Log Out</button>
                             
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
-        <h2>Profile</h2>
-        <div class="one">
-            <form id="sign-form" onsubmit=" update(event)"  >
+        </header>
+        <main>
+            <h2>Profile</h2>
+            <div class="one">
+                <form id="profile_form">
 
-                <div class="part">
+                    <div class="part">
 
-                    <div class="content">
-                        <label class="forms">Shop Name</label>
-                        <input class="lists" id="shop_name" type="text"  required readonly/>
+                        <div class="content">
+                            <label class="forms">Shop Name</label>
+                            <input class="lists" id="shop_name" type="text"  pattern="[^\s][a-zA-Z]+(\s[a-zA-Z]+)?[^\s]" required>
+
+                        </div>
+
+                        <div class="content">
+                            <label class="forms">License Number</label>
+                            <input class="lists" id="licence_number" type="text" pattern="[A-Z0-9]+"  maxlength="14" title="Don't Use space and any Special Characters.Use A_Z and 1-9 and Must Be 14 Characters"
+                                required readonly>
+                        </div>
+                        <div class="content">
+                            <label class="forms">Phone Number</label>
+                            <input class="lists" id="phone_number" type="tel" pattern="^[789]\d{9,9}$" maxlength="10" title="Use Numbers begin with 7,8,9 and must Enter 10 Characters" required>
+                        </div>
+
+                        <div class="content">
+                            <label class="forms">E-Mail Address</label>
+                            <input class="lists" id="user_email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  title="Please enter correct Email" readonly>
+                        </div>
+                 
+                    </div>
+                    <div class="part1">
+                        <div class="content">
+                            <label class="forms">GSTN Number</label>
+                            <input class="lists" id="gstn_number" type="text" value="33AAACH7409R1Z8" placeholder="Enter GSTN Number" maxlength="15" pattern="\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}" title="Don't Use space and any Special Characters.Use A-Z and 1-9 and Must Be 15 Characters" required>
+
+                        </div>
+                        <div class="content">
+                            <label class="forms">Address</label>
+                            <input class="lists" id="address" type="text" value="MIET,Trichy" placeholder="Enter Shop Address" maxlength="250" required>
+
+                        </div>
+                        <div class="content">
+                            <label class="forms">Shop Logo</label>
+                            <input class="lists" id="file" type="text"  placeholder="Upload Logo"  readonly>
+
+                        </div>
+                        <div class="content">
+                            <label class="forms">Print Name</label>
+                            <input class="lists" id="nameforprint" type="text" value="Evergreen Super Market" placeholder="Enter Print Name" readonly>
+
+                        </div>
 
                     </div>
-
-                    <div class="content">
-                        <label class="forms">License Number</label>
-                        <input class="lists" id="licence_number" type="text"
-                            required disabled />
-                    </div>
-                    <div class="content">
-                        <label class="forms">Phone Number</label>
-                        <input class="lists" id="phone_number" type="tel" required readonly />
-                    </div>
-
-                    <div class="content">
-                        <label class="forms">E-Mail Address</label>
-                        <input class="lists" id="user_email" type="email" readonly />
-                    </div>
-                    <!-- <div class="content">
-                        <label class="forms">Username(E-mail Address)</label>
-                        <input class="lists" id="username" type="email" />
-                    </div> -->
-                </div>
-                <div class="part1">
-                    <div class="content">
-                        <label class="forms">GSTN Number</label>
-                        <input class="lists" id="gstn_number" type="text" placeholder="Enter GSTN Number"  required  readonly/>
-
-                    </div>
-                    <div class="content">
-                        <label class="forms">Address</label>
-                        <input class="lists" id="address" type="text" placeholder="Enter Shop Address" required readonly/>
-
-                    </div>
-                    <div class="content">
-                        <label class="forms">Shop Logo</label>
-                        <input class="lists" id="file" type="file" placeholder="Upload Logo" readonly />
-
-                    </div>
-                    <div class="content">
-                        <label class="forms">Print Name</label>
-                        <input class="lists" id="nameforprint" type="text" placeholder="Enter Print Name" required readonly />
-
-                    </div>
-                    <!-- <div class="content">
-                        <label class="forms">Password</label>
-                        <input class="lists" id="password" type="text" required />
-
-                    </div> -->
-                </div>
-                <div class="content1">
-                    <button class="button_1" onclick="backbutton()"  type="button"><span>&#x1F870;</span> Back</button>
-                    <!-- <button class="button" id="edit" type="submit">
-                        edit</button> -->
-                    <button class="button" id="save"type="submit" >
-                        Save</button>
+                    <div class="content1">
+                        <button class="button_1" type="button">
+                            <span>&#x1F870;</span> Back
+                        </button>
+  
+                        <button class="button" id="save"type="submit">
+                            Save<span>&#x1F872;</span>
+                        </button>
                        
-                 </div>  
+                    </div>  
         
-            </form>
-        </div>
-        <!-- <div class="content1">
-            <button class="button_1" onclick="backbutton()"  type="button"><span>&#x1F870;</span> Back</button>
-             <button class="button" onclick="(event)"  type="submit">
-                Save<span>&#x1F872;</span></button>
-               
-         </div>   -->
+                </form>
+            </div>
 
-
-
-    </main>
-    <script>
-        
-
-let userRecords = JSON.parse(localStorage.getItem("userRecords"));
-let unique = localStorage.getItem("unique")
-      function findDetail(e){
-          return e.user_email===unique;
-      }
-      let user_records = userRecords.find(findDetail);
-
-      document.getElementById("shop_name").value = user_records["shop_name"];
-        document.getElementById("licence_number").value = user_records["licence_number"]
-        document.getElementById("user_email").value = user_records["user_email"];
-        document.getElementById("phone_number").value = user_records["phone_number"];
-
-
-       
-      function update(e){
-//                  // getting the updated data from the input field
-// const shop_name = document.getElementById("shop_name").value;
-// const licence_number = document.getElementById("licence_number").value;
-// const phone_number = document.getElementById("phone_number").value;
-let user_email = document.getElementById("user_email").value;
-let gstn_number = document.getElementById("gstn_number").value;
-let address = document.getElementById("address").value;
-let nameforprint = document.getElementById("nameforprint").value;
-              
-
-
-
-// paste the updated data to the correct object
-
-
-user_records["gstn_number"] = gstn_number;
-user_records["address"] = address;
-user_records["nameforprint"] = nameforprint;
-              
-
-
-
-// again paste it to the
-                localStorage.setItem("userRecords", JSON.stringify(userRecords));
-                alert("Successfully Updated")
-                window.location.href="../homepage/homepage.html"
-            }
-            document.getElementById("gstn_number").value = user_records["gstn_number"];
-        document.getElementById("address").value = user_records["address"];
-        document.getElementById("nameforprint").value = user_records["nameforprint"];
-
-
-        //     const sumbit =document.querySelector(".button");
-        //   sumbit.addEventListener("click",update);
-
-
-
-
-
-       
-        function backbutton() {
-        window.location.href="../homepage/homepage.html"
-        }
-        function logout() {
-            alert("Are you Sure !")
-        window.location.href="../login/login.html"
-        }
-
-
-
-
-        function remove(){
-
-            let user_Records = JSON.parse(localStorage.getItem("userRecords"));
-            let unique_1 = localStorage.getItem("unique")
-           
-           
-            function findDetails(e){
-          return e.user_email===unique_1;
-      }
-       records = user_Records.find(findDetails);
-
-            let indexOfShop = user_Records.indexOf(records);
-            user_Records.splice(indexOfShop,1)
-
-            localStorage.setItem("userRecords", JSON.stringify(user_Records) )
-    alert("Deleted!")
-    window.location.href="../../index.html"
-
-    document.getElementById("gstn_number").value = user_records["gstn_number"];
-        document.getElementById("address").value = user_records["address"];
-        document.getElementById("nameforprint").value = user_records["nameforprint"];
-
-}
-
-// const sumbit =document.querySelector("#save");
-//           sumbit.addEventListener("submit",update)
-//           sumbit.addEventListener("click",findReadonly1)
-//       function findReadonly(e){
-
-//         document.getElementById("shop_name").removeAttribute("readonly");
-//         document.getElementById("phone_number").removeAttribute("readonly");
-//         document.getElementById("user_email").removeAttribute("readonly");
-//         document.getElementById("gstn_number").removeAttribute("readonly");
-//         document.getElementById("address").removeAttribute("readonly");
-//         document.getElementById("file").removeAttribute("readonly");
-//         document.getElementById("nameforprint").removeAttribute("readonly");
-        
-//         document.querySelector("#edit").removeAttribute("style");
-//         document.querySelector("#save").setAttribute("style","display:none");
-//       }
-//       function findReadonly1(e){
-//         document.getElementById("shop_name").setAttribute("readonly","true");
-//         document.getElementById("phone_number").setAttribute("readonly","true");
-//         document.getElementById("user_email").setAttribute("readonly","true");
-//         document.getElementById("gstn_number").setAttribute("readonly","true");
-//         document.getElementById("address").setAttribute("readonly","true");
-//         document.getElementById("file").setAttribute("readonly","true");
-//         document.getElementById("nameforprint").setAttribute("readonly","true");
-        
-
-//         document.querySelector("#edit").setAttribute("style","display:none");
-//         document.querySelector("#save").setAttribute("style","display:inline");
-//       }
-//       const editThing = document.querySelector("#edit");
-//       editThing.addEventListener("click",findReadonly);
-
-       
-       
-    </script>
-
-
-
-
-
-
-
-
-
-
-
-</body>
+        </main>
+        <script src="./../../assets/js/profile/viewprofile.js"></script>
+    </body>
 
 </html>

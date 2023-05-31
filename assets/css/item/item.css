@@ -3,7 +3,7 @@
 .nav1{
     border-bottom: 3px solid blue;
 }
-.additem button{
+#additem_button{
 
     font-size: 30px;
     background-color: lightblue;
@@ -15,6 +15,7 @@
     border-color: lightblue;
     color: white;
     margin-left:19px ;
+    margin-top: 16px;
 }
 
 
@@ -31,10 +32,18 @@
 .additem h2 {
     font-size: 30px;
     margin: 1em;
+    margin-top: 44px;
 }
 .search{
     display: flex;
     margin: 1em;
+}
+
+.div_search{
+    display: flex;
+    margin: 1em;
+    height: 59px;
+    border-radius: 2px;
 }
 .dropdown{
     display: none;
@@ -45,14 +54,20 @@
     height: 60px;
     font-size: 25px;
     background-color: lightblue;
+    margin-right: 20px;
 }
 .srch{
     font-size: 25px;
     background-color: lightblue;
     border-color: lightblue;
     margin-left:0 !important;
+    border-radius: 4px;
 
 
+}
+
+#icon{
+    color: black;
 }
 /* ended here */
 .additem a i{
@@ -88,6 +103,28 @@ table {
     background-color: darkblue !important;
     color: white;
 }
+.highlight {
+    background-color: rgb(243, 65, 62);
+    font-weight: bold;
+    padding: 3px;
+    margin: 2px;
+    font-size: 15px;
+    color: white;
+  }
+  @keyframes blink-animation {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  .highlight_warning {
+    background-color: yellow;
+    font-weight: bold;
+    padding: 3px;
+    margin: 2px;
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    animation: blink-animation 1s infinite;
+  }
 
 @media screen and (max-width: 400px) {
 

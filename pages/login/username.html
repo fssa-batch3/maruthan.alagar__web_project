@@ -1,370 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M A M Billing</title>
-    <link rel="stylesheet" href="../../assets/css/login/username.css">
-    <link rel="stylesheet" href="../../assets/css/normalize.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>M A M Billing</title>
+        <link rel="stylesheet" href="../../assets/css/login/username.css">
+        <link rel="stylesheet" href="../../assets/css/normalize.css">
+        <link rel="icon" href="../../assets/Imges/M_A_M.png">
+       
+    </head>
 
-<body>
-    <header>
-        <div>
-            <div class="nav">
-                <div class="logo">
-                    <img src="../../assets//Imges/M A M - Copy.jpg" alt="Logo pic" />
+    <body>
+        <header>
+            <div>
+                <div class="nav">
+                    <div class="logo">
+                        <img src="../../assets//Imges/M A M - Copy.jpg" alt="Logo pic">
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
-        <div class="one">
-            <form id="signup-form"  onsubmit="(event)">
-                <h3>User Name Creation</h3>
-                <div class="content">
-                    <label class="forms"> Enter Your Email Address</label>
-                    <input class="lists" id="user_email" type="email" placeholder=" Enter Your Email"  required />
-
-                </div>
-
-                <div class="content">
-                    <label class="forms"> Create New Password</label>
-                    <input class="lists" id="new_password" type="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*+`~=?\|<>/]).{8,}" required />
-                </div>
-                <div class="content">
-                    <label class="forms">Confirm Password</label>
-                    <input class="lists" id="password" type="password" placeholder="Confirm password" required />
-                </div>
-                <div class="content_1">
-                    <button class="button" type="submit"> Finish<span>&#8594;</span></button>
-
-                </div>
-
-       
-
-
-        </form>
-        </div>
-    </main>
-    <script>
-
-
-
-
-
-
-
-
-
-
-
-// const user_name_creation = [
-//             //first label
-//             {
-//                 name : "Create Userame",
-//                 place_holder : " Enter Username",
-//                 input_id : "create_username",
-//                 input_type : "text"
-               
-
-//             },
-//                //second label
-//             {
-//                 name : "Create New Password",
-//                 place_holder : "Password",
-//                 input_id : "new_password",
-//                 input_type : "password"
-                
-
-//             },
-//             //third label
-//             {
-//                 name : "Confirm Password",
-//                 place_holder : "Confirm password",
-//                 input_id : "password",
-//                 input_type : "password"
-                
-
-//             }
-//         ]
-
-//                   div_content = document.createElement("div");
-//                   div_content.setAttribute("class", "content");
-                  
-            
-
-//             for(i = 0; i < 3; i++){
-
-//             // label
-//             label_name = document.createElement("label");
-//             label_name.setAttribute("class", "forms");
-//             label_name.innerText = user_name_creation[i]["name"];
-//             div_content.append(label_name);
-
-
-//             // input
-//             input = document.createElement("input");
-//             input.setAttribute("class", "lists")
-//             input.setAttribute("id", user_name_creation[i]["input_id"])
-//             input.setAttribute("type",user_name_creation[i]["input_type"])
-//             input.setAttribute("placeholder", user_name_creation[i]["place_holder"])
-//             div_content.append(input);
-//             }
-
-
-//             // button_div
-//             div_content_1 = document.createElement("div");
-//             div_content_1.setAttribute("class", "content_1");
-//             div_content.append(div_content_1);
-           
-
-//             // button
-//             submit_button = document.createElement("button");
-//             submit_button.setAttribute("class", "button");
-//             submit_button.setAttribute("type", "button")
-//             submit_button.innerText = "Finish";
-//             submit_button.setAttribute("onclick", "loginpage()")
-//             div_content_1.append(submit_button);
-
-//             // span
-//             arrow = document.createElement("span");
-//             arrow.innerText = "→";
-//             submit_button.append(arrow);
-            
-
-
-
-          
-
-//             document.querySelector("form").append(div_content)
-
-
-//             document.querySelector("form").append(div_content_1)
-
-
-
-       
-       
-
-
-
-//         function store(){
-
-// let name = document.getElementById('create_username');
-// let new_pw = document.getElementById('new_password');
-// let pw = document.getElementById('password');
-
-// if(name.value.length == 0){
-//     alert('Please fill in email');
-
-// }else if(new_pw.value.length == 0){
-//     alert('Please create new password');
-// }else if(pw.value.length == 0){
-//     alert('Please re-enter password');
-
-// }else if(pw.value != new_pw.value){
-//     alert('Please Check the password');
-
-// }else if(name.value.length == 0 && pw.value.length == 0 && new_pw.value.length == 0){
-//     alert('Please fill in email and password');
-
-// }else if(pw.value.length > 8){
-//     alert('Max of 8');
-
-// }else if(!pw.value.match(numbers)){
-//     alert('please add 1 number');
-
-// }else if(!pw.value.match(upperCaseLetters)){
-//     alert('please add 1 uppercase letter');
-
-// }else if(!pw.value.match(lowerCaseLetters)){
-//     alert('please add 1 lovercase letter');
-
-// }else{
-//     localStorage.setItem('name', name.value);
-//     localStorage.setItem('new_pw', new_pw.value);
-//     localStorage.setItem('pw', pw.value);
-//     alert('Your account has been created');
-//     window.location.href="./login.html"
-// }
-// }
-       
-
-
-// function saveData()
-// {
-// let name,new_pw,pw;
-// name = document.getElementById("create_username").value;
-// new_pw = document.getElementById("new_password").value;
-// pw = document.getElementById("password").value;
-// let user_records = new Array();
-// user_records = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
-// if(user_records.some((v)=>{return v.pw == pw}))
-// {
-//   alert("Your details successfully registed ");
-//   window.location.href = "./login.html"
-// }
-// else if(create_username.value.length == 0 && password.value.length == 0 && new_password.value.length == 0){
-//     alert('Please fill your Details');
-// }else if(new_password.value.length == 0){
-//     alert('Please create new password');
-// }else if(password.value.length == 0){
-//     alert('Please re-enter password');
-
-// }else if(password.value != new_password.value){
-//     alert('Please Check the password');
-
-
-// }else
-// {
-//   user_records.push({
-//   "name":name,
-//   "new_pw":new_pw,
-//   "pw":pw
-// })
-// localStorage.setItem("users",JSON.stringify(user_records));
-// }
-// }
-
-
-
-
-
-// function saveData()
-// {
-// let name,new_pw,pw;
-// name = document.getElementById("create_username").value;
-// new_pw = document.getElementById("new_password").value;
-// pw = document.getElementById("password").value;
-// let user_records = new Array();
-// user_records = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
-// if(user_records.some((v)=>{return v.pw == pw}))
-// {
- 
-// }
-// else if(create_username.value == " "){
-//     alert('Please fill Details');
-// }else if(new_password.value.length == 0){
-//     alert('Please create new password');
-// }else if(password.value.length == 0){
-//     alert('Please re-enter password');
-// }else if(password.value != new_password.value){
-//     alert('Please Check the password');
-// }else
-// {
-//   user_records.push({
-//   "name":name,
-//   "new_pw":new_pw,
-//   "pw":pw
-// })
-// alert("Your details successfully registed ");
-//   window.location.href = "./login.html"
-// localStorage.setItem("users",JSON.stringify(user_records));
-// }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-const form = document.getElementById("signup-form");
-let user_email = document.getElementById("user_email");
-let new_pw = document.getElementById("new_password");
-let pw = document.getElementById("password");
-
-
-
-let userRecords = JSON.parse(localStorage.getItem("userRecords"));
-let unique = localStorage.getItem("unique")
-console.log(unique)
-
-form.addEventListener("submit", function(event) {
-  event.preventDefault();
-  
-  if (pw.value !== new_pw.value) {
-    alert("Passwords do not match");
-    return;
-  }else if (unique !== user_email.value) {
-    alert("Please Enter correct Email Address");
-    return;
-  }else if(user_email.value === 0){
-    alert('Please fill Email Address');
-    return;
-}else if(new_pw.value.length == 0){
-    alert('Please create new password');
-    return;
-}else if(pw.value.length == 0){
-    alert('Please re-enter password');
-    return;
-
-}else if(pw.value.length !== 8){
-    alert('Password Length Max of 8 Characters');
-    return;
-
-}else if(!pw.value.match(/\d/)){
-    alert('Please add 1 number');
-    return;
-
-}else if(!pw.value.match(/[A-Z]/)){
-    alert('Please add 1 uppercase letter');
-    return;
-
-
-}else if(!pw.value.match(/[a-z]/)){
-    alert('please add 1 lovercase letter');
-    return;
-}
-
-
-
-
-
-  
-
-
-else{
-
-
-    function findemail(e){
-          return e.user_email == unique;
-      }
-      let users_records = userRecords.find(findemail);
-
-
-    // const users_records = userRecords.find(userRecords => unique === user_email.value)
-   
-   
-   
-users_records["user_email"] = user_email.value;
-users_records["new_pw"] = new_pw.value;
-users_records["pw"] =pw.value;
-}
-
-
-localStorage.setItem("userRecords", JSON.stringify(userRecords));
-console.log(userRecords)
-
-  alert("Your details successfully registed ");
- window.location.href = "./login.html"
-  
-});
-
-       
-       
-    </script>
-
-
-
-</body>
+        </header>
+        <main>
+            <div class="one">
+                <form id="user_form">
+                    <h3>User Name Creation</h3>
+                    <div class="content">
+                        <label class="forms"> Enter Your Email Address</label>
+                        <input class="lists" id="user_email" type="email" value="evergreen@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder=" Enter Your Email" required>
+
+                    </div>
+
+                    <div class="content">
+                        <label class="forms"> Create New Password</label>
+                        <input class="lists" id="new_password" type="password" value="Asdf@123" placeholder="Abcd@123"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*+`~=?\|<>/]).{8,}" required>
+                    </div>
+                    <div class="content">
+                        <label class="forms">Re-Enter Password</label>
+                        <input class="lists" id="password" type="password" value="Asdf@123" placeholder="Abcd@123" required>
+
+                    </div>
+                    <div id="rulez" style="display:none;"
+                        class="rules">
+                        <p>Constraints :-</p>
+                        <p>*Password Length Max of 8 Characters</p>
+                        <p>*Add 1 number & 1 uppercase letter</p>
+                        <p>*Add 1 lowercase letter & Add 1 Symbol </p>
+                    </div>
+
+                    <div class="content_1">
+                        <button class="button" type="submit">
+                            Finish<span>&#8594;</span>
+                        </button>
+
+                    </div>
+
+                </form>
+            </div>
+        </main>
+        <script src="./../../assets/js/profile/username.js"></script>
+
+    </body>
 
 </html>

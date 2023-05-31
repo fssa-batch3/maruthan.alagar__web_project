@@ -1,120 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M A M Billing</title>
-    <link rel="stylesheet" href="../../assets/css/customer/purchasehistory.css">
-    <link rel="stylesheet" href="../../assets/css/normalize.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>M A M Billing</title>
+        <link rel="stylesheet" href="../../assets/css/customer/purchasehistory.css">
+        <link rel="stylesheet" href="../../assets/css/normalize.css">
+        <link rel="icon" href="../../assets/Imges/M_A_M.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
 
-<body>
-    <header>
-        <div>
-            <div class="nav">
-                <div class="logo">
-                    <img src="../../assets/Imges/M_A_M.png    " alt="Logo pic" />
-                </div>
-                <div class="list">
-                    <ul class="link">
-                        <li class="navlist"><a class="navlist" href="../customer/customer.html">&#8592; Back To
-                                Customer</a></li>
-                    </ul>
+    <body>
+        <header>
+            <div>
+                <div class="nav">
+                    <div class="logo">
+                        <img src="../../assets/Imges/M_A_M.png    " alt="Logo pic">
+                    </div>
+                    <div class="list">
+                        <ul class="link">
+                            <li class="navlist">
+                                <a class="navlist" href="../customer/customer.html">&#8592; Back To
+                                    Customer</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
-        <div class="additem">
-            <h2>Purchase History</h2>
-            <div class="search">
-                <input class="searchbox" type="text" placeholder="Enter Customer Name Or ID" />
-            <button class="srch"><a  href="./purchasehistory.html"><i class="fa fa-search"></a></i></button>
-        </div>
+        </header>
+        <main>
+            <div class="additem">
+                <h2>Purchase History</h2>
+                <div class="div_search">
+                    <input class="searchbox" type="text" id="searchInput" placeholder="Enter Item Name Or ID">
+                    <button  class="srch" id="searchButton">
+                      <span>
+                        <i id="icon" class="fa fa-search"></i>
+                      </span>
+                    </button>
+                  </div>
+                </div>
             
         </div>
-        <table class="table">
-            <caption style="font-size: 0%;">billing details</caption>
-            <tr class="tb1">
-                <th>Customer Name</th>
-                <th>ID</th>
-                <th>Details</th>
-                <th>Amount</th>
-                <th>View</th>
-            </tr>
-            <tr>
-                <td>Praveen</td>
-                <td>C0023</td>
-                <td>10 Items</td>
-                <td>1290/-</td>
-                <td><a class="arrow" href="../customer/purchasedetails.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Raj</td>
-                <td>C0323</td>
-                <td>10 Items</td>
-                <td>1930/-</td>
-                <td><a class="arrow" href="../customer/purchasedetails/purchasedetail1.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Maruthan</td>
-                <td>C0043</td>
-                <td>7 Items</td>
-                <td>90/-</td>
-                <td><a class="arrow" href="../customer/purchasedetails/purchasedetail2.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Santhosh</td>
-                <td>C0223</td>
-                <td>10 Items</td>
-                <td>390/-</td>
-                <td><a class="arrow" href="../customer/purchasedetails/purchasedetail3.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Meena</td>
-                <td>C0124</td>
-                <td>10 Items</td>
-                <td>280/-</td>
-                <td><a class="arrow" href="../customer/purchasedetails/purchasedetail4.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Priya</td>
-                <td>C0233</td>
-                <td>9 Items</td>
-                <td>230/-</td>
-                <td><a class="arrow" href="../customer/purchasedetails/purchasedetail5.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Sesslyn</td>
-                <td>C1223</td>
-                <td>12 Items</td>
-                <td>437/-</td>
-                <td><a class="arrow" href="../customer/purchasedetails/purchasedetail6.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Ram</td>
-                <td>C0564</td>
-                <td>6 Items</td>
-                <td>325/-</td>
-                <td><a class="arrow" href="../customer/purchasedetails/purchasedetail7.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Tamil</td>
-                <td>C0765</td>
-                <td>12 Items</td>
-                <td>160/-</td>
-                <td><a class="arrow" href="../customer/purchasedetails/purchasedetail8.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Kiruba</td>
-                <td>C0543</td>
-                <td>11 Items</td>
-                <td>340/-</td>
-                <td><a class="arrow" href="../customer/purchasedetails/purchasedetail9.html">&#8594;</a></td>
-            </tr>
-        </table>
+                           
 
     </main>
+    <script src="./../../assets/js/customer/purchasehistory.js"></script>
+    </body>
+    </html>

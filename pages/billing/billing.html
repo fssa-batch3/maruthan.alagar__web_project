@@ -1,145 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M A M Billing</title>
-    <link rel="stylesheet" href="../../assets/css/billing/billing.css">
-    <link rel="stylesheet" href="../../assets/css/normalize.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>M A M Billing</title>
+        <link rel="stylesheet" href="../../assets/css/billing/billing.css">
+        <link rel="stylesheet" href="../../assets/css/normalize.css">
+        <link rel="icon" href="../../assets/Imges/M_A_M.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       
+    </head>
 
-<body>
-    <header>
-        <div class="header">
-            <a href="../homepage/homepage.html"><img class="logo" src="../../assets/Imges/M_A_M.png" alt="logo" width="110px" /></a>
-            <div class="list1">
-                <a href="../item/item.html">Item</a>
-                <a href="../stock/stock.html">Stock</a>
-                <a href="../customer/customer.html">Customer</a>
-                <a class="nav1" href="#">Bill</a>
-                <a href="../profile/viewprofile.html">Profile</a>
-            </div>
-            <div class="dropdown">
-                <button class="dropbtn">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a class="link" href="../item/item.html">Item</a>
-                    <a class="link" href="../stock/stock.html">Stock</a>
-                    <a class="link" href="../customer/customer.html">Customer</a>
-                    <a class="link" href="../billing/billing.html">Bill</a>
-                    <a class="link" href="../profile/viewprofile.html">Profile</a>
+    <body>
+        <header>
+            <div class="header">
+                <a href="../homepage/homepage.html">
+                    <img class="logo" src="../../assets/Imges/M_A_M.png" alt="logo" width="110px">
+                </a>
+                <div class="list1">
+                    <a href="../item/item.html">Item</a>
+                    <a href="../stock/stock.html">Stock</a>
+                    <a href="../customer/customer.html">Customer</a>
+                    <a class="nav1" href="#">Bill</a>
+                    <a href="../profile/viewprofile.html">Profile</a>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a class="link" href="../item/item.html">Item</a>
+                        <a class="link" href="../stock/stock.html">Stock</a>
+                        <a class="link" href="../customer/customer.html">Customer</a>
+                        <a class="link" href="../billing/billing.html">Bill</a>
+                        <a class="link" href="../profile/viewprofile.html">Profile</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
+        </header>
+   
         <div class="additem">
             <h2>Recent Bills</h2>
             <div>
-                <button class="btn1"><a class="top" href="../billing/billinghistory.html"> Billing History </a></button>
-                <button class="btn1"><a class="top" href="../billing/newbill.html"> &#x002B;New Bill </a></button>
+                <button class="btn1">
+                    <a class="top" href="../billing/billinghistory.html"> Billing History </a>
+                </button>
+                <button class="btn1">
+                    <a class="top" href="../billing/newbill.html"> &#x002B;New Bill </a>
+                </button>
             </div>
 
         </div>
         <main>
 
-            <table class="table">
-                <caption style="font-size: 0%;">billing details</caption>
-                <tr class="tb1">
-                    <th>ID No</th>
-                    <th>Bill No</th>
-                    <th>Date</th>
-                    <th>Amount</th>
-
-                </tr>
-                <tr>
-                    <td>A097</td>
-                    <td>B021</td>
-                    <td><input type="date" value="2022-12-25" /></td>
-                    <td>390/-</td>
-
-                </tr>
-                <tr>
-                    <td>A0034</td>
-                    <td>B020</td>
-                    <td><input type="date" value="2022-12-25" /></td>
-                    <td>230/-</td>
-
-                </tr>
-                <tr>
-                    <td>A0045</td>
-                    <td>B019</td>
-                    <td><input type="date" value="2022-12-25" /></td>
-                    <td>430/-</td>
-
-                </tr>
-                <tr>
-                    <td>A0347</td>
-                    <td>B018</td>
-                    <td><input type="date" value="2022-12-25" /></td>
-                    <td>250/-</td>
-
-                </tr>
-                <tr>
-                    <td>A0457</td>
-                    <td>B017</td>
-                    <td><input type="date" value="2022-12-25" /></td>
-                    <td>760/-</td>
-
-                </tr>
-                <tr>
-                    <td>A0347</td>
-                    <td>B016</td>
-                    <td><input type="date" value="2022-12-25" /></td>
-                    <td>450/-</td>
-
-                </tr>
-                <tr>
-                    <td>A0337</td>
-                    <td>B015</td>
-                    <td><input type="date" value="2022-12-25" /></td>
-                    <td>230/-</td>
-
-                </tr>
-                <tr>
-                    <td>A0237</td>
-                    <td>B014</td>
-                    <td><input type="date" value="2022-12-25" /></td>
-                    <td>370/-</td>
-
-                </tr>
-                <tr>
-                    <td>A0267</td>
-                    <td>B013</td>
-                    <td><input type="date" value="2022-12-25" /></td>
-                    <td>980/-</td>
-
-
-                </tr>
-                <tr>
-                    <td>A0237</td>
-                    <td>B012</td>
-                    <td><input type="date" value="2022-12-25" /></td>
-                    <td>30/-</td>
-
-                </tr>
-
-            </table>
-
         </main>
+        <script src="./../../assets/js/bill/billing.js"></script>
         <footer>
             <h3>Copyright © 2023 M A M Billing Software</h3>
 
-            <button class="btn" type="submit"><a href="../homepage/cards.html">Contact Us</a></button>
-
-
-
+            <button class="btn" type="submit">
+                <a href="../homepage/cards.html">Contact Us</a>
+            </button>
 
         </footer>
-</body>
+       
+    </body>
 
 </html>

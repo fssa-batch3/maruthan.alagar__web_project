@@ -92,6 +92,7 @@ form {
     float: right;
     color: white;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .content_1 .button span {
@@ -102,4 +103,10 @@ form {
 .continue {
     text-decoration: none !important;
     color: white !important;
+}
+.rules p{
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(9 61 171);
 }

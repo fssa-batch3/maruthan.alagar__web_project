@@ -15,7 +15,9 @@ body footer {
     background-color: #dbdbd5;
     text-align: center;
     padding: 2em;
-    margin-top: 3em;
+    position: sticky;
+    margin-top: 25%;
+
 }
 
 .btn {

@@ -1,239 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M A M Billing</title>
-    <link rel="stylesheet" href="../../assets/css/customer/customer.css">
-    <link rel="stylesheet" href="../../assets/css/normalize.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>M A M Billing</title>
+        <link rel="stylesheet" href="../../assets/css/customer/customer.css">
+        <link rel="stylesheet" href="../../assets/css/normalize.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" href="../../assets/Imges/M_A_M.png">
+        
+    </head>
 
-<body>
-    <header>
-        <div class="header">
-            <a href="../homepage/homepage.html"><img class="logo" src="../../assets/Imges/M_A_M.png" alt="logo" width="110px" /></a>
-            <div class="list1">
-                <a href="../item/item.html">Item</a>
-                <a href="../stock/stock.html">Stock</a>
-                <a class="nav1" href="#">Customer</a>
-                <a href="../billing/billing.html">Bill</a>
-                <a href="../profile/viewprofile.html">Profile</a>
-            </div>
-            <div class="dropdown">
-                <button class="dropbtn">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a class="link" href="../item/item.html">Item</a>
-                    <a class="link" href="../stock/stock.html">Stock</a>
-                    <a class="link" href="../customer/customer.html">Customer</a>
-                    <a class="link" href="../billing/billing.html">Bill</a>
-                    <a class="link" href="../profile/viewprofile.html">Profile</a>
+    <body>
+        <header>
+            <div class="header">
+                <a href="../homepage/homepage.html">
+                    <img class="logo" src="../../assets/Imges/M_A_M.png" alt="logo" width="110px">
+                </a>
+                <div class="list1">
+                    <a href="../item/item.html">Item</a>
+                    <a href="../stock/stock.html">Stock</a>
+                    <a class="nav1" href="#">Customer</a>
+                    <a href="../billing/billing.html">Bill</a>
+                    <a href="../profile/viewprofile.html">Profile</a>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a class="link" href="../item/item.html">Item</a>
+                        <a class="link" href="../stock/stock.html">Stock</a>
+                        <a class="link" href="../customer/customer.html">Customer</a>
+                        <a class="link" href="../billing/billing.html">Bill</a>
+                        <a class="link" href="../profile/viewprofile.html">Profile</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
-        <div class="additem">
-            <h2>Customer List</h2>
-            <div class="search">
-                <button class="btn1"><a class="top" href="../customer/purchasehistory.html"> Purchase History
-                    </a></button>
-                <button class="btn1"><a class="top" href="../customer/addcustomer.html"> &#x002B;Add New Customer
-                    </a></button>
-                    <button class="srch1"><a href="./searchcustomer.html"><i class="fa fa-search"></a></i></button>
+        </header>
+        <main>
+            <div class="additem">
+                <h2>Customer List</h2>
+                <div class="search">
+                    <button id="addcustomer_button1" class="btn1">
+                        <a class="top" href="../customer/purchasehistory.html"> Purchase History
+                        </a></button>
+                    <button  id="addcustomer_button2" class="btn1">
+                        <a class="top" href="../customer/addcustomer.html"> &#x002B;Add New Customer
+                        </a></button>
+                        <div class="div_search">
+                            <input class="searchbox" type="text" id="searchInput" placeholder="Enter Item Name Or ID">
+                            <button  class="srch" id="searchButton">
+                              <span>
+                                <i id="icon" class="fa fa-search"></i>
+                              </span>
+                            </button>
+                          </div>
+                        </div>
             </div>
 
         </div>
     </main>
+                            <script src="./../../assets/js/customer/customer.js"></script>
+                            
+                            <footer>
+                                <h3>Copyright © 2023 M A M Billing Software</h3>
 
+                                <button class="btn" type="submit">
+                                    <a href="../homepage/cards.html">Contact Us</a>
+                                </button>
 
-        <!-- <table class="table">
-            <caption style="font-size: 0%;">billing details</caption>
-            <tr class="tb1">
-                <th> Customer Name</th>
-                <th>Phone Number</th>
-                <th class="forres">E-Mail</th>
-                <th>View</th>
-            </tr>
-            <tr>
-                <td>Praveen</td>
-                <td>934521346</td>
-                <td class="forres">*********@gmailcom</td>
-                <td><a class="arrow" href="../customer/viewcustomers/viewcustomer1.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Raj</td>
-                <td>934521346</td>
-                <td class="forres">*********@gmailcom</td>
-                <td><a class="arrow" href="../customer/viewcustomers/viewcustomer2.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Maruthan</td>
-                <td>7810061572</td>
-                <td class="forres">*********@gmailcom</td>
-                <td><a class="arrow" href="../customer/viewcustomer.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Santhosh</td>
-                <td>934521346</td>
-                <td class="forres">*********@gmailcom</td>
-                <td><a class="arrow" href="../customer/viewcustomers/viewcustomer3.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Meena</td>
-                <td>934521346</td>
-                <td class="forres">*********@gmailcom</td>
-                <td><a class="arrow" href="../customer/viewcustomers/viewcustomer4.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Priya</td>
-                <td>934521346</td>
-                <td class="forres">*********@gmailcom</td>
-                <td><a class="arrow" href="../customer/viewcustomers/viewcustomer5.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Sesslyn</td>
-                <td>934521346</td>
-                <td class="forres">*********@gmailcom</td>
-                <td><a class="arrow" href="../customer/viewcustomers/viewcustomer6.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Ram</td>
-                <td>934521346</td>
-                <td class="forres">*********@gmailcom</td>
-                <td><a class="arrow" href="../customer/viewcustomers/viewcustomer7.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>TamilSelven</td>
-                <td>934521346</td>
-                <td class="forres">*********@gmailcom</td>
-                <td><a class="arrow" href="../customer/viewcustomers/viewcustomer8.html">&#8594;</a></td>
-            </tr>
-            <tr>
-                <td>Dhanush</td>
-                <td>934521346</td>
-                <td class="forres">*********@gmailcom</td>
-                <td><a class="arrow" href="../customer/viewcustomers/viewcustomer9.html">&#8594;</a></td>
-            </tr>
-        </table>
- -->
+                            </footer>
 
-  
-    <footer>
-        <h3>Copyright © 2023 M A M Billing Software</h3>
-
-        <button class="btn" type="submit"><a href="../homepage/cards.html">Contact Us</a></button>
-
-
-
-
-    </footer>
-
-    <script>
-
-
-        let customerDetails = JSON.parse(localStorage.getItem("customerDetails")); 
-   
-   
-                  // main table
-               main_table = document.createElement("table");
-               main_table.setAttribute("class", "table");
-               
-               
-   
-               
-              // table row
-               table_row = document.createElement("tr");
-               table_row.setAttribute("class", "tb1");
-               // label_name.innerText = register_shop[i]["name"];
-               main_table.append(table_row);
-          
-               //table coloumn_1
-           table_coloumn = document.createElement("th");
-           table_coloumn.innerText = " Customer Name";
-           table_row.append(table_coloumn);
-            
-           
-           //table coloumn_2
-             table_coloumn = document.createElement("th");
-             table_coloumn.innerText = "Phone Number";
-           table_row.append(table_coloumn);
-            
-           //table coloumn_3
-             table_coloumn = document.createElement("th");
-             table_coloumn.setAttribute("class","forres");
-             table_coloumn.innerText = "Customer ID";
-           table_row.append(table_coloumn);
-           
-        
-            
-           //table coloumn_5
-             table_coloumn = document.createElement("th");
-             table_coloumn.innerText = "View";
-           table_row.append(table_coloumn);
-   
-           for( i=0; i<customerDetails.length;i++){
-           
-               // table row
-            table_row_1 = document.createElement("tr");
-            table_row_1.setAttribute("class", "tb1");
-               // label_name.innerText = register_shop[i]["name"];
-               main_table.append(table_row_1);
-          
-               //table coloumn_1
-           table_coloumn_1 = document.createElement("td");
-           table_coloumn_1.innerText = customerDetails[i]["customer_name"];
-           table_row_1.append(table_coloumn_1);
-             //table coloumn_2
-             table_coloumn_1 = document.createElement("td");
-             table_coloumn_1.innerText = customerDetails[i]["customer_phone"];
-             table_row_1.append(table_coloumn_1);
-             //table coloumn_3
-             table_coloumn_1 = document.createElement("td");
-             table_coloumn_1.setAttribute("class","forres");
-             table_coloumn_1.innerText =  customerDetails[i]["customer_id"];
-             table_row_1.append(table_coloumn_1);
-           
-             //table coloumn_4
-             table_coloumn_1_arrow = document.createElement("td");
-            
-             table_row_1.append(table_coloumn_1_arrow);
-   
-             let nameValue = customerDetails[i].customer_id
-   // Set the value as a parameter in a URL
-//    const url = "http://127.0.0.1:5500/pages/stock/viewstock.html?stock_name=" + encodeURIComponent(nameValue);
-   const url = "./viewcustomer.html?customer_id=" + encodeURIComponent(nameValue);
-   
-             //anchor
-             a_tag = document.createElement("a");
-             a_tag.setAttribute("class", "arrow");
-             a_tag.innerText = "→";
-             a_tag.setAttribute("href", url);
-             table_coloumn_1_arrow.append(a_tag);
-            
-             
-          
-   
-   
-             
-           }
-           document.querySelector("main").append(main_table)   
-   
-   
-       
-   // checking
-   
-         
-   
-           
-   
-   
-   
-       </script>
 </body>
 
 </html>

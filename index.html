@@ -1,247 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>M A M Billing</title>
+        <link rel="stylesheet" href="./assets/css/login/style.css">
+        <link rel="stylesheet" href="./assets/css/normalize.css">
+        <link rel="icon" href="./assets/Imges/M_A_M.png">
+        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+        <script src="./schema/main.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M A M Billing</title>
-    <link rel="stylesheet" href="./assets/css/login/style.css">
-    <link rel="stylesheet" href="./assets/css/normalize.css" />
-    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
-    
-</head>
-
-<body>
-    <header>
-        <div>
-
-            <div class="logo">
-                <img src="./assets/Imges/M A M - Copy.jpg " alt="Logo pic" />
+    <body>
+        <header>
+            <div>
+                <div class="logo">
+                    <img src="./assets/Imges/M A M - Copy.jpg " alt="Logo pic">
+                </div>
             </div>
-    </header>
-    <main>
-        <div class="one">
-             <form id="signup-form" onsubmit="(event)">
-                <h2>Register Shop</h2>
-                <div class="content">
-                    <label class="forms">Shop Name</label>
-                    <input class="lists" id="shop_name" type="text" placeholder="Enter Shop Name"pattern="[a-zA-Z0-9\s]+" title="Use a-z and A-Z Create Shop Name"
-                         required />
+        </header>
+        <main>
+            <div class="one">
+                <form id="signup_form" role="form">
+                    <h2>Register Shop</h2>
+                    <div class="content">
+                        <label class="forms">Shop Name</label>
+                        <input
+                            class="lists"
+                            id="shop_name"
+                            type="text"
+                            placeholder="Enter Shop Name"
+                            value="Evergreen Supermarket"
+                            pattern="[^\s][a-zA-Z]+(\s[a-zA-Z]+)?[^\s]"
+                            title="Use a-z and A-Z Create Shop Name"
+                            required
+                        >
+                    </div>
 
-                </div>
+                    <div class="content">
+                        <label class="forms">License Number</label>
+                        <input
+                            class="lists"
+                            id="licence_number"
+                            type="text"
+                            placeholder="Enter License Number"
+                            pattern="[A-Z0-9]+"
+                            value="LICE4F9009898GO"
+                            maxlength="14"
+                            title="Don't Use space and any Special Characters.Use A_Z and 1-9 and Must Be 14 Characters"
+                            required
+                        >
+                    </div>
+                    <div class="content">
+                        <label class="forms">Phone Number</label>
+                        <input
+                            class="lists"
+                            id="phone_number"
+                            type="tel"
+                            value="9856305464"
+                            pattern="^[6789]\d{9,9}$"
+                            maxlength="10"
+                            title="Use Numbers begin with 6,7,8,9 and must Enter 10 Characters"
+                            placeholder="Enter Mobile Number"
+                            required
+                        >
+                    </div>
 
-                <div class="content">
-                    <label class="forms">License Number</label>
-                    <input class="lists" id="licence_number" type="text" placeholder="Enter License Number" pattern="[a-zA-Z0-9]+"
-                     required />
-                </div>
-                <div class="content">
-                    <label class="forms">Phone Number</label>
-                    <input class="lists" id="phone_number" type="tel" pattern="^[789]\d{9,9}$"
-                        placeholder="Enter Mobile Number" required />
-                </div>
+                    <div class="content">
+                        <label class="forms">E-Mail Address </label>
+                        <input
+                            class="lists"
+                            id="email"
+                            type="email"
+                            value ="evergreen@gmail.com"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                            placeholder="Enter your E-Mail"
+                            title="Please enter correct Email"
+                            required
+                        >
+                    </div>
 
-                <div class="content">
-                    <label class="forms">E-Mail Address </label>
-                    <input class="lists" id="email" type="email" placeholder="Enter your E-Mail"
-                       required />
-                </div>
-               
-                <div class="content_1">
-                    <p class="log" onclick="login()">Already have an Account? Login</p>
-                    <button class="button" type="submit" > Continue<span>&#8594;</span></button>
+                    <div class="content_1">
+                        <p class="log" id="log-in">Already have an Account? Login</p>
+                        <button class="button" type="submit">
+                            Continue<span>&#8594;</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <script src="./assets/js/profile/register.js"></script>
 
-                </div>
-            </form>
-        
-        </div>
-    </main>
-
-   
-
-    <script>
-
-        // const register_shop = [
-        //     //first label
-        //     {
-        //         name : "Shop Name",
-        //         place_holder : "Enter Shop Name",
-        //         input_id : "shop_name",
-        //         input_type : "text",
-               
-
-        //     },
-        //        //second label
-        //     {
-        //         name : "License Number",
-        //         place_holder : "Enter License Number",
-        //         input_id : "licence_number",
-        //         input_type : "text",
-                
-
-        //     },
-        //     //third label
-        //     {
-        //         name : "Phone Number",
-        //         place_holder : "Enter Mobile Number",
-        //         input_id : "phone_number",
-        //         input_type : "tel",
-                
-
-        //     },
-        //     //forth label
-        //     {
-        //         name : "E-Mail Address (optional)",
-        //         place_holder : "Enter your E-Mail",
-        //         input_id : "email",
-        //         input_type : "email",
-                
-
-        //     }
-
-        // ]
-
-
-
-
-        //     // main div
-        //     div_content = document.createElement("div");
-        //     div_content.setAttribute("class", "content");
-            
-
-        //     for(i = 0; i < 4; i++){
-        //     // shop name
-
-        //     // label
-        //     label_name = document.createElement("label");
-        //     label_name.setAttribute("class", "forms");
-        //     label_name.innerText = register_shop[i]["name"];
-        //     div_content.append(label_name);
-
-
-        //     // input
-        //     input = document.createElement("input");
-        //     input.setAttribute("class", "lists")
-        //     input.setAttribute("id", register_shop[i]["input_id"])
-        //     input.setAttribute("type", register_shop[i]["input_type"])
-        //     input.setAttribute("placeholder", register_shop[i]["place_holder"])
-        //     div_content.append(input);
-        //     }
-
-
-        //     // button_div
-        //     div_content_1 = document.createElement("div");
-        //     div_content_1.setAttribute("class", "content_1");
-        //     div_content.append(div_content_1);
-           
-
-        //     // button
-        //     submit_button = document.createElement("button");
-        //     submit_button.setAttribute("class", "button");
-        //     submit_button.setAttribute("type", "button")
-        //     submit_button.innerText = "Continue";
-        //     submit_button.setAttribute("onclick", "register()")
-        //     div_content_1.append(submit_button);
-
-        //     // span
-        //     arrow = document.createElement("span");
-        //     arrow.innerText = "→";
-        //     submit_button.append(arrow);
-
-
-
-          
-
-        //     document.querySelector("form").append(div_content)
-
-
-        //     document.querySelector("form").append(div_content_1)
-
-
-    // function register(){
-    //     const shop_name = document.getElementById("shop_name").value
-    //     const licence_number = document.getElementById("licence_number").value
-    //     const phone_number = document.getElementById("phone_number").value
-    //     const email = document.getElementById("email").value
-
-
-
-
-    //     localStorage.setItem("shop_name", shop_name)
-    //     localStorage.setItem("licence_number", licence_number)
-    //     localStorage.setItem("phone_number", phone_number)
-    //     localStorage.setItem("email", email)
-        
-
-    //    window.location.href="./pages/login/username.html"
-    // }
-
-    
-
-let form = document.getElementById("signup-form");
-let shop_name = document.getElementById("shop_name");
-let licence_number = document.getElementById("licence_number");
-let phone_number = document.getElementById("phone_number");
-let user_email = document.getElementById("email");
-const uuid = uuidv4();
-
-
-const userRecords = JSON.parse(localStorage.getItem("userRecords")) || [];
-
-
-form.addEventListener("submit", function(event) {
-  event.preventDefault();
-  
-
-
-
- if (userRecords.some(record => record.user_email === user_email.value)) {
-    alert("Email already exists Please try another one! ");
-    return;
-  }
-  else if(userRecords.some(record => record.phone_number === phone_number.value)){
-    alert("phone Number is already exists Please try another one!");
-    return;
-  }
-  else if(userRecords.some(record => record.licence_number === licence_number.value)){
-    alert("licence Number is already exists Please try another one!");
-    return;
-  }
-  
-else{
-
-  let newUser = {
-    shop_name: shop_name.value,
-    licence_number: licence_number.value,
-    phone_number: phone_number.value,
-     user_email: user_email.value,
-     unique :uuid     
-  };
-
-
-
-  userRecords.push(newUser);
-  localStorage.setItem("userRecords", JSON.stringify(userRecords));
-  localStorage.setItem("unique", user_email.value);
-  alert("Your details successfully registed ");
-  window.location.href="./pages/login/username.html"
-  event.preventDefault();
-  
-}});
-
-
-function login(){
-    window.location.href="./pages/login/login.html"
-}
-
-
-
-
-
-    </script>
-   
-
-</body>
-
+    </body>
 </html>
